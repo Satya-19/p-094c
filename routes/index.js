@@ -7,7 +7,11 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/gallery', (req, res) => {
-res.render('gallery');
+  res.render('gallery');
 });
+
+router.get('/register', (req, res) => {
+  res.render('register');
+})
 
 module.exports = router;
