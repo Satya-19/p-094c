@@ -1,0 +1,140 @@
+<style>
+    html,
+    body {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+    }
+
+    body {
+        font-family: "Quicksand", sans-serif;
+    }
+
+    .logo img {
+        height: 45px;
+        float: left;
+        margin: 16px 36px;
+        color: #fff;
+    }
+
+    nav {
+        position: fixed;
+        width: 100%;
+        transition: 1s;
+        z-index: 1000;
+    }
+
+    nav ul {
+        list-style: none;
+        background: rgba(0, 0, 0, 0);
+        overflow: hidden;
+        color: #fff;
+        padding: 0;
+        text-align: center;
+        margin: 0;
+        float: right;
+        transition: 1s;
+    }
+
+    nav.black {
+        background-color: #000;
+        transition: 1s;
+    }
+
+    nav ul li {
+        display: inline-block;
+        padding: 20px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 20px;
+    }
+
+    .menu-icon {
+        width: 100%;
+        background: #000;
+        text-align: right;
+        box-sizing: border-box;
+        padding: 15px 24px;
+        cursor: pointer;
+        color: #fff;
+        display: none;
+    }
+
+    @media(max-width: 800px) {
+        .logo img {
+            position: fixed;
+            top: 0;
+            margin-top: 10px;
+            height: 45px;
+        }
+
+        nav ul {
+            max-height: 0px;
+            background: #000;
+            float: none;
+        }
+
+        nav.black ul {
+            background: #000;
+        }
+
+        .showing {
+            max-height: 20em;
+        }
+
+        nav ul li {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 24px 0;
+            text-align: center;
+        }
+
+        .menu-icon {
+            display: block;
+            color: #fff;
+        }
+    }
+</style>
+
+<div class="wrapper">
+    <header>
+        <nav>
+            <div class="menu-icon">
+                <i class="fa fa-bars fa-2x"></i>
+            </div>
+            <div class="logo">
+                <a href="https://cet.edu.in"><img src="images/cet.png"></a>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/register">Register</a></li>
+                    <li><a href="/gallery">Gallery</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+   
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    //Menu toggle-button
+    $('.menu-icon').on('click', function () {
+        $('nav ul').toggleClass('showing');
+    });
+
+    //scrolling effect
+
+    $(window).on('scroll', function () {
+        if ($(window).scrollTop()) {
+            $('nav').addClass('black');
+        } else {
+            $('nav').removeClass('black');
+        }
+    });
+</script>

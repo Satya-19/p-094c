@@ -6,4 +6,24 @@ router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
 
+/* GET About Us page. */
+router.get('/about', (req, res) => {
+  res.render('about');
+});
+
+/* GET gallery page. */
+router.get('/gallery', (req, res) => {
+  res.render('gallery');
+});
+
+/* GET register page. */
+router.get('/register', (req, res) => {
+  res.render('register');
+});
+
+/* GET contact us page. */
+router.get('/contact', (req, res) => {
+  res.render('contact');
+});
+
 module.exports = router;
