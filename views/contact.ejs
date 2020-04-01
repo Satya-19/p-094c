@@ -18,6 +18,11 @@
         .two {
             font-size: 1.1em;
         }
+        @media (max-width: 800px) {
+            .last {
+                text-align: center;
+            }
+        }
     </style>
 </head>
 <body>
@@ -45,7 +50,7 @@
         <br><br>
         <div class="row">
             <div class="col-md-4">
-                <h4>Prof. Samrjit Patnaik</h4><hr>
+                <h4>Prof. Samarjit Patnaik</h4><hr>
                 <p>Deputy Training and Placement Officer, T&P Cell</p>
                 <p>Ph. No: +91 9438488168</p>
                 <p>e-mail: patnaik.samarjit@cet.edu.in</p>
@@ -59,6 +64,8 @@
             </div>
         </div>
         <br><br>
+    </center>
+        <div class="last">
         <div class="row">
             <div class="col-md-4"></div>
             <div class="col-md-8">
@@ -73,8 +80,9 @@
                 <span class="two"> placement@cet.edu.in</span>
             </div>
         </div>
-    </center>
+        </div>
     </div>    
+    <%- include('paper') %>
     <%- include('footer') %>
 
 </body>
