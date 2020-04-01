@@ -9,7 +9,7 @@ body {
     position: relative;
     margin: 50px auto;
   }
-  h2 {
+  h2.title {
     font-family: arial;
     color: #333;
     font-size: 40px;
@@ -18,7 +18,7 @@ body {
     padding: 0 15px;
     text-transform: uppercase;
   }
-  span {
+  .title span {
     display: inline-block;
     position: absolute;
     background: #faa;
