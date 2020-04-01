@@ -7,21 +7,3 @@
     flex-direction: column;
     justify-content: center;
 }
-
-.sec-2 {
-    background-image: url("https://www.confirmadmission.com/wp-content/uploads/2018/06/bhuneshwar.jpg");
-    /* filter: blur(8px); */
-    background-position: center;
-    background-size: cover;
-    height: auto;
-    padding: 10px;
-}
-
-
-.sec-2 .container {
-    background-color: rgba(255,255,255, 0.9);
-    padding: 30px;
-    box-shadow: 5px 4px 10px #000;
-    border-radius: 3px;    
-}
-  
