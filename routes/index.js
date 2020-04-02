@@ -11,6 +11,11 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
+/* GET Placement page. */
+router.get('/placement', (req, res) => {
+  res.render('placement');
+});
+
 /* GET gallery page. */
 router.get('/gallery', (req, res) => {
   res.render('gallery');
