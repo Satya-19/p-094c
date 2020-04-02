@@ -9,16 +9,25 @@
     <link rel="stylesheet" href="stylesheets/home.css">
     <script src="https://d3js.org/d3.v4.js"></script>
     <title>Placement</title>
+    <style>
+        @media (max-width: 800px) {
+            .main_sec {
+                height: auto;
+            }
+        }
+    </style>
 </head>
-<body class="pt-4">
+<body>
 
     <%- include('navbar') %>
     
         <div class="main_sec">  
             <div class="container">
                 <center><h1><b>Why Recruit Us</b></h1></center>  <hr>
-            <h5>The institute goes by the saying, "It is the spirit within you which persuades you to challenge your limitations, to discover the undiscovered and subvert the paradigm". It has been 37 years, (3rd oldest institute of Odisha) since the establishment of CET and it is this spirit of the institute that Cetitans imbibe and carry froward wherever they go.</h5>
-            <h5>CET-B has made it a legacy to set new benchmarks in technical education, since its inception in 1981. It deeply inculcates the zeal in students, to turn odds into favour and strive to reach a notch higher in each of their endeavours.</h5>
+            <h5>The institute goes by the saying, "It is the spirit within you which persuades you to challenge your limitations, to discover the undiscovered and subvert the paradigm".</h5><br>
+            <h5> It has been 37 years, (3rd oldest institute of Odisha) since the establishment of CET and it is this spirit of the institute that Cetitans imbibe and carry froward wherever they go.</h5><br>
+            <h5>CET-B has made it a legacy to set new benchmarks in technical education, since its inception in 1981.</h5><br>
+            <h5> It deeply inculcates the zeal in students, to turn odds into favour and strive to reach a notch higher in each of their endeavours.</h5><br>
             <h5>Over 3 lacs state students appear for JEE Mains out of which only the meritorious few of Odisha and India pursue their graduation in the premier college of Odisha Government, CET-B. </h5>
             </div>          
         </div>
@@ -31,7 +40,6 @@
         <div class="main_sec sec-3">
             <div class="container">
                 <center><h1><b>Placement Statistics</b></h1></center>  <hr>
-                 <%- include('donut') %>
             </div>
         </div>
 
