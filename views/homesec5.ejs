@@ -1,15 +1,5 @@
 <center><h1><b>Students Activities</b></h1></center>  <hr>
-
 <style>
-  .clubs-container {
-    height: 300px;
-  margin: 0 0;
- 
-}
-
-.cards a{
-    text-decoration: none;
-}
 
 .cards {
   display: -webkit-flex;
@@ -18,18 +8,18 @@
   justify-content: center;
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
-  /* margin-top: 15px; */
+  margin-top: 15px;
   padding: 1.5%;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  width: 100vw;
+ 
 }
-
+.cards a{
+  text-decoration: none;
+}
 .card {
   position: relative;
-  height: 300px;
-  width: 250px;
   margin-bottom: 20px;
   padding-bottom: 30px;
   background: #fefff9;
@@ -41,16 +31,16 @@
   -moz-border-radius: 4px;
   -webkit-border-radius: 4px;
   border-radius: 4px;
-  
+ 
 }
 @media (max-width: 700px) {
   .card {
-    width: 100%;
+    width: 80vw;
   }
 }
 @media (min-width: 700px) {
   .card {
-    max-width: 320px;
+    max-width: 273px;
     margin-right: 20px;
     margin-bottom: 20px;
   }
@@ -62,17 +52,15 @@
   .card:nth-child(even) {
     margin-right: 20px;
   }
-  .card:nth-child(3n) {
+  /* .card:nth-child(3n) {
     margin-right: 0;
-  }
+  } */
 }
 .card span {
   display: block;
-  
 }
 .card .card-summary {
   padding: 5% 5% 3% 5%;
- 
 }
 .card .card-header {
   position: relative;
@@ -145,6 +133,12 @@ img {
   max-width: 100%;
 }
 
+body {
+  background: #f0f0f0;
+  font-size: 17px;
+  line-height: 1.4;
+  font-family: 'Jaldi', sans-serif;
+}
 
 * {
   -moz-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -moz-transform;
@@ -162,9 +156,8 @@ img {
 }
 
 </style>
-<div class="container clubs-container">
+<!-- <div class="container"> -->
 	<div class="cards">
-       
 		<a class="card" href="#">
 			<span class="card-header" style="background-image: url(images/zairza.png);">
 				<span class="card-title">
@@ -172,9 +165,8 @@ img {
 				</span>
 			</span>
 			<span class="card-summary">
-				Established in 2007, it is the technical club promoting Robotics and Software
-			</span>
-			
+        Established in 2007, it is the technical club promoting Robotics and Software			</span>
+	
 		</a>
 
 		<a class="card" href="#">
@@ -184,30 +176,30 @@ img {
 				</span>
 			</span>
 			<span class="card-summary">
-                Established in 2012 to rekindle the spirit of Entrepreneurship.			</span>
-			
+        Established in 2012 to rekindle the spirit of Entrepreneurship.			</span>
+		
 		</a>
 		
-		<a class="card" href="#" style="  margin-right: 20px;">
-			<span class="card-header" style="background-image:url(images/ceta.png)">
+		<a class="card" href="#" >
+			<span class="card-header" style="background-image: url(images/ceta.png)">
 				<span class="card-title">
 					<h3>CETADEL</h3>
 				</span>
 			</span>
 			<span class="card-summary">
-                Established in 2015 to motivate the literary prowess of future technocrats.			</span>
+        Established in 2015 to motivate the literary prowess of future technocrats.			</span>
 			
 		</a>
 
-		<a class="card" href="#">
+		<a class="card" href="#" >
 			<span class="card-header" style="background-image: url(images/energy.png);">
 				<span class="card-title">
 					<h3>ENERGY CLUB</h3>
 				</span>
 			</span>
 			<span class="card-summary">
-                Established in 2011 promotes green energy and projects for sustainable development.			</span>
-		
+        Established in 2011 promotes green energy and projects for sustainable development.			</span>
+			
 		</a>
 		
 		<a class="card" href="#">
@@ -217,12 +209,17 @@ img {
 				</span>
 			</span>
 			<span class="card-summary">
-                Established in 2014, deals with electronic projects and instrumentation conversions			</span>
-			
+        Established in 2014, deals with electronic projects and instrumentation conversions			</span>
+		
 		</a>
 		
+
+	
+
+
+	
 	</div>
-</div>
+<!-- </div> -->
 <!-- 
 <div class="container-fluid">
     <div class="row">
