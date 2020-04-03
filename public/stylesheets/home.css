@@ -3,7 +3,7 @@
     border: 2px solid black;
     margin: 0;
     width: 100%;
-    display: flex;
+    /* display: flex; */
     flex-direction: column;
     justify-content: center;
 }
