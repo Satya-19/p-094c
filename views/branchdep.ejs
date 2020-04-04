@@ -1,0 +1,85 @@
+<style>
+    .branch__chart__container {
+        /* height: 40vh;  */
+        width: 40vw;
+        position: relative;
+        margin: 70px auto;
+    }
+
+    /* .chart__heading {
+        padding-top: 50px;
+    } */
+    .sec-3 {
+        height: auto;
+        text-align: center;
+        padding-top: 70px;
+        flex-direction: row;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .branch__chart__container {
+            width: 90vw;
+        }
+        .sec-3 {
+            flex-direction: column !important;
+        }
+    }
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<div class="branch__chart__container">
+    <h3 class="chart__heading">Courses Offered</h3>
+    <canvas id="myChart"></canvas>
+</div>
+<div class="branch__chart__container">
+    <h3 class="chart__heading">Student Demographics</h3>
+    <canvas id="myChart1"></canvas>
+</div>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var ctx1 = document.getElementById('myChart1').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Int. MSc.', 'B.Arch & B.Plan', 'MCA', 'B.Tech', 'M.Tech'],
+        datasets: [{
+            label: '# of Students',
+            data: [137, 81, 34, 775, 217],
+            borderWidth: 1,
+            backgroundColor: "#a1cdf1"
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        responsive: true
+    }
+});
+var myChart = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['BIOTECH', 'CIVIL','CSE','ELECTRICAL','F&AT', 'I&E','IT','MECHANICAL', 'TEXTILE'],
+        datasets: [{
+            label: '# of Students',
+            data: [15,145,74,139,10,119,55,143,54],
+            borderWidth: 1,
+            backgroundColor: "#a1cdf1"
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        responsive: true
+    }
+});
+</script>
