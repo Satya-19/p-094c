@@ -16,6 +16,11 @@ router.get('/placement', (req, res) => {
   res.render('placement');
 });
 
+/* GET Why CET page. */
+router.get('/whycet', (req, res) => {
+  res.render('whycet');
+});
+
 /* GET gallery page. */
 router.get('/gallery', (req, res) => {
   res.render('gallery');
