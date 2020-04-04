@@ -1,7 +1,8 @@
 <style>
     .sec-2 {
-    background-image: url("images/cet.jpg");
+    /* background-image: url("images/CETB_Main_Office_Building_View.jpg"); */
     /* filter: blur(8px); */
+    background:rgba(255,255,255, 0.9);
     background-position: center;
     background-size: cover;
     height: auto;
@@ -10,7 +11,10 @@
 
 
 .sec-2 .container {
-    background-color: rgba(255,255,255, 0.9);
+    /* background-color: #7AE3D9; */
+    background-image: url(images/CETB_Main_Office_Building_View.jpg);
+    background-color: rgba(255,255,255,0.79);
+    background-blend-mode: lighten;
     padding: 30px;
     box-shadow: 5px 4px 10px #000;
     border-radius: 3px;    
@@ -20,6 +24,12 @@
     width: 75%; 
     text-align: justify; 
     margin: 0 auto;
+    color: #000;
+}
+.principal-img{
+    height: auto;
+    width:13rem;
+   
 }
 
 @media only screen and (max-width: 768px) {
@@ -32,11 +42,18 @@
 <div class="container">
     <center><h1><b>Principal's Desk</b></h1><h4>(Prof. (Dr.) P.K. Patra)</h4></center>  <hr>
   <div class="row align-items-center justify-content-center">
-        <img src="/images/principal.png" class="img-thumbnail">
+      <div class="col-md-4">
+        <img src="/images/principal.png" class="img-fluid  principal-img mx-auto d-block">
+    </div>
+    <div class="col-md-8">
+        <p>
+          On behalf of College of Engineering and Technology, Bhubaneswar, it is my pleasure to welcome you all to this beautiful campus. This institute has been known for its technical excellence for more than three decades, and we strive hard to keep up the tradition. It is in fact a matter of great pride for me to state that CET has a brand name in the field of technical education and that the college attracts the best talented students through the JEE conducted by the Government of India and this institute is the first choice out of all colleges of Odisha, be it Engineering, Archi­tecture or MCA. The qualities and skills that the students imbibe here empower them to work in a global environment. Whether you have regularly recruited our graduates and postgraduates or you are visiting us a for the first time, I am sure you will find our students very competent and you will like to visit us again, year after year. We look forward to a warm and enduring relation­ship. 
+          </p>
+        </div>
   </div>
-  <div class="row align-items-center justify-content-center mt-5 sec-2__p">
+  <!-- <div class="row align-items-center justify-content-center mt-5 sec-2__p">
       <p>
         On behalf of College of Engineering and Technology, Bhubaneswar, it is my pleasure to welcome you all to this beautiful campus. This institute has been known for its technical excellence for more than three decades, and we strive hard to keep up the tradition. It is in fact a matter of great pride for me to state that CET has a brand name in the field of technical education and that the college attracts the best talented students through the JEE conducted by the Government of India and this institute is the first choice out of all colleges of Odisha, be it Engineering, Archi­tecture or MCA. The qualities and skills that the students imbibe here empower them to work in a global environment. Whether you have regularly recruited our graduates and postgraduates or you are visiting us a for the first time, I am sure you will find our students very competent and you will like to visit us again, year after year. We look forward to a warm and enduring relation­ship. 
       </p>
-  </div>
+  </div> -->
 </div>
