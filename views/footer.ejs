@@ -24,6 +24,9 @@
     footer a {
       color: #505050;
     }
+    .social-pet {
+      padding-left: 0;
+    }
     .social-pet li {
       display: inline-block;
       margin-right: 10px;
@@ -83,9 +86,6 @@
     .f-address li a {
       color: #505050;
     }
-    .sas {
-      margin-top: 102px;
-    }
     /*=-Copyright-=*/
     .copyright {
       margin-top: 0;
@@ -129,9 +129,6 @@
         width: 300px;
         height: 300px;
       }
-      .social-pet {
-        margin-left: 25%;
-      }
       .footer-item{
         display: grid;
         justify-content: center;
@@ -139,8 +136,8 @@
         margin-right: auto;
         margin-top: 0;
       }
-      .sas {
-        margin-top: 0;
+      .left {
+        margin-left: 24px;
       }
     }
   </style>
@@ -150,67 +147,50 @@
   <footer class="pt-5 mb-0" id="contact">
     <div class="container">
       <div class="row">
-        <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
+        <div class="col-md-3 col-sm-6 mt-2 mb-4">
           <p class="mb-4"></p>
           <ul class="f-address">
             <li>
               <div class="row">
-                <div class="col-9 img-fluid">
-                  <img src="images/cet.png" alt="" class="img-thumbnail">
-                </div>
-              </div>
-            </li><br><br>
-            <li>
-              <div class="row">
-                <div class="col-1"><i class="fas fa-phone-volume" style="color:#57aced";></i></div>
-                <div class="col-10">
-                  <h6 class="font-weight-bold mb-0" style="color:#f78620;">Contact us:</h6>
-                  <p><a href="#" style="color: white;">+91 9438688816</a></p>
-                </div>
-              </div>
-            </li>
-             
-          </ul>
-          <ul class="social-pet mt-4" style="margin-left: 10px;">
-            <li>
-              <a href="https://www.facebook.com/groups/cetinformation/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            </li>
-            <li>
-              <a href="/" title="Google"
-                ><i class="fab fa-google-plus-g"></i
-              ></a>
-            </li>
-            <li>
-              <a href="https://www.linkedin.com/in/placementcet/" title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
-            </li>
-          </ul>
-        </div>
-  
-        <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-2">
-  
-          <div class="footer-item sas">
-            
-              <div class="row">
-                <div class="col-1"><i class="fas fa-map-marker" style="color:#57aced";></i></div>
+                <div class="col-1"><i class="fas fa-map-marker" style="color:#57aced;"></i></div>
                 <div class="col-10">
                   <h6 class="font-weight-bold mb-0" style="color:#f78620;">Address:</h6>
-                  <p style="color: white">
+                  <p style="color: white;margin-top: 5px;">
                     College of Engineering & Technology, Ghatikia, Kalinga Nagar
                     Bhubaneswar- 751003 Odisha, India
                   </p>
                 </div>
               </div>
-            
-              <div class="row">
-                <div class="col-1"><i class="far fa-envelope" style="color:#57aced";></i></div>
-                <div class="col-10">
-                  <h6 class="font-weight-bold mb-0" style="color:#f78620">Have any questions?</h6>
-                  <p><a href="/" style="color: white">placement@cet.edu.in</a></p>
-                </div>
-              </div>
+            </li>
+          </ul>
+          
         </div>
-      </div>
-        <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-2">
+  
+         <div class="col-md-3 col-sm-6 mt-2 mb-2">
+  
+          <p class="mb-4"></p>
+            <ul class="f-address">
+              <li>
+                <div class="row">
+                  <div class="col-1"><i class="far fa-envelope" style="color:#57aced;"></i></div>
+                  <div class="col-10">
+                    <h6 class="font-weight-bold mb-0" style="color:#f78620">Have any questions?</h6>
+                    <p style="margin-top: 5px;"><a href="/" style="color: white">placement@cet.edu.in</a></p>
+                  </div>
+                </div>
+              </li><br><br>
+              <li>
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-phone-volume" style="color:#57aced;"></i></div>
+                  <div class="col-10">
+                    <h6 class="font-weight-bold mb-0" style="color:#f78620;">Contact us:</h6>
+                    <p style="margin-top: 5px;"><a href="#" style="color: white;">+91 9438688816</a></p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+         </div>
+        <!-- <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-2">
             <div class="" id="gmap_container">
               <iframe
                 title="cet-map"
@@ -223,7 +203,52 @@
               ></iframe>
             </div>
   
+        </div> -->
+        <div class="col-md-3 col-sm-6 mt-2 mb-2">
+  
+          <p class="mb-4"></p>
+            <ul class="f-address">
+              <li>
+                <div class="row">
+                  <div class="col-1"><i class="fas fa-user" style="color:#57aced;"></i></div>
+                  <div class="col-10">
+                    <h6 class="font-weight-bold mb-0" style="color:#f78620">Designed and Developed By:</h6>
+                    <p style="color: white"></p>
+                    <p style="color: white"></p>
+                    <p style="color: white"></p>
+                  </div>
+                </div>
+              </li>
+            </ul>
+         </div>
+
+         <div class="col-md-3 col-sm-6 mt-2 mb-2">
+  
+          <p class="mb-4"></p>
+          <div class="row left">
+            <div class="col-1"><i class="fas fa-share-alt fa-lg" style="color:#57aced;"></i></div>
+            <div class="col-10">
+              <h6 class="font-weight-bold mb-0" style="color:#f78620;font-size: 1.01rem;">Social Handles :</h6>
+              <ul class="social-pet mt-4">
+                <li>
+                  <a href="https://www.facebook.com/groups/cetinformation/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                </li>
+                <li>
+                  <a href="/" title="Google"
+                    ><i class="fab fa-google-plus-g"></i
+                  ></a>
+                </li>
+                <li>
+                  <a href="https://www.linkedin.com/in/placementcet/" title="Linkedin"><i class="fab fa-linkedin-in"></i></a>
+                </li>
+              </ul>
+            </div>
         </div>
+         </div>
+
+        <div class="col-md-6 col-sm-6 mt-2 mb-2">
+        
+      </div>
       
     </div>
   </footer>

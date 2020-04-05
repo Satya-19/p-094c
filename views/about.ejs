@@ -6,10 +6,21 @@
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="stylesheet" href="stylesheets/home.css">
     <title>About Us</title>
     <style>
+         b {
+            font-size: large;
+            /* font-weight: 300; */
+        }
+        p {
+            font-size: 1.1em;
+        }
+        .sc {
+            width: 75%;
+        }
         @media (max-width: 800px) {
             .main_sec {
                 height: auto;
@@ -21,19 +32,77 @@
     <%- include('navbar') %>
     
     <div class="container"><br><br>
-        <center><h1>CET At a Glance</h1></center>  <hr>
        <p>
            The College of Engineering and Technology (CET-B), Bhubaneswar was established as a constituent college of Orissa University of Agricultural Technology in 1981 to cater the technical manpower of the state with an intake of 90 students i.e. 30 each in Electrical Engineering, Civil Engineering and Mechanical Engineer­ing. After establishment of Biju Patnaik University of Technology (BPUT) in 2002, it became a constituent college of BPUT, Odisha. With demand of technical manpower of the state, additional UG and PG pro­grams were added. CET now offers 9 different B. Tech programmes, 22 M. Tech and PG programmes includ­ing Applied Sciences, MCA,. B.Arch., M.Arch.,B.Plan.and M.Plan. 
        </p>
-
-    <div class="main_sec sec-2">
-        <center><h1>About Placement Cell</h1></center>  <hr>
-
     </div>
+       <div class="main_sec sec-3">
+        <%- include('branchdep') %>
+      </div>
 
-    <div class="main_sec sec-3">
-        <center><h1>TPO Message</h1></center>  <hr>
+      <div class="main_sec sec-4 " style="padding-top: 50px; height: auto;">
+        <%- include('homesec5') %>
+      </div><br>
+
+      <div class="container">
+      <center><h1>Student Chapters</h1></center>  <hr><br>
+       <div class="row"><div class="col-md-1"></div>
+           <div class="col-md-2">
+               <div class="img-fluid sc">
+                  <center> <img src="images/asme.png" alt="" class="img-thumbnail" style="border: none;"></center>
+               </div>
+           </div>
+           <div class="col-md-9">
+                  <h4><b> Collegiate Chapter of American Society of Mechanical Engineers, USA</b></h4>
+                <p>
+                    Established in 2014; promotes the engineering ingenuity and encourages application through its  international level competitions and expositions.
+               </p>
+           </div>
+       </div><br>
+       <div class="row"><div class="col-md-1"></div>
+           <div class="col-md-2">
+               <div class="img-fluid sc">
+                  <center> <img src="images/sae.png" alt="" class="img-thumbnail" style="border: none;"></center>
+               </div>
+           </div>
+           <div class="col-md-9">
+            <h4><b> Collegiate Chapter of Society of Automotive Engineers, USA </b></h4>
+               <p>
+                   Established in 2014; provides the necessary base to hone the skills of automotive applications through its  international level competitions - SAE BAJA & SAE SUPRA.
+               </p>
+           </div>
+       </div><br>
+       <div class="row"><div class="col-md-1"></div>
+           <div class="col-md-2">
+               <div class="img-fluid sc">
+                  <center> <img src="images/iste.png" alt="" class="img-thumbnail" style="border: none;"></center>
+               </div>
+           </div>
+           <div class="col-md-9">
+            <h4><b> Collegiate Chapter of Indian Society for Technical Education, USA </b></h4>
+               <p>
+                  Established in 2014; infuses the engineering ingenuity and encourages application through its national  level competitions, seminars and workshops.
+               </p>
+           </div>
+       </div><br>
+       <div class="row"><div class="col-md-1"></div>
+           <div class="col-md-2">
+               <div class="img-fluid sc">
+                   <center> <img src="images/almuni.png" alt="" class="img-thumbnail" style="border: none;"></center>
+               </div>
+           </div>
+           <div class="col-md-9">
+            <h4><b> The Alumni Chapter of CET </b></h4>
+               <p>
+                  A strong and growing network. It keeps the Company-Institution relationship going and helps both grow in  collaboration with each other.
+               </p>
+           </div>
+       </div><br>
     </div>
+    
+
+    <%- include('footer') %>
+
    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
