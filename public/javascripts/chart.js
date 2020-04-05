@@ -90,13 +90,12 @@ $(document).ready(function(){
     }
 
     var data3 = {
-        labels: ["Factset", "Symphony Talent", "Infosys", "Red Hat", "Deloitte", "PRADAN", "TCS", "MuSigma", "Incture Technologies", "Eurofins", "Accenture", "Kreeti Technologies", "Nineleaps", "Gyansys", "IBM", "Cognizant", "Capgemini", "ITC Infotech", "Ajatus", "Wipro", "Thoomri", "Genpact"],
+        labels: ["Factset", "Symphony Talent", "Infosys", "Red Hat", "Deloitte", "PRADAN", "TCS", "MuSigma", "Incture Technologies", "Accenture", "Kreeti Technologies", "Nineleaps", "Gyansys", "IBM", "Cognizant", "Capgemini", "ITC Infotech", "Ajatus", "Wipro", "Thoomri", "Genpact"],
         datasets: [
           {
             label: "Team A",
-            data: [4, 1, 29, 1, 17, 6, 128, 4, 5, 1, 134, 1, 1, 6, 6, 14, 3, 12, 3, 2, 7, 12],
+            data: [4, 1, 29, 1, 17, 6, 128, 4, 5, 134, 1, 1, 6, 6, 14, 3, 12, 3, 2, 7, 12],
             backgroundColor: [
-                "#ddff11",
                 "#a78fa9",
                 "#acd123",
                 "#abd123",
@@ -120,7 +119,6 @@ $(document).ready(function(){
                 "#45df54"
             ],
             borderColor: [
-                "#ddff11",
                 "#a78fa9",
                 "#acd123",
                 "#abd123",
@@ -198,7 +196,13 @@ $(document).ready(function(){
         fontColor: "#111"
       },
       legend: {
-        display: false
+        display: true,
+        position: 'right',
+        labels: {
+          boxWidth: 8,
+          padding: 4,
+          fontSize: 10
+        }
       },
       animation: {
         animateScale: true,
@@ -215,8 +219,14 @@ $(document).ready(function(){
           fontColor: "#111"
         },
         legend: {
-          display: false
-        },
+            display: true,
+            position: 'right',
+            labels: {
+              boxWidth: 8,
+              padding: 4,
+              fontSize: 9
+            }
+          },
         animation: {
           animateScale: true,
           animateRotate: true,
@@ -228,12 +238,17 @@ $(document).ready(function(){
           display: false
         },
         legend: {
-          display: false
+          display: true,
+          position: 'right',
+          labels: {
+            boxWidth: 12,
+            padding: 10
+          }
         },
         animation: {
           animateScale: true,
-          animateRotate: true,
-        }
+          animateRotate: true
+        },
       }
   
     var chart1 = new Chart(ctx1, {

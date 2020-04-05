@@ -13,12 +13,21 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <title>Placement</title>
     <style>
+        .sec-3 {
+            height: auto;
+        }
         .lgb {
             width: 70px;
         }
         @media (max-width: 800px) {
             .main_sec {
                 height: auto;
+            }
+            .chart-container-0 {
+                display: none;
+            }
+            .chart-container-1 {
+                display: none;
             }
         }
     </style>
@@ -46,37 +55,31 @@
         <div class="main_sec sec-3">
             <div class="container">
                 <center><h1>Placement Statistics</h1></center>  <hr><br>
+                <div class="row"><div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="chart-container-0">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-1"></canvas>
+                            </div>  
+                        </div>
+                    </div>
+                </div><br>
                 <div class="row">
-                    <div class="col-md-8">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="chart-container col-md-12">
-                                    <div class="pie-chart-container">
-                                        <canvas id="pie-chartcanvas-1"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                        </div><br>
-                        <div class="row">
-                            <div class="col-md-6">
-                                <div class="chart-container">
-                                    <div class="pie-chart-container">
-                                        <canvas id="pie-chartcanvas-2"></canvas>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="chart-container">
-                                    <div class="pie-chart-container">
-                                        <canvas id="pie-chartcanvas-3"></canvas>
-                                    </div>
-                                </div>
+                    <div class="col-md-6">
+                        <div class="chart-container-1">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-2"></canvas>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
+                        <div class="chart-container">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-3"></canvas>
+                            </div>
+                        </div>
                     </div>
-                </div>
+                </div><br>
             </div>
         </div>
 

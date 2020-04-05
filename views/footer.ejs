@@ -1,12 +1,11 @@
 <style>
     /*=-footer-=*/
     footer {
-      color: #fff;
+      /* color: burlywood; */
       background-attachment: fixed;
-      /* background-color: black; */
+      background-color: #005077;
       /* background-image: url(images/slider/image1.jpg) ; */
       /* background-color:  #181818; */
-      background:linear-gradient(to right, #6190E8, #A7BFE8);
      
       background-size: cover;
       height: auto;
@@ -84,11 +83,13 @@
     .f-address li a {
       color: #505050;
     }
-  
+    .sas {
+      margin-top: 102px;
+    }
     /*=-Copyright-=*/
     .copyright {
       margin-top: 0;
-      background-color: black;
+      background-color: #005077;
       padding: 12px 0;
       font-size: 14px;
       background-position: bottom;
@@ -106,7 +107,7 @@
       height: 350px;
       width: 600px;
     }
-    @media only screen and (max-width: 800px) {
+    @media (max-width: 800px) {
       .gmap_canvas {
         overflow: hidden;
         background: none !important;
@@ -123,22 +124,23 @@
         margin:auto !important;
         text-align: center !important;
       }
-      #fb_canvas{
-        /* margin: 18%; */
-      }
+      
       iframe {
         width: 300px;
         height: 300px;
       }
       .social-pet {
         margin-left: 25%;
-        padding-top: 40px;
       }
       .footer-item{
         display: grid;
         justify-content: center;
-        margin-left: auto;
+        margin-left: 20px;
         margin-right: auto;
+        margin-top: 0;
+      }
+      .sas {
+        margin-top: 0;
       }
     }
   </style>
@@ -149,42 +151,27 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-4">
-          <!-- <h5 class="mb-4 font-weight-bold">ABOUT US</h5> -->
           <p class="mb-4"></p>
           <ul class="f-address">
             <li>
               <div class="row">
-                <div class="col-1"><i class="fas fa-map-marker" style="color:#57aced";></i></div>
-                <div class="col-10">
-                  <h6 class="font-weight-bold mb-0" style="color:#f78620;">Address:</h6>
-                  <p style="color: #fff;">
-                    College of Engineering & Technology, Ghatikia, Kalinga Nagar
-                    Bhubaneswar- 751003 Odisha, India
-                  </p>
+                <div class="col-9 img-fluid">
+                  <img src="images/cet.png" alt="" class="img-thumbnail">
                 </div>
               </div>
-            </li>
-            <li>
-              <div class="row">
-                <div class="col-1"><i class="far fa-envelope" style="color:#57aced";></i></div>
-                <div class="col-10">
-                  <h6 class="font-weight-bold mb-0" style="color:#f78620">Have any questions?</h6>
-                  <p><a href="/" style="color: #fff">placement@cet.edu.in</a></p>
-                </div>
-              </div>
-            </li>
+            </li><br><br>
             <li>
               <div class="row">
                 <div class="col-1"><i class="fas fa-phone-volume" style="color:#57aced";></i></div>
                 <div class="col-10">
                   <h6 class="font-weight-bold mb-0" style="color:#f78620;">Contact us:</h6>
-                  <p><a href="#" style="color: #fff;">+91 9438688816</a></p>
+                  <p><a href="#" style="color: white;">+91 9438688816</a></p>
                 </div>
               </div>
             </li>
              
           </ul>
-          <ul class="social-pet mt-4">
+          <ul class="social-pet mt-4" style="margin-left: 10px;">
             <li>
               <a href="https://www.facebook.com/groups/cetinformation/" title="Facebook"><i class="fab fa-facebook-f"></i></a>
             </li>
@@ -201,9 +188,28 @@
   
         <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-2">
   
-          <div class="footer-item">
-  <iframe title="perception-facebook" id="fb_canvas" src="https://www.facebook.com/groups/cetinformation/" width="250" height="400" style="border:none;overflow:hidden;width:250px" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>        </div>
+          <div class="footer-item sas">
+            
+              <div class="row">
+                <div class="col-1"><i class="fas fa-map-marker" style="color:#57aced";></i></div>
+                <div class="col-10">
+                  <h6 class="font-weight-bold mb-0" style="color:#f78620;">Address:</h6>
+                  <p style="color: white">
+                    College of Engineering & Technology, Ghatikia, Kalinga Nagar
+                    Bhubaneswar- 751003 Odisha, India
+                  </p>
+                </div>
+              </div>
+            
+              <div class="row">
+                <div class="col-1"><i class="far fa-envelope" style="color:#57aced";></i></div>
+                <div class="col-10">
+                  <h6 class="font-weight-bold mb-0" style="color:#f78620">Have any questions?</h6>
+                  <p><a href="/" style="color: white">placement@cet.edu.in</a></p>
+                </div>
+              </div>
         </div>
+      </div>
         <div class="col-lg-3 col-md-6 col-sm-6 mt-2 mb-2">
             <div class="" id="gmap_container">
               <iframe
@@ -214,15 +220,11 @@
                 marginheight="0"
                 marginwidth="0"
                 frameborder="0"
-  
-  
-              ></iframe
-  
-              >
+              ></iframe>
             </div>
   
         </div>
-      </div>
+      
     </div>
   </footer>
   <!-- Copyright -->
@@ -231,8 +233,7 @@
       <div class="row">
         <div class="col-md-12 ">
           <div class="text-center text-white">
-            &copy; 2020 College of Engineering and Technology. All Rights
-            Reserved.
+            &copy; 2020 College of Engineering and Technology. All Rights Reserved.
           </div>
         </div>
       </div>
