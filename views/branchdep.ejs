@@ -14,6 +14,7 @@
         text-align: center;
         padding-top: 70px;
         flex-direction: row;
+        background-color: white;
     }
 
     @media only screen and (max-width: 1000px) {
@@ -38,6 +39,10 @@
 <script>
 var ctx = document.getElementById('myChart').getContext('2d');
 var ctx1 = document.getElementById('myChart1').getContext('2d');
+/*** Gradient ***/
+var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+   gradient.addColorStop(1, '#00D4FF');
+  gradient.addColorStop(.3, '#7D43E5');   
 var myChart = new Chart(ctx, {
     type: 'bar',
     data: {
@@ -46,7 +51,7 @@ var myChart = new Chart(ctx, {
             label: '# of Students',
             data: [137, 81, 34, 775, 217],
             borderWidth: 1,
-            backgroundColor: "#a1cdf1"
+            backgroundColor:'#3A90F2'
         }]
     },
     options: {
@@ -68,7 +73,7 @@ var myChart = new Chart(ctx1, {
             label: '# of Students',
             data: [15,145,74,139,10,119,55,143,54],
             borderWidth: 1,
-            backgroundColor: "#a1cdf1"
+            backgroundColor: [gradient,gradient,gradient,gradient,gradient,gradient,gradient,gradient,gradient]
         }]
     },
     options: {
