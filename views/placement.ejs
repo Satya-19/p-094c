@@ -56,6 +56,9 @@
         .sec-2{
             margin-top:5rem;
         }
+        .chart-container-3 {
+            display: none;
+        }
         @media (max-width: 800px) {
             .main_sec {
                 height: auto;
@@ -65,6 +68,12 @@
             }
             .chart-container-1 {
                 display: none;
+            }
+            .chart-container-2 {
+                display: none;
+            }
+            .chart-container-3 {
+                display: block;
             }
             .sec-2{
                 margin-top:3rem;
@@ -112,9 +121,16 @@
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <div class="chart-container">
+                        <div class="chart-container-2">
                             <div class="pie-chart-container">
                                 <canvas id="pie-chartcanvas-3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container-3">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-4"></canvas>
                             </div>
                         </div>
                     </div>

@@ -3,6 +3,7 @@ $(document).ready(function(){
     var ctx1 = $('#pie-chartcanvas-1');
     var ctx2 = $('#pie-chartcanvas-2');
     var ctx3 = $('#pie-chartcanvas-3');
+    var ctx4 = $('#pie-chartcanvas-4');
   
     var data1 = {
       labels: ["Analog Devices", "TATA Steel", "Maruti Suzuki India Limited", "Factset", "Symphony Talent", "Infosys", "Red Hat", "Vedanta", "Deloitte", "Tejas Networks", "PRADAN", "Godrej & Boyce", "TCS", "MuSigma", "Incture Technologies", "Eurofins", "Accenture", "Robert Bosch", "Kreeti Technologies", "TATA Steel BSL", "Nineleaps", "Gyansys", "IBM", "JK Paper", "Cognizant", "TATA Advanced Systems", "TRL Krosaki", "Capgemini", "ITC Infotech", "Ajatus", "Wipro", "Windmoller and Holscher", "Thoomri", "Macleods Pharmaceuticals", "Genpact"],
@@ -201,7 +202,8 @@ $(document).ready(function(){
         labels: {
           boxWidth: 8,
           padding: 4,
-          fontSize: 10
+          fontSize: 10,
+          fontColor: '#000750'
         }
       },
       animation: {
@@ -224,7 +226,8 @@ $(document).ready(function(){
             labels: {
               boxWidth: 8,
               padding: 4,
-              fontSize: 9
+              fontSize: 9,
+              fontColor: '#000750'
             }
           },
         animation: {
@@ -242,8 +245,22 @@ $(document).ready(function(){
           position: 'right',
           labels: {
             boxWidth: 12,
-            padding: 10
+            padding: 10,
+            fontColor: '#000750'
           }
+        },
+        animation: {
+          animateScale: true,
+          animateRotate: true
+        },
+      }
+
+      var options2 = {
+        title: {
+          display: false
+        },
+        legend: {
+          display: false
         },
         animation: {
           animateScale: true,
@@ -267,5 +284,11 @@ $(document).ready(function(){
         type: "doughnut",
         data: data3,
         options: options0
+      });
+
+      var chart4 = new Chart(ctx4, {
+        type: "doughnut",
+        data: data1,
+        options: options2
       });
   });
