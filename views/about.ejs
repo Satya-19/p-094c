@@ -36,7 +36,55 @@
                 margin-bottom: 10px;
                 border: none;
             }
+            blockquote{
+                font-size:1rem;
+            }
         }
+        
+.quote {
+  text-align: center;
+  font-size: 1.3rem;
+  margin: auto;
+  padding: 15px;
+  border: 2px solid black;
+  max-width: 100%;
+  position: relative;
+  /* margin-top: 100px; */
+}
+
+blockquote {
+  /* color: white; */
+  /* font-style: italic; */
+  position: relative;
+  z-index: 20;
+}
+
+.quote .left {
+  position: absolute;
+  top: -65px;
+  left: -40px;
+  width: 150px;
+  text-align: left;
+  z-index: 10;
+  font-size: 5rem;
+  color: #336699;
+  background-color: #fff;
+  line-height: 200px;
+}
+
+.quote .right {
+  position: absolute;
+  bottom: -65px;
+  right: -40px;
+  width: 150px;
+  text-align: right;
+  z-index: 10;
+  font-size: 5rem;
+  color: #336699;
+  background-color: #fff;
+  line-height: 200px;
+}
+
     </style>
 </head>
 <body>
@@ -45,7 +93,13 @@
     <div class="container"><br><br>
         <div class="row">
             <div class="col-md-12">
+                <div class="quote">
+                <span class="left">❝</span>
+                <blockquote>
                 The College of Engineering and Technology (CET-B), Bhubaneswar was established as a constituent college of Orissa University of Agricultural Technology in 1981 to cater the technical manpower of the state with an intake of 90 students i.e. 30 each in Electrical Engineering, Civil Engineering and Mechanical Engineer­ing. After establishment of Biju Patnaik University of Technology (BPUT) in 2002, it became a constituent college of BPUT, Odisha. With demand of technical manpower of the state, additional UG and PG pro­grams were added. CET now offers 9 different B. Tech programmes, 22 M. Tech and PG programmes includ­ing Applied Sciences, MCA,. B.Arch., M.Arch.,B.Plan.and M.Plan. 
+                </blockquote>   
+                <span class="right">❞</span>
+            </div>
             </div>
         </div>
     </div>
