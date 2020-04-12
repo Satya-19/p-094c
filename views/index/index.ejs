@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Roboto+Slab|Comfortaa" rel="stylesheet"> -->
     <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
@@ -13,12 +14,12 @@
     <link rel="stylesheet" href="stylesheets/home.css">
     <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon">
     <title>p-094c</title>
-    
+  
 </head>
 
 <body >
     
-    <%- include('navbar') %>
+    <%- include('../navbar') %>
     
     <div class="main_sec" style="display: block;">
       <%- include('slider') %>
@@ -26,15 +27,19 @@
     <div class="main_sec sec-2">
       <%- include('homesec2') %>
     </div>
-    <div class="main_sec sec-4">
-      <center><h1>TPO Message</h1></center>  <hr>
+    <div class="sec-3">
+      <%- include('homesec4') %>
     </div>
 
     <div class="main_sec sec-5" >
       <%- include('homesec6') %>
     </div>
 
-  <%- include('footer') %>
+    <div class="main_sec sec-4">
+      <center><h1>TPO Message</h1></center>  <hr>
+    </div>
+
+  <%- include('../footer') %>
   
 
   <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
