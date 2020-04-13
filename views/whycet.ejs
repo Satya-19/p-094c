@@ -42,9 +42,9 @@
             height: auto;
         }
         .achievements{
-            padding: 8rem 0 16rem 0;
+            padding: 8rem 0 8rem 0;
             background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Laboratory_Building.jpg);    
-            clip-path: polygon(0 18vh, 100% 0, 120% 60vh, 0 86vh);
+            clip-path: polygon(0 18vh, 100% 0, 100% 70vh, 0 91vh);
             background-size: cover;
             background-position: center;
             margin:0 2rem 0 2rem;
@@ -78,6 +78,10 @@
             #places{
                 margin:1rem 1rem;
             }
+            .arrow{
+                margin-top:2px;
+            }
+          
         }
     </style>
 </head>
@@ -90,7 +94,7 @@
                 <div class="col-md-11 size"><br>
                     <div class="row">
                         <div class="col-md-1 col-sm-1 col-1">
-                            <span style="float: right;"><i class="fa fa-check"></i></span> 
+                            <span style="float: right;"><i class="arrow fa fa-arrow-right fa-2x"></i></span> 
                         </div>
                         <div class="col-md-10 col-sm-10 col-10">
                             <h5>The institute goes by the saying, "It is the spirit within you which persuades you to challenge your limitations, to discover the undiscovered and subvert the paradigm".</h5>
@@ -98,7 +102,7 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-md-1 col-sm-1 col-1">
-                            <span style="float: right;"><i class="fa fa-check"></i></span> 
+                            <span style="float: right;"><i class="arrow fa fa-arrow-right fa-2x"></i></span> 
                         </div>
                         <div class="col-md-10 col-sm-10 col-10">
                             <h5> It has been 37 years, (3rd oldest institute of Odisha) since the establishment of CET and it is this spirit of the institute that Cetitans imbibe and carry froward wherever they go.</h5>
@@ -106,7 +110,7 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-md-1 col-sm-1 col-1">
-                            <span style="float: right;"><i class="fa fa-check"></i></span> 
+                            <span style="float: right;"><i class="arrow fa fa-arrow-right fa-2x"></i></span> 
                         </div>
                         <div class="col-md-10 col-sm-10 col-10">
                             <h5>CET-B has made it a legacy to set new benchmarks in technical education, since its inception in 1981.</h5>
@@ -114,7 +118,7 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-md-1 col-sm-1 col-1">
-                            <span style="float: right;"><i class="fa fa-check"></i></span> 
+                            <span style="float: right;"><i class="arrow fa fa-arrow-right fa-2x"></i></span> 
                         </div>
                         <div class="col-md-10 col-sm-10 col-10">
                             <h5>Excellent placement statistics which keeps on increasing every academic session, through a dedicated T&P Cell</h5>
@@ -122,7 +126,7 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-md-1 col-sm-1 col-1">
-                            <span style="float: right;"><i class="fa fa-check"></i></span> 
+                            <span style="float: right;"><i class="arrow fa fa-arrow-right fa-2x"></i></span> 
                         </div>
                         <div class="col-md-10 col-sm-10 col-10">
                             <h5>It deeply inculcates the zeal in students, to turn odds into favour and strive to reach a notch higher in each of their endeavours.</h5>
@@ -130,7 +134,7 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-md-1 col-sm-1 col-1">
-                            <span style="float: right;"><i class="fa fa-check"></i></span> 
+                            <span style="float: right;"><i class="arrow fa fa-arrow-right fa-2x"></i></span> 
                         </div>
                         <div class="col-md-10 col-sm-10 col-10">
                             <h5>Over 3 lacs state students appear for JEE Mains out of which only the meritorious few of Odisha and India pursue their graduation in the premier college of Odisha Govt, CET-B. </h5>
@@ -141,7 +145,7 @@
         </div>
     </div>
 
-    <div class="main_sec sec-5" style="margin-bottom:30px;">
+    <div class="main_sec sec-5">
            
         <div class="container">
             <center><h1>Notable Alumni</h1></center><hr><br>
@@ -258,6 +262,23 @@
             slideSpeed:1000,
             autoPlay:true
         });
+        jQuery(document).ready(function($) {
+  var alterClass = function() {
+    var ww = document.body.clientWidth;
+    if (ww < 800) {
+      $('.fa').removeClass('fa-2x');
+      $('span').removeAttr('style');
+    } else if (ww >= 800) {
+      $('.fa').addClass('fa-2x');
+      $('span').css('float','right');
+    };
+  };
+  $(window).resize(function(){
+    alterClass();
+  });
+  //Fire it when the page first loads:
+  alterClass();
+});
     }));
 </script>
 
