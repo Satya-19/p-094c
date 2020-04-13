@@ -1,0 +1,102 @@
+<style>
+    .branch__chart__container {
+        /* height: 40vh;  */
+        width: 40vw;
+        position: relative;
+        margin: 70px auto;
+    }
+
+    /* .chart__heading {
+        padding-top: 50px;
+    } */
+    .sec-3 {
+        height: auto;
+        text-align: center;
+        padding-top: 70px;
+        flex-direction: row;
+        background-color: white;
+    }
+
+    @media only screen and (max-width: 1000px) {
+        .branch__chart__container {
+            width: 90vw;
+        }
+        .sec-3 {
+            flex-direction: column !important;
+        }
+    }
+
+</style>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+<div class="branch__chart__container">
+    <h4 class="chart__heading">Courses Offered</h4><br>
+    <canvas id="myChart"></canvas>
+</div>
+<div class="branch__chart__container">
+    <h4 class="chart__heading">Student Demographics</h4><br>
+    <canvas id="myChart1"></canvas>
+</div>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var ctx1 = document.getElementById('myChart1').getContext('2d');
+/*** Gradient ***/
+var gradient = ctx.createLinearGradient(0, 0, 0, 300);
+   gradient.addColorStop(1, '#00D4FF');
+  gradient.addColorStop(.3, '#7D43E5');   
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Int. MSc.', 'B.Arch & B.Plan', 'MCA', 'B.Tech', 'M.Tech'],
+        datasets: [{
+            label: ' ',
+            data: [137, 81, 34, 775, 217],
+            borderWidth: 1,
+            backgroundColor:'#3A90F2'
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        responsive: true,
+        legend: {
+            display: false
+        },
+        title: {
+            display: false
+        }
+    }
+});
+var myChart = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: ['BIOTECH', 'CIVIL','CSE','ELECTRICAL','F&AT', 'I&E','IT','MECHANICAL', 'TEXTILE'],
+        datasets: [{
+            label: ' ',
+            data: [15,145,74,139,10,119,55,143,54],
+            borderWidth: 1,
+            backgroundColor: gradient
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        responsive: true,
+        legend: {
+            display: false
+        },
+        title: {
+            display: false
+        }
+    }
+});
+</script>

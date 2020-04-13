@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="stylesheets/home.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css">
+    <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon">
+
+    <!-- <link rel="stylesheet" href="stylesheets/home.css"> -->
+    <link rel="stylesheet" href="stylesheets/alumni.css">
+    <script src="https://d3js.org/d3.v4.js"></script>
+    <title>Placement</title>
+    <style>
+        .sec-1{
+            margin-top:0;
+            height: 83vh;
+            padding:3rem 0rem;
+           
+            background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/slider/CETB_Main_Office_Building.jpg);
+            background-size: cover;
+            background-position: top;
+            position: relative;
+
+            clip-path: polygon(0 0, 100% 0, 100% 68vh, 0 100%);
+
+        }
+        .sec-3{
+            margin-top:0;
+            height: 90vh;
+            background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Laboratory_Building.jpg);
+            background-size: cover;
+            background-position:center;
+            position: relative;
+
+            /* clip-path: polygon(0 15vh, 100% 0, 100% 100vh, 0 100%); */
+            clip-path: polygon(0 15vh, 100% 0%, 100% 100%, 0% 100%);
+
+        }
+        .main_sec{
+            margin-top: 2rem;
+        }
+        .sec-3 {
+            height: auto;
+            /* margin-bottom: 10rem; */
+            /* padding-bottom: 10rem; */
+            /* margin-top: 5rem; */
+            padding-top: 5rem;
+        }
+        .lgb {
+            width: 70px;
+        }
+        .sec-2{
+            margin-top:5rem;
+        }
+        .chart-container-3 {
+            display: none;
+        }
+        @media (max-width: 800px) {
+            .main_sec {
+                height: auto;
+            }
+            .chart-container-0 {
+                display: none;
+            }
+            .chart-container-1 {
+                display: none;
+            }
+            .chart-container-2 {
+                display: none;
+            }
+            .chart-container-3 {
+                display: block;
+            }
+            .sec-2{
+                margin-top:3rem;
+            }
+            .sec-1{
+                height:100vh;
+                padding-top:10px;
+                padding-bottom: 0;
+                clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
+            }
+            .container h5{
+                font-size: 1rem;
+            }
+            .sec-3{
+                padding-top:6rem;
+                clip-path: polygon(0 12vh, 100% 0%, 100% 100%, 0% 100%);
+            }
+        }
+      
+    </style>
+</head>
+<body>
+
+    <%- include('navbar') %>
+      
+          <div id="exp">
+        <div class="main_sec sec-3">
+            <div class="container">
+                <center><h1 style="color: #fff">Placement Statistics</h1></center>  <hr><br>
+                <div class="row"><div class="col-md-1"></div>
+                    <div class="col-md-10">
+                        <div class="chart-container-0">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-1"></canvas>
+                            </div>  
+                        </div>
+                    </div>
+                </div><br>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="chart-container-1">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-2"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container-2">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-3"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="chart-container-3">
+                            <div class="pie-chart-container">
+                                <canvas id="pie-chartcanvas-4"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div><br>
+            </div>
+        </div>
+    </div>
+        <%- include('past-placement') %>
+        <div class="main_sec sec-2" style="margin-top: 50px;">
+            <div class="container">
+                <%- include('recruiters') %>
+            </div>
+        </div>
+
+        <!-- <div class="main_sec sec-4">
+
+            <div class="container">
+            <center><h1>Placement Guide</h1></center>  <hr>
+                <div class="row">
+                    <ul style="list-style: none;">
+                        <h5>A job offer must specify:</h5>
+                        <li><h5>Position offered</h5></li>
+                        <li><h5>Remuneration</h5></li>
+                        <li><h5>Job description</h5></li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <ul>
+                        <h5>The representatives of the organisation should have the authority to make the final job offers immediately after the interviews.</h5>
+                    </ul>
+                </div>
+                <div class="row">
+                    <ul>
+                        <h5>The Institute is well equipped to carry out multiple Placement Drives, provide any logistical requirements and host the representatives of the participating organisations.</h5>
+                    </ul>
+                </div>
+                <div class="row">
+                    <ul>
+                        <h5>The Placement Committee will be glad to arrange for the stay of the representatives at hotels in the city.</h5>
+                    </ul>
+                </div>
+            </div>
+        </div> -->
+
+    <%- include('footer') %>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3/dist/Chart.min.js"></script>
+    <script src="javascripts/chart.js"></script>
+
+</body>
+</html>
