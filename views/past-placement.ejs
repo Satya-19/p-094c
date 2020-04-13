@@ -1,349 +1,194 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
 
 <style>
- #process {
-  margin-bottom: 40px;
-  overflow-x: hidden;
+.circle {
+  padding: 13px 20px;
+  border-radius: 50%;
+  background-color: #ED8D8D;
+  color: #fff;
+  max-height: 50px;
+  z-index: 2;
 }
 
-#process .section-heading {
-  margin-bottom: 40px;
+.how-it-works.row .col-2 {
+  align-self: stretch;
+}
+.how-it-works.row .col-2::after {
+  content: "";
+  position: absolute;
+  border-left: 3px solid #ED8D8D;
+  z-index: 1;
+}
+.how-it-works.row .col-2.bottom::after {
+  height: 50%;
+  left: 50%;
+  top: 50%;
+}
+.how-it-works.row .col-2.full::after {
+  height: 100%;
+  left: calc(50% - 3.5px);
+}
+.how-it-works.row .col-2.top::after {
+  height: 50%;
+  left: 50%;
+  top: 0;
+}
+.how-it-works.row .col-2.full-3::after {
+  height: 100%;
+  left: calc(50%);
 }
 
-.steps-pane0 img {
-  height: 100px;
-  margin-top: 18px;
-  -ms-transform: skewX(-15deg);
-  /* IE 9 */
-  -webkit-transform: skewX(-15deg);
-  /* Safari */
-  -o-transform: skewX(-15deg);
-  /* Standard syntax */
-  -moz-transform: skewX(-15deg);
+.timeline div {
+  padding: 0;
+  height: 41px;
+}
+.timeline hr {
+  border-top: 3.5px solid #ED8D8D;
+  margin: 0;
+  top: 17px;
+  position: relative;
+}
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
+}
+.timeline .corner {
+  border: 3px solid #ED8D8D;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -50%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 3.5px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -51%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+}
+.timeline .right-bottom-5 {
+  left: 50%;
+  top: calc(50% - 4px);
 }
 
-.pane-warp0 {
-  height: 140px;
-  width: 25px;
-  margin-left: 20%;
-  margin-top: 20px;
-  -ms-transform: skewX(15deg);
-  /* IE 9 */
-  -webkit-transform: skewX(15deg);
-  /* Safari */
-  -o-transform: skewX(15deg);
-  /* Standard syntax */
-  -moz-transform: skewX(15deg);
+.container{
+  margin-top:5rem;
 }
 
-.steps-pane0 {
-  height: 140px;
-  width: 140px;
-  margin-left: 30px;
-  box-shadow: 7px 0px 5px #bcbcbc;
-  
-}
-
-.inverted-pane-warp0 {
-  height: 140px;
-  width: 25px;
-  margin-left: 20%;
-  -ms-transform: skewX(-15deg);
-  /* IE 9 */
-  -webkit-transform: skewX(-15deg);
-  /* Safari */
-  -o-transform: skewX(-15deg);
-  /* Standard syntax */
-  -moz-transform: skewX(-15deg);
-}
-
-.inverted-steps-pane0 {
-  height: 140px;
-  width: 140px;
-  background: #bcbcbc;
-  margin-left: 30px;
-  box-shadow: 7px 0px 5px #bcbcbc;
-}
-
-.inverted-steps-pane0 p {
-  -ms-transform: skewX(15deg);
-  /* IE 9 */
-  -webkit-transform: skewX(15deg);
-  /* Safari */
-  -o-transform: skewX(15deg);
-  /* Standard syntax */
-  -moz-transform: skewX(15deg);
-  padding: 20px 10px 10px 10px;
-}
-
-@media(min-width: 900px) {
-  .steps-timeline0 {
-    border-top: 5px double #fc6429;
-    padding-top: 20px;
-    margin-top: 40px;
-    margin-left: 3%;
-    margin-right: 3%;
-  }
-  .steps-one0,
-  .steps-two0,
-  .steps-three0,
-  .steps-four0,
-  .steps-five0 {
-    float: left;
-    width: 20%;
-    margin-top: -105px;
-  }
-  .step-wrap0 {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background: transparent;
-    margin-left: 39%;
-    border: 2px solid #fc6429;
-  }
-  .verticle-line0 {
-    position: absolute;
-    height: 57px;
-    width: 5px;
-    margin-left: 10px;
-    /* marker-top: 10px; */
-  }
-  .steps-stops0 {
-    height: 25px;
-    width: 25px;
-    margin: 11px 10.1px;
-    border-radius: 50%;
-    background: #fc6429;
-  }
-  .end-circle0 {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: 19px;
-    margin-left: -10px;
-  }
-  .inverted-end-circle0 {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: 19px;
-    margin-left: 18.1%;
-  }
-}
-
-@media(max-width: 899px) {
-  #process .container-fluid {
-    width: 50%;
-  }
-  .steps-timeline0 {
-    border-left: 5px double #fc6429;
-    margin-left: 35px;
-  }
-  .steps-one0,
-  .steps-two  ,
-  .steps-three,
-  .steps-four,
-  .steps-five {
-    margin-left: -25px;
-  }
-  .step-wrap0,
-  .steps-stops0 {
-    float: left;
-  }
-  .steps-timeline0 {
-    /* border-left: 2px solid $brand-primary; */
-    margin-left: 30px;
-  }
-  .pane-warp0 {
-    margin-left: 30%;
-  }
-  .inverted-pane-warp00 {
-    margin-left: 30%;
-  }
-  .verticle-line0 {
-    position: absolute;
-    width: 125px;
-    height: 5px;
-    margin-left: 5px;
-    margin-top: 10px;
-  }
-  .steps-stops0 {
-    height: 25px;
-    width: 25px;
-    margin: 11px 10px;
-    border-radius: 50%;
-    background: #fc6429;
-  }
-  .step-wrap0 {
-    height: 50px;
-    width: 50px;
-    border-radius: 50%;
-    background: transparent;
-    margin-top: 125px;
-    margin-left: -2px;
-    border: 2px solid #fc6429;
-  }
-  .end-circle0 {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: -45px;
-    margin-left: 15px;
-  }
-  .inverted-end-circle0 {
-    height: 15px;
-    width: 15px;
-    border-radius: 50%;
-    position: absolute;
-    margin-top: 280px;
-    margin-left: 15px;
-  }
-}
-
-@media (max-width: 600px) {
-  #process .container-fluid {
-    width: 90%;
-  }
-}
-
-@media (max-width: 400px) {
-  .verticle-line0 {
-    width: 105px;
-  }
-}
-
-.back-orange0 {
-  background: #fc6429;
-}
-
-.back-blue0 {
-  background: rgb(59, 37, 132);
-}
 </style>
 
-<section id="process">
-    <div class="row">
-      <div class="section-heading">
-        <h2 class="text-center orange">Last 5 year placement statistics</h2>
+
+<div class="">
+  <div class="container">
+   <center> <h2 class="pb-3 pt-2 border-bottom mb-5">Last 5 Year Placements</h2></center>
+    <!--first section-->
+    <div class="row align-items-center how-it-works d-flex">
+      <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">1</div>
+      </div>
+      <div class="col-6">
+        <h5>Fully Responsive</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
       </div>
     </div>
-    <div class="container-fluid">
-      <div class="row">
-        <div class="steps-timeline0 text-center">
-          <div class="steps-one0">
-            <h3>Step 1</h3>
-            <div class="end-circle0 back-orange0"></div>
-            <div class="step-wrap0">
-              <div class="steps-stops0">
-                <div class="verticle-line0 back-orange0"></div>
-              </div>
-            </div>
-            <div class="pane-warp0 back-blue0">
-              <div class="steps-pane0">
-                <img src="https://imgur.com/5U7IJvy.png">
-              </div>
-            </div>
-            <div class="inverted-pane-warp0 back-blue0">
-              <div class="inverted-steps-pane0">
-                <p>Please fill your respective details in the attached TAX sheet whose salary mandat</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="steps-two0">
-            <h3>Step 2</h3>
-            <div class="step-wrap0">
-              <div class="steps-stops0">
-                <div class="verticle-line0 back-orange0"></div>
-              </div>
-            </div>
-            <div class="pane-warp0 back-orange0">
-              <div class="steps-pane0">
-                <img src="https://imgur.com/ACjjJNm.png">
-              </div>
-            </div>
-            <div class="inverted-pane-warp0 back-orange0">
-              <div class="inverted-steps-pane0">
-                <p>Please fill your respective details in the attached TAX sheet whose salary mandat</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="steps-three0">
-            <h3>Step 3</h3>
-            <div class="step-wrap0">
-              <div class="steps-stops0">
-                <div class="verticle-line0 back-orange0"></div>
-              </div>
-            </div>
-            <div class="pane-warp0 back-blue0">
-              <div class="steps-pane0">
-                <img class="third" src="https://imgur.com/5U7IJvy.png">
-              </div>
-            </div>
-            <div class="inverted-pane-warp0 back-blue0">
-              <div class="inverted-steps-pane0">
-                <p>Please fill your respective details in the attached TAX sheet whose salary mandat</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="steps-four0">
-            <h3>Step 4</h3>
-            <div class="step-wrap0">
-              <div class="steps-stops0">
-                <div class="verticle-line0 back-orange0"></div>
-              </div>
-            </div>
-            <div class="pane-warp0 back-orange0">
-              <div class="steps-pane0">
-                <img src="https://imgur.com/ACjjJNm.png">
-              </div>
-            </div>
-            <div class="inverted-pane-warp0 back-orange0">
-              <div class="inverted-steps-pane0">
-                <p>Please fill your respective details in the attached TAX sheet whose salary mandat</p>
-              </div>
-            </div>
-          </div>
-  
-          <div class="steps-five">
-            <h3>Step 5</h3>
-            <div class="inverted-end-circle back-orange"></div>
-            <div class="step-wrap">
-              <div class="steps-stops">
-                <div class="verticle-line back-orange"></div>
-              </div>
-            </div>
-            <div class="pane-warp back-blue">
-              <div class="steps-pane">
-                <img src="https://imgur.com/5U7IJvy.png">
-              </div>
-            </div>
-            <div class="inverted-pane-warp back-blue">
-              <div class="inverted-steps-pane">
-                <p>Please fill your respective details in the attached TAX sheet whose salary mandat</p>
-              </div>
-            </div>
-          </div>
-  
-        </div>
-        <!-- /.steps-timeline -->
+    <!--path between 1-2-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner top-right"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner left-bottom"></div>
       </div>
     </div>
-  </section>
-
-
-
-
-
-
-
-
-
-
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script> 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <!--second section-->
+    <div class="row align-items-center justify-content-end how-it-works d-flex">
+      <div class="col-6 text-right">
+        <h5>Using Bootstrap</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+      <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">2</div>
+      </div>
+    </div>
+    <!--path between 2-3-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner right-bottom"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner top-left"></div>
+      </div>
+    </div>
+    <!--third section-->
+    <div class="row align-items-center  how-it-works d-flex">
+      <div class="col-2 text-center full-3 d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">3</div>
+      </div>
+      <div class="col-6">
+        <h5>Fully Responsive</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
+    <!--path between 3-4-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner top-right"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner left-bottom"></div>
+      </div>
+    </div>
+    <!--fourth section-->
+    <div class="row align-items-center justify-content-end how-it-works d-flex">
+      <div class="col-6 text-right">
+        <h5>Using Bootstrap</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+      <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center" >
+        <div class="circle font-weight-bold">4</div>
+      </div>
+    </div>
+    <!--path between 4-5-->
+    <div class="row timeline">
+      <div class="col-2">
+        <div class="corner right-bottom-5"></div>
+      </div>
+      <div class="col-8">
+        <hr/>
+      </div>
+      <div class="col-2">
+        <div class="corner top-left"></div>
+      </div>
+    </div>
+    <!--fifth section-->
+    <div class="row align-items-center how-it-works d-flex">
+      <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
+        <div class="circle font-weight-bold">5</div>
+      </div>
+      <div class="col-6">
+        <h5>Now with Pug and Sass</h5>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      </div>
+    </div>
+  </div>
+</div>
