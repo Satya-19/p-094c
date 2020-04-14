@@ -148,11 +148,11 @@ $(document).ready(function(){
       }
   
     var data2 = {
-      labels: ["Analog Devices", "TATA Steel", "Maruti Suzuki India Limited", "Vedanta", "Tejas Networks", "Godrej & Boyce", "Robert Bosch", "TATA Steel BSL", "JK Paper", "TATA Advanced Systems", "TRL Krosaki", "Windmoller and Holscher", "Macleods Pharmaceuticals"],
+      labels: ["Analog Devices", "TATA Steel", "Vedanta", "Tejas Networks", "Godrej & Boyce", "Robert Bosch", "TATA Steel BSL", "JK Paper", "TATA Advanced Systems", "TRL Krosaki", "Windmoller and Holscher", "Macleods Pharmaceuticals", "Maruti Suzuki India Limited"],
       datasets: [
         {
           label: "Team A",
-          data: [2, 5, 5, 9, 3, 1, 25, 5, 5, 4, 1, 2, 12],
+          data: [2, 5, 9, 3, 1, 25, 5, 5, 4, 1, 2, 12, 5],
           backgroundColor: [
             "#297597",
             "#E8DFDF",
@@ -201,7 +201,7 @@ $(document).ready(function(){
         position: 'right',
         labels: {
           boxWidth: 8,
-          padding: 4,
+          padding: 20,
           fontSize: 10,
           fontColor: '#000750'
         }
@@ -225,8 +225,8 @@ $(document).ready(function(){
             position: 'right',
             labels: {
               boxWidth: 8,
-              padding: 4,
-              fontSize: 9,
+              padding: 14,
+              fontSize: 10,
               fontColor: '#000750'
             }
           },
@@ -245,7 +245,7 @@ $(document).ready(function(){
           position: 'right',
           labels: {
             boxWidth: 12,
-            padding: 10,
+            padding: 12,
             fontColor: '#000750'
           }
         },
