@@ -1,7 +1,7 @@
 <style>
     .branch__chart__container {
         /* height: 40vh;  */
-        width: 40vw;
+        width: 44vw;
         position: relative;
         margin: 70px auto;
     }
@@ -57,8 +57,27 @@ var myChart = new Chart(ctx, {
     options: {
         scales: {
             yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'no of students '
+                },
+                gridLines: {
+                    drawOnChartArea: false
+                },
                 ticks: {
                     beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'BRANCHES ',
+                    padding: {
+                        top: 5
+                    }
+                },
+                gridLines: {
+                    drawOnChartArea: false
                 }
             }]
         },
@@ -74,10 +93,10 @@ var myChart = new Chart(ctx, {
 var myChart = new Chart(ctx1, {
     type: 'bar',
     data: {
-        labels: ['BIOTECH', 'CIVIL','CSE','ELECTRICAL','F&AT', 'I&E','IT','MECHANICAL', 'TEXTILE'],
+        labels: ['B.ARCH', 'BIOTECH', 'CIVIL','CSE','ELECTRICAL','F&AT', 'I&E','IT','MECHANICAL', 'PLANNING', 'TEXTILE'],
         datasets: [{
             label: ' ',
-            data: [15,145,74,139,10,119,55,143,54],
+            data: [20,15,135,74,139,10,119,55,140,60,54],
             borderWidth: 1,
             backgroundColor: gradient
         }]
@@ -85,8 +104,27 @@ var myChart = new Chart(ctx1, {
     options: {
         scales: {
             yAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'no of students'
+                },
+                gridLines: {
+                    drawOnChartArea: false
+                },
                 ticks: {
                     beginAtZero: true
+                }
+            }],
+            xAxes: [{
+                scaleLabel: {
+                    display: true,
+                    labelString: 'BRANCHES',
+                    padding: {
+                        top: 5
+                    }
+                },
+                gridLines: {
+                    drawOnChartArea: false
                 }
             }]
         },

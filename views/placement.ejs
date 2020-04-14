@@ -60,6 +60,9 @@
         #pie-chartcanvas-1{
             margin-bottom: 3rem;
         }
+        .col-md-6 img {
+            display: none;
+        }
         @media (max-width: 800px) {
             .main_sec {
                 height: auto;
@@ -128,7 +131,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-6">
                         <div class="chart-container-3">
                             <div class="pie-chart-container">
                                 <canvas id="pie-chartcanvas-4"></canvas>
@@ -136,19 +139,23 @@
                         </div>
                     </div>
                 </div><br>
+                <div class="row">
+                    <div class="col-12 img-fluid">
+                        <img src="images/writing.png" alt="" class="img-thumbnail">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
+        <div class="main_sec sec-4" style="margin-top: 50px;">
+            <%- include('past-placement') %>
+        </div>
 
         <div class="main_sec sec-2" style="margin-top: 50px;">
             <div class="container">
                 <%- include('recruiters') %>
             </div>
-        </div>
-
-        <div class="main_sec sec-4" style="margin-top: 50px;">
-            <%- include('past-placement') %>
         </div>
 
     <%- include('footer') %>
