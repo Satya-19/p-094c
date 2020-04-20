@@ -16,9 +16,6 @@ router.get('/placement', (req, res) => {
   res.render('placement');
 });
 
-router.get('/past-placement', (req, res) => {
-  res.render('past-placement');
-});
 
 /* GET Why CET page. */
 router.get('/whycet', (req, res) => {

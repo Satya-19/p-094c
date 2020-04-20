@@ -7,14 +7,20 @@
   .logo{
     width: auto;
      margin-left:30px ;
-     height: 64px;
+     height: 70px;
   }
- 
-
-  /* .navbar-nav:hover a.nav-item {
-      padding-left: 10px;
-      padding-right: 10px;
-  } */
+ .brand-name{
+ font-size:1.2rem;
+ margin: .5rem 1rem;
+ color:#7D4AE6;
+ }
+ .vertical-line {
+  border-left: 2px solid #ff0000;
+  margin-left: .8rem;
+}
+ .college-brand {
+   display:flex;
+ }
   a.nav-item.active_nav_link {
       color: #000 !important;
       font-weight: 700;
@@ -37,7 +43,11 @@
     }
  .logo{
    height: 60px;
-   margin-left: 10px;
+   margin-left: 0;
+ }
+ .brand-name{
+   font-size:.62rem;
+   width: 50%;
  }
   }
 </style>
@@ -84,8 +94,8 @@ ready(() => {
 })
 </script>
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark" style="background-color: #fff !important ;top: 0;">
-  <span class="">
-      <a href="https://cet.edu.in"><img src="images/cet.png" class="logo"></a>
+  <span class="college-brand">
+      <a href="https://cet.edu.in"><img src="images/cet.png" class="logo"></a><div class="vertical-line"></div><p class="brand-name">Welcome to<br> College of Engineering and Technology</p>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>

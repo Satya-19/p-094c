@@ -1,6 +1,7 @@
-<!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
-<!-- <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script> -->
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
 <!------ Include the above in your HEAD tag ---------->
 
 <style>
@@ -42,65 +43,66 @@
     left: calc(50%);
   }
 
-  .timeline div {
-    padding: 0;
-    height: 41px;
-  }
-  .timeline hr {
-    border-top: 3.5px solid #ED8D8D;
-    margin: 0;
-    top: 17px;
-    position: relative;
-  }
-  .timeline .col-2 {
-    display: flex;
-    overflow: hidden;
-  }
-  .timeline .corner {
-    border: 3px solid #ED8D8D;
-    width: 100%;
-    position: relative;
-    border-radius: 15px;
-  }
-  .timeline .top-right {
-    left: 50%;
-    top: -50%;
-  }
-  .timeline .left-bottom {
-    left: -50%;
-    top: calc(50% - 3.5px);
-  }
-  .timeline .top-left {
-    left: -50%;
-    top: -51%;
-  }
-  .timeline .right-bottom {
-    left: 50%;
-    top: calc(50% - 3px);
-  }
-  .timeline .right-bottom-5 {
-    left: 50%;
-    top: calc(50% - 4px);
-  }
-
-  .container{
-    margin-top:5rem;
-  }
+.timeline div {
+  padding: 0;
+  height: 41px;
+}
+.timeline hr {
+  border-top: 3.5px solid #ED8D8D;
+  margin: 0;
+  top: 17px;
+  position: relative;
+}
+.timeline .col-2 {
+  display: flex;
+  overflow: hidden;
+}
+.timeline .corner {
+  border: 3px solid #ED8D8D;
+  width: 100%;
+  position: relative;
+  border-radius: 15px;
+}
+.timeline .top-right {
+  left: 50%;
+  top: -51%;
+}
+.timeline .left-bottom {
+  left: -50%;
+  top: calc(50% - 3.5px);
+}
+.timeline .top-left {
+  left: -50%;
+  top: -50%;
+}
+.timeline .right-bottom {
+  left: 50%;
+  top: calc(50% - 3px);
+}
+.timeline .right-bottom-5 {
+  left: 50%;
+  top: calc(50% - 4px);
+}
+.cl {
+  margin-bottom: 5rem;
+}
 
 </style>
 
 
 <div class="">
-  <div class="container">
-    <center><h1 style="color: #fff">Statistics of Previous Years</h1></center>  <hr><br>
+  <div class="container cl">
+   <center> <h1 class="pb-3 pt-2 border-bottom mb-5">Previous Statistics</h1></center>
     <!--first section-->
     <div class="row align-items-center how-it-works d-flex">
       <div class="col-2 text-center bottom d-inline-flex justify-content-center align-items-center">
-        <div class="circle font-weight-bold">1</div>
+        <div class="circle font-weight-bold"><i class="fa fa-graduation-cap"></i></div>
       </div>
-      <div class="col-6">
-        <h5>Fully Responsive</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      <div class="col-5">
+        <h3 style="font-family: 'Comic Neue', cursive;"><b>2019-20</b></h3>
+        <p>Total jobs offered: 477</p>
+        <p>Highest Package: 17.42 LPA</p>
+        <a href="pdf/2019.pdf" target="_blank">Click here to know more</a>
       </div>
     </div>
     <!--path between 1-2-->
@@ -117,12 +119,14 @@
     </div>
     <!--second section-->
     <div class="row align-items-center justify-content-end how-it-works d-flex">
-      <div class="col-6 text-right">
-        <h5>Using Bootstrap</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      <div class="col-5 text-right">
+        <h3 style="font-family: 'Comic Neue', cursive;"><b>2018-19</b></h3>
+        <p>Total jobs offered: 451</p>
+        <p>Highest Package: 30 LPA</p>
+        <a href="pdf/2018.pdf" target="_blank">Click here to know more</a>
       </div>
       <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center">
-        <div class="circle font-weight-bold">2</div>
+        <div class="circle font-weight-bold"><i class="fa fa-graduation-cap"></i></div>
       </div>
     </div>
     <!--path between 2-3-->
@@ -140,13 +144,17 @@
     <!--third section-->
     <div class="row align-items-center  how-it-works d-flex">
       <div class="col-2 text-center full-3 d-inline-flex justify-content-center align-items-center">
-        <div class="circle font-weight-bold">3</div>
+        <div class="circle font-weight-bold"><i class="fa fa-graduation-cap"></i></div>
       </div>
-      <div class="col-6">
-        <h5>Fully Responsive</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      <div class="col-5">
+        <h3 style="font-family: 'Comic Neue', cursive;"><b>2017-18</b></h3>
+        <p>Total jobs offered: 323</p>
+        <p>Highest Package: </p>
+        <a href="pdf/2017.pdf" target="_blank">Click here to know more</a>
       </div>
+     
     </div>
+   
     <!--path between 3-4-->
     <div class="row timeline">
       <div class="col-2">
@@ -161,12 +169,15 @@
     </div>
     <!--fourth section-->
     <div class="row align-items-center justify-content-end how-it-works d-flex">
-      <div class="col-6 text-right">
-        <h5>Using Bootstrap</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      <div class="col-5 text-right">
+        <h3 style="font-family: 'Comic Neue', cursive;"><b>2015-16</b></h3>
+        <p>Total jobs offered: 403</p>
+        <p>Highest Package: 35 LPA</p>
+        <a href="pdf/2015.pdf" target="_blank">Click here to know more</a>
       </div>
+      
       <div class="col-2 text-center full d-inline-flex justify-content-center align-items-center" >
-        <div class="circle font-weight-bold">4</div>
+        <div class="circle font-weight-bold"><i class="fa fa-graduation-cap"></i></div>
       </div>
     </div>
     <!--path between 4-5-->
@@ -184,11 +195,13 @@
     <!--fifth section-->
     <div class="row align-items-center how-it-works d-flex">
       <div class="col-2 text-center top d-inline-flex justify-content-center align-items-center">
-        <div class="circle font-weight-bold">5</div>
+        <div class="circle font-weight-bold"><i class="fa fa-graduation-cap"></i></div>
       </div>
-      <div class="col-6">
-        <h5>Now with Pug and Sass</h5>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed porttitor gravida aliquam. Morbi orci urna, iaculis in ligula et, posuere interdum lectus.</p>
+      <div class="col-5">
+        <h3 style="font-family: 'Comic Neue', cursive;"><b>2014-15</b></h3>
+        <p>Total jobs offered: 442</p>
+        <p>Highest Package: </p>
+        <a href="pdf/2014.pdf" target="_blank">Click here to know more</a>
       </div>
     </div>
   </div>

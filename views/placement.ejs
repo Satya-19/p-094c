@@ -30,33 +30,40 @@
         }
         .sec-3{
             margin-top:0;
-            height: 90vh;
-            background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Laboratory_Building.jpg);
+            height: auto;
+            background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Physics_Laboratory_2.jpg);
             background-size: cover;
             background-position:center;
             position: relative;
-
+            padding: 2rem 0 8rem 0;
+            
             /* clip-path: polygon(0 15vh, 100% 0, 100% 100vh, 0 100%); */
-            clip-path: polygon(0 15vh, 100% 0%, 100% 100%, 0% 100%);
+            clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
 
         }
-        .main_sec{
-            margin-top: 2rem;
-        }
-        .sec-3 {
-            height: auto;
-            /* margin-bottom: 10rem; */
-            /* padding-bottom: 10rem; */
-            /* margin-top: 5rem; */
-            padding-top: 5rem;
-        }
+        
         .lgb {
             width: 70px;
         }
         .sec-2{
             margin-top:5rem;
         }
+        .sec-4 {
+            height: auto;
+        }
         .chart-container-3 {
+            display: none;
+        }
+        #pie-chartcanvas-3{
+            margin-left:5rem;
+        }
+        #pie-chartcanvas-1{
+            margin-bottom: 3rem;
+        }
+        .col-md-6 img {
+            display: none;
+        }
+        .noimg {
             display: none;
         }
         @media (max-width: 800px) {
@@ -77,6 +84,9 @@
             }
             .sec-2{
                 margin-top:3rem;
+            }
+            .noimg {
+                display: block;
             }
             .sec-1{
                 height:100vh;
@@ -102,7 +112,7 @@
           <div id="exp">
         <div class="main_sec sec-3">
             <div class="container">
-                <center><h1 style="color: #fff">Placement Statistics</h1></center>  <hr><br>
+                <center><h1 style="color: #000">Placement Statistics</h1></center>  <hr><br>
                 <div class="row"><div class="col-md-1"></div>
                     <div class="col-md-10">
                         <div class="chart-container-0">
@@ -127,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 col-12">
                         <div class="chart-container-3">
                             <div class="pie-chart-container">
                                 <canvas id="pie-chartcanvas-4"></canvas>
@@ -135,45 +145,24 @@
                         </div>
                     </div>
                 </div><br>
+                <div class="row">
+                    <div class="col-12 img-fluid noimg">
+                        <img src="images/writing.png" alt="" class="img-thumbnail">
+                    </div>
+                </div>
             </div>
         </div>
     </div>
-        <%- include('past-placement') %>
+
+        <div class="main_sec sec-4" style="margin-top: 50px;">
+            <%- include('past-placement') %>
+        </div>
+
         <div class="main_sec sec-2" style="margin-top: 50px;">
             <div class="container">
                 <%- include('recruiters') %>
             </div>
         </div>
-
-        <!-- <div class="main_sec sec-4">
-
-            <div class="container">
-            <center><h1>Placement Guide</h1></center>  <hr>
-                <div class="row">
-                    <ul style="list-style: none;">
-                        <h5>A job offer must specify:</h5>
-                        <li><h5>Position offered</h5></li>
-                        <li><h5>Remuneration</h5></li>
-                        <li><h5>Job description</h5></li>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul>
-                        <h5>The representatives of the organisation should have the authority to make the final job offers immediately after the interviews.</h5>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul>
-                        <h5>The Institute is well equipped to carry out multiple Placement Drives, provide any logistical requirements and host the representatives of the participating organisations.</h5>
-                    </ul>
-                </div>
-                <div class="row">
-                    <ul>
-                        <h5>The Placement Committee will be glad to arrange for the stay of the representatives at hotels in the city.</h5>
-                    </ul>
-                </div>
-            </div>
-        </div> -->
 
     <%- include('footer') %>
     <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
