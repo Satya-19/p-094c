@@ -16,6 +16,10 @@ router.get('/placement', (req, res) => {
   res.render('placement');
 });
 
+/* GET Team page. */
+router.get('/team', (req, res) => {
+  res.render('team');
+});
 
 /* GET Why CET page. */
 router.get('/whycet', (req, res) => {
