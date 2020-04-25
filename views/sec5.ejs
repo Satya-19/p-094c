@@ -1,0 +1,293 @@
+
+    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700|Montserrat:300,400,400i,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js"></script>
+    <style>
+        :root {
+        --gutter: 1.5rem;
+        --bg-color: #edf2f7;
+        --speed: 0.3s;
+        }
+
+        .project-list {
+        display: grid;
+        grid-gap: calc(var(--gutter) * 1.5 + 1vw);
+        grid-template-columns: 1rem;
+        grid-template-rows: minmax(10rem, 1fr);
+        grid-auto-flow: column;
+        grid-auto-columns: 320px;
+        overflow-x: scroll;
+        scroll-snap-type: x proximity;
+        scroll-snap-points-x: repeat(100%);
+        scroll-snap-type: mandatory;
+        scroll-snap-destination: 100% 0%;
+        padding-bottom: calc(.75 * var(--gutter));
+        margin-bottom: calc(-.25 * var(--gutter));
+        -webkit-overflow-scrolling: touch;
+        }
+        .project-list::-webkit-scrollbar {
+        display: none;
+        }
+
+        h1{
+            font-size: 2.5em;
+            margin-bottom: .5rem;
+            text-align: center;
+        }
+
+        @media (min-width: 800px) {
+        .project-list:hover .item {
+            opacity: 0.6;
+            filter: blur(2px);
+        }
+        }
+
+        @media screen and (min-width: 640px) {
+        .mask-right {
+            mask: linear-gradient(-90deg, rgba(0, 0, 0, 0) 3%, black 20%);
+            -webkit-mask: linear-gradient(-90deg, rgba(0, 0, 0, 0) 3%, black 20%);
+        }
+
+        footer ul.f-address {
+          padding: inherit;
+        }
+        }
+
+        .flag {
+        transition: all var(--speed) ease;
+        transform: translate3d(6rem, -6rem, 0) rotate(45deg);
+        }
+
+        .project-list:before,
+        .project-list:after {
+        content: '';
+        width: 10px;
+        }
+
+        .item {
+        scroll-snap-align: center;
+        padding: calc(var(--gutter) / 2 * 1.5);
+        transition: all var(--speed);
+        }
+        .item:hover {
+        opacity: 1 !important;
+        filter: blur(0) !important;
+        }
+        .item:hover .flag {
+        transform: translate3d(4rem, -4rem, 0) rotate(45deg);
+        }
+
+        .item:nth-last-child {
+        margin-right: 5rem;
+        }
+
+        .lozad {
+        transition: opacity var(--speed);
+        opacity: 1;
+        }
+
+        /* .lozad.loaded {
+        opacity: 1;
+        } */
+
+        .toggled {
+        transition: opacity var(--speed);
+        transition-delay: var(--speed);
+        opacity: 1;
+        }
+
+        .no-scrollbar {
+        scrollbar-width: none;
+        margin-bottom: 0;
+        padding-bottom: 0;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+        display: none;
+        }
+
+        .is-active {
+        display: block;
+        }
+
+        .icon, .toggle-me, .nav-item {
+        transition: all var(--speed) ease;
+        }
+
+        .is-toggled {
+        color: black;
+        }
+        .is-toggled .icon-default {
+        display: none;
+        }
+        .is-toggled .icon-active {
+        display: block;
+        }
+
+        /* .nav-items:nth-child(1) a {
+        transition-delay: 0.25s;
+        }
+        .nav-items:nth-child(2) a {
+        transition-delay: 0.3s;
+        }
+        .nav-items:nth-child(3) a {
+        transition-delay: 0.35s;
+        }
+        .nav-items:nth-child(4) a {
+        transition-delay: 0.4s;
+        }
+        .nav-items:nth-child(5) a {
+        transition-delay: 0.45s;
+        }
+        .nav-items:nth-child(6) a {
+        transition-delay: 0.5s;
+        }
+
+        .toggle-target.is-active .nav-items a.nav-item {
+        transform: translate3D(0, 0, 0);
+        opacity: 1;
+        } */
+
+        .fade-1 {
+        transition: opacity 0.2s, transform 0.2s ease;
+        transform: translate3D(-4px, 0, 0);
+        transition-delay: 0.8s;
+        opacity: 0;
+        }
+
+        .fade-1 {
+        transition-delay: 0.8s;
+        }
+
+    </style>
+</head>
+<body>
+    
+<nav class="flex items-center justify-between flex-wrap bg-gray-200 p-6" role="navigation" style="display: none;">
+    <div class="flex items-center flex-shrink-0 text-gray-500 mr-6"><a class="w-36 sm:48" href="/" title="Home"><img class="logo m-2" src="http://acmelogos.com/images/logo-1.svg"/></a></div>
+    <div class="block md:hidden">
+      <button class="toggle-me flex items-center px-3 py-2 rounded text-blue-400 hover:border hover:text-black" id="toggle" aria-controls="menu">
+        <svg class="icon icon-default fill-current h-6 w-6 outline-none" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+        <svg class="icon icon-active fill-current h-6 w-6 hidden outline-none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
+          <title>Close Menu</title>
+          <path d="M16 13.7L4.7 2.4 2.4 4.7 13.7 16 2.4 27.3l2.3 2.3L16 18.3l11.3 11.3 2.3-2.3L18.3 16 29.6 4.7l-2.3-2.3L16 13.7z"></path>
+        </svg>
+      </button>
+    </div> 
+      <!-- <div class="toggle-target w-full block flex-shrink hidden md:flex md:items-center md:w-auto">
+        <div class="nav-items text-sm md:flex-grow md:mr-4"><a class="nav-item text-center block p-2 mt-2 text-blue-800 md:mt-0 md:inline-block hover:text-gray-500" href="#">Docs</a><a class="nav-item text-center block p-2 mt-2 text-blue-800 md:mt-0 md:inline-block hover:text-gray-500" href="#">Examples</a></div>
+        <div class="text-center mx-auto block"><a class="nav-item text-sm inline-block mt-4 px-4 py-2 leading-none border rounded text-blue-500 border-blue-500 mt-4 md:mt-0 hover:border-black hover:text-black md:mt-0" href="#">Call to action</a></div>
+      </div> -->
+  </nav>
+  <!-- <section class="p-8 max-w-3xl mx-auto">
+    <h1 class="text-2xl font-bold">Horizontal scrolling cards demo<span class="ml-3 font-bold uppercase text-sm tracking-widest text-gray-600">CSS-only</span></h1>
+    <p class="mb-3 text-sm">In this exploration, I wanted to see how mobile-portrait-width cards might be more effectively organized using a simple design pattern of a scrolling horizontal list. It's implemented with CSS, and doesn't require any scripting for the layout or interactions. <a href="https://github.com/ApoorvSaxena/lozad.js">Lozad</a> is used for lazy-loading.</p>
+    <p class="mb-3 text-sm">There's some nice hover effects in place, and I use a simple CSS mask gradient on the edge to indicate there are more cards. <em>To-do:</em> Enable tabindex for accessibilty.</p>
+    <p class="mb-3 text-sm">You can read a more detailed write-up <a class="font-bold" at my href="https://dev.to/allanwhite/css-only-horizontally-scrolling-cards-with-snapping-pl0" title="Dev.To article">Dev.to blog</a>.</p>
+  </section> -->
+  <h1>Placement Committee</h1><hr><br>
+  <section class="project-list opacity-0 no-scrollbar mask-right lozad" data-toggle-class="toggled"><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" href="" title="Project Title">
+      <figure>
+        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Project Title">
+          <source srcset="images/ed.png" media="(min-width: 980px)"/>
+          <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
+          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
+          <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Project Title"/></noscript>
+        </picture>
+        <figcaption>
+          <h3 class="headline-4 text-base font-bold leading-tight mb-1">Project Title</h3>
+          <p class="caption text-xs leading-regular">A project description</p>
+        </figcaption>
+      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" href="" title="Project Title">
+      <figure>
+        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/dtYGcdagOm0/400x400" data-alt="Project Title">
+          <source srcset="https://source.unsplash.com/dtYGcdagOm0/800x800" media="(min-width: 980px)"/>
+          <source srcset="https://source.unsplash.com/dtYGcdagOm0/640x640" media="(min-width: 240px)"/>
+          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
+          <noscript><img src="https://source.unsplash.com/dtYGcdagOm0/400x400" alt="Project Title"/></noscript>
+        </picture>
+        <figcaption>
+          <h3 class="headline-4 text-base font-bold leading-tight mb-1">Project Title</h3>
+          <p class="caption text-xs leading-regular">A project description which is longer; consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </figcaption>
+      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" href="" title="Project Title, which might wrap or be longish">
+      <figure>
+        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/1tLpgLfKohQ/400x400" data-alt="Project Title, which might wrap or be longish">
+          <source srcset="https://source.unsplash.com/1tLpgLfKohQ/800x800" media="(min-width: 980px)"/>
+          <source srcset="https://source.unsplash.com/1tLpgLfKohQ/640x640" media="(min-width: 240px)"/>
+          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
+          <noscript><img src="https://source.unsplash.com/1tLpgLfKohQ/400x400" alt="Project Title, which might wrap or be longish"/></noscript>
+        </picture>
+        <figcaption>
+          <h3 class="headline-4 text-base font-bold leading-tight mb-1">Project Title, which might wrap or be longish</h3>
+          <p class="caption text-xs leading-regular">A project description</p>
+        </figcaption>
+      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" href="" title="Project Title">
+      <figure>
+        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Project Title">
+          <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
+          <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
+          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
+          <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Project Title"/></noscript>
+        </picture>
+        <figcaption>
+          <h3 class="headline-4 text-base font-bold leading-tight mb-1">Project Title</h3>
+          <p class="caption text-xs leading-regular">A project description</p>
+        </figcaption>
+      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" href="" title="Project Title">
+      <figure>
+        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/5Ui5glVjUAQ/400x400" data-alt="Project Title">
+          <source srcset="https://source.unsplash.com/5Ui5glVjUAQ/800x800" media="(min-width: 980px)"/>
+          <source srcset="https://source.unsplash.com/5Ui5glVjUAQ/640x640" media="(min-width: 240px)"/><span class="absolute right-0 bottom-0 m-2 text-sm font-bold text-gray-500">#Video</span>
+          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
+          <noscript><img src="https://source.unsplash.com/5Ui5glVjUAQ/400x400" alt="Project Title"/></noscript>
+        </picture>
+        <figcaption>
+          <h3 class="headline-4 text-base font-bold leading-tight mb-1">Project Title</h3>
+          <p class="caption text-xs leading-regular">A project description</p>
+        </figcaption>
+      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" href="" title="Project Title">
+      <figure>
+        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Project Title">
+          <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
+          <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/><span class="absolute right-0 bottom-0 m-2 text-sm font-bold text-gray-500">#UX</span>
+          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
+          <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Project Title"/></noscript>
+        </picture>
+        <figcaption>
+          <h3 class="headline-4 text-base font-bold leading-tight mb-1">Project Title</h3>
+          <p class="caption text-xs leading-regular">A project description</p>
+        </figcaption>
+      </figure></a>
+  </section>
+  <!-- <section class="p-8 max-w-2xl mx-auto">
+    <h3 class="text-xl">Responsive Navigation </h3>
+    <p>This responsive navigation requires a small bit of JS, but is simpler, more accessible and more flexible than a pure CSS solution. Classes are toggled on the targeted div as well as the button, allowing for some effects.</p>
+    <p>In a production scenario, we&apos;d take some of the tailwind classes and combine them with the <code>@apply</code> directive.</p>
+  </section> -->
+  <script>
+      (function() {
+        var toggler = document.querySelector('.toggle-me');
+        var toggleTarget = document.querySelector('.toggle-target');
+
+        toggler.addEventListener('click', function() {
+            toggler.toggleAttribute('aria-expanded');
+            toggleTarget.classList.toggle('is-active');
+            toggler.classList.toggle('is-toggled');
+        });
+    })();
+    const observer = lozad('.lozad', {
+        rootMargin: '100px 0px', // like css margin
+        // threshold: 0.1 // ratio of element convergence
+        loaded: function(el) {
+            // Custom implementation on a loaded element
+            el.classList.add('loaded');
+            // el.classList.remove('loading-blur');
+        }
+    });
+    observer.observe();
+  </script>
