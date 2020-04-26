@@ -1,135 +1,5 @@
 <style>
 
-.cards {
-  display: -webkit-flex;
-  display: flex;
-  -webkit-justify-content: center;
-  justify-content: center;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-top: 15px;
-  padding: 1.5%;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
- 
-}
-.cards a{
-  text-decoration: none;
-}
-.card {
-  position: relative;
-  margin-bottom: 20px;
-  padding-bottom: 30px;
-  background: #fefff9;
-  color: #363636;
-  text-decoration: none;
-  -moz-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
-  box-shadow: rgba(0, 0, 0, 0.19) 0 0 8px 0;
-  -moz-border-radius: 10px;
-  -webkit-border-radius: 10px;
-  border-radius: 10px;
- 
-}
-@media (max-width: 700px) {
-  .card {
-    width: 70vw;
-  }
-}
-@media (min-width: 700px) {
-  .card {
-    max-width: 245px;
-    margin-right: 20px;
-    margin-bottom: 20px;
-  }
-  .card:nth-child(even) {
-    margin-right: 0;
-  }
-}
-@media (min-width: 980px) {
-  .card:nth-child(even) {
-    margin-right: 20px;
-  }
-  /* .card:nth-child(3n) {
-    margin-right: 0;
-  } */
-}
-.card span {
-  display: block;
-}
-.card .card-summary {
-  padding: 5% 5% 3% 5%;
-}
-.card .card-header {
-  position: relative;
-  height: 175px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  background-color: rgba(255, 255, 255, 0.15);
-  background-blend-mode: overlay;
-  -moz-border-radius: 4px 4px 0 0;
-  -webkit-border-radius: 4px;
-  border-radius: 4px 4px 0 0;
-}
-.card .card-header:hover, .card .card-header:focus {
-  background-color: rgba(255, 255, 255, 0);
-}
-.card .card-title {
-  background: linear-gradient(90deg, rgba(125,67,229,1) 35%, rgba(0,212,255,1) 100%);
-  padding: 3.5% 0 2.5% 0;
-  color: white;
-  font-family: 'Roboto Condensed', sans-serif;
-  text-transform: uppercase;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-.card .card-title h3 {
-  font-size: 1.2em;
-  line-height: 1.2;
-  padding: 0 3.5%;
-  margin: 0;
-}
-.card .card-meta {
-  max-height: 0;
-  overflow: hidden;
-  color: #666;
-  font-size: .78em;
-  text-transform: uppercase;
-  position: absolute;
-  bottom: 5%;
-  padding: 0 5%;
-  -moz-transition-property: max-height;
-  -o-transition-property: max-height;
-  -webkit-transition-property: max-height;
-  transition-property: max-height;
-  -moz-transition-duration: 0.4s;
-  -o-transition-duration: 0.4s;
-  -webkit-transition-duration: 0.4s;
-  transition-duration: 0.4s;
-  -moz-transition-timing-function: ease-in-out;
-  -o-transition-timing-function: ease-in-out;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-}
-.card:hover, .card:focus {
-  background: white;
-  -moz-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
-  -webkit-box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
-  box-shadow: rgba(0, 0, 0, 0.45) 0px 0px 20px 0px;
-}
-
-.card:hover .card-meta, .card:focus .card-meta {
-  max-height: 1em;
-}
-
-.sec-4 img {
-  max-width: 100%;
-}
-
 .sec-4 {
   background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Communication_Systems_and_Signal_Processing_Laboratory.jpg);
   background-size: cover;
@@ -141,145 +11,189 @@
   font-family: 'Jaldi', sans-serif;
 }
 
+@media (max-width: 768px) {
+  .card {
+    border-radius: 1.25em;
+  }
+  .card-img-top {
+    border-top-left-radius: 1.25em;
+    border-top-right-radius: 1.25em;
+    width: 800px;
+    height: 300px;
+  }
+}
 
-* {
-  -moz-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -moz-transform;
-  -o-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -o-transform;
-  -webkit-transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, -webkit-transform;
-  transition-property: background-color, border-color, box-shadow, color, opacity, text-shadow, transform;
-  -moz-transition-duration: 0.2s;
-  -o-transition-duration: 0.2s;
-  -webkit-transition-duration: 0.2s;
-  transition-duration: 0.2s;
-  -moz-transition-timing-function: linear;
-  -o-transition-timing-function: linear;
-  -webkit-transition-timing-function: linear;
-  transition-timing-function: linear;
+@media (min-width: 768px) {
+  /* show 3 items */
+  .carousel-inner .active,
+  .carousel-inner .active + .carousel-item,
+  .carousel-inner .active + .carousel-item + .carousel-item {
+    display: block;
+  }
+
+  .carousel-control-prev {
+    left: -120px;
+  }
+
+  .carousel-control-next {
+    right: -120px;
+  }
+
+  .card {
+    border-radius: 1.25em;
+  }
+  .card-img-top {
+    border-top-left-radius: 1.25em;
+    border-top-right-radius: 1.25em;
+    width: 800px;
+    height: 300px;
+  }
+
+  .card-title {
+    text-align: center;
+    font-weight: 600;
+  }
+
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item,
+  .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left) + .carousel-item + .carousel-item {
+    transition: none;
+  }
+
+  .carousel-inner .carousel-item-next,
+  .carousel-inner .carousel-item-prev {
+    position: relative;
+    transform: translate3d(0, 0, 0);
+  }
+
+  .carousel-inner .active.carousel-item + .carousel-item + .carousel-item + .carousel-item {
+    position: absolute;
+    top: 0;
+    right: -33.3333%;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* left or forward direction */
+  .active.carousel-item-left + .carousel-item-next.carousel-item-left,
+  .carousel-item-next.carousel-item-left + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
+  .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(-100%, 0, 0);
+    visibility: visible;
+  }
+
+  /* farthest right hidden item must be abso position for animations */
+  .carousel-inner .carousel-item-prev.carousel-item-right {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    display: block;
+    visibility: visible;
+  }
+
+  /* right or prev direction */
+  .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
+  .carousel-item-prev.carousel-item-right + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
+  .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item + .carousel-item {
+    position: relative;
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+    display: block;
+    visibility: visible;
+  }
 }
 
 </style>
-<!-- <div class="parallax"> -->
-  <center><h1 style="color: #fff">Students Activities</h1></center>  <hr>
 
-	<div class="cards">
-		<a class="card" href="#">
-			<span class="card-header" style="background-image: url(images/zairza-logo.png); background-size: auto;">
-				<span class="card-title">
-					<h3>ZAIRZA</h3>
-				</span>
-			</span>
-			<span class="card-summary">
-        Established in 2007, it is the technical club promoting Robotics and Software			</span>
-	
-		</a>
-
-		<a class="card" href="#">
-			<span class="card-header" style="background-image: url(images/ed.png); background-size: auto;">
-				<span class="card-title">
-					<h3>E-CELL</h3>
-				</span>
-			</span>
-			<span class="card-summary">
-        Established in 2012 to rekindle the spirit of Entrepreneurship.			</span>
-		
-		</a>
-		
-		<a class="card" href="#" >
-			<span class="card-header" style="background-image: url(images/ceta.png); background-size: auto;">
-				<span class="card-title">
-					<h3>CETADEL</h3>
-				</span>
-			</span>
-			<span class="card-summary">
-        Established in 2015 to motivate the literary prowess of future technocrats.			</span>
-			
-		</a>
-
-		<a class="card" href="#" >
-			<span class="card-header" style="background-image: url(images/energy.png);  background-size: auto;">
-				<span class="card-title">
-					<h3>ENERGY CLUB</h3>
-				</span>
-			</span>
-			<span class="card-summary">
-        Established in 2011 promotes green energy and projects for sustainable development.			</span>
-			
-		</a>
-		
-		<a class="card" href="#">
-			<span class="card-header" style="background-image: url(images/spectrum.png); background-size: auto;">
-				<span class="card-title">
-					<h3>SPECTRUM</h3>
-				</span>
-			</span>
-			<span class="card-summary">
-        Established in 2014, deals with electronic projects and instrumentation conversions			</span>
-		
-		</a>
-	
-	</div>
-<!-- </div> -->
-<!-- 
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3"></div>
-        <div class="col-md-4">
-            <div class="row"><div class="col-md-4"></div>
-                <div class="col-md-5 col-sm-8 col-8">
-                    <h5>ZAIRZA</h5>
-                    <p>Established in 2007, it is the technical club promoting Robotics and Software</p>
-                </div>
-                <div class="img-fluid col-md-3 col-sm-4 col-4">
-                    <img src="images/zairza.png" alt="" class="img-thumbnail">
-                </div>
-            </div><br><br>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            <div class="row"><div class="col-md-4"></div>
-                <div class="col-md-5 col-sm-8 col-8">
-                    <h5>E-CELL</h5>
-                    <p>Established in 2012 to rekindle the spirit of Entrepreneurship.</p>
-                </div>
-                <div class="img-fluid col-md-3 col-sm-4 col-4">
-                    <img src="images/ed.png" alt="" class="img-thumbnail">
-                </div>
-            </div><br><br>
-            <div class="row">
-                <div class="col-md-5 col-sm-8 col-8">    
-                    <h5>CETADEL</h5>
-                    <p>Established in 2015 to motivate the literary prowess of future technocrats.</p>
-                </div>
-                <div class="img-fluid col-md-3 col-sm-4 col-4">
-                    <img src="images/ceta.png" alt="" class="img-thumbnail">
-                </div>
-            </div><br><br>
-        </div>
-        <div class="col-md-4">
-            <div class="img-fluid nodis" style="margin-left: 30px;">
-                <img src="images/centre.png" alt="" class="img-thumbnail">
+  <div class="container">
+    <h1 class="text-center mb-3">Students Activities</h1><hr>
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner row w-100 mx-auto">
+        <div class="carousel-item col-md-4 active">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/zairza-logo.png" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">ZAIRZA</h4>
+              <p class="card-text">Established in 2007, it is the technical club promoting Robotics and Software.	</p>
             </div>
+          </div>
         </div>
-        <div class="col">
-            <div class="row">
-                <div class="col-md-5 col-sm-8 col-8">
-                    <h5>ENERGY CLUB</h5>
-                    <p>Established in 2011 promotes green energy and projects for sustainable development.</p>
-                </div>
-                <div class="img-fluid col-md-3 col-sm-4 col-4">
-                    <img src="images/energy.png" alt="" class="img-thumbnail">
-                </div>
-            </div><br><br>
-            <div class="row"><div class="col-md-4"></div>
-                <div class="col-md-5 col-sm-8 col-8">    
-                    <h5>SPECTRUM</h5>
-                    <p>Established in 2014, deals with electronic projects and instrumentation conversions</p>
-                </div>
-                <div class="img-fluid col-md-3 col-sm-4 col-4">
-                    <img src="images/spectrum.png" alt="" class="img-thumbnail">
-                </div>
-            </div><br><br>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/ed.png" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">ED CELL</h4>
+              <p class="card-text">Established in 2012 to rekindle and revitalize the spirit of Entrepreneurship...</p>
+            </div>
+          </div>
         </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/ceta.png" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">CETADEL</h4>
+              <p class="card-text"> Established in 2015 to motivate the literary prowess of future technocrats.	</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/energy.png" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">ENERGY CLUB</h4>
+              <p class="card-text"> Established in 2011 promotes green energy and projects for sustainable development.	</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/spectrum.png" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">SPECTRUM</h4>
+              <p class="card-text">Established in 2014, deals with electronic projects and instrumentation conversions.	</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/nukkad.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">NUKKAD</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. </p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/biozo.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">BIOZO</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="carousel-item col-md-4">
+          <div class="card">
+            <img class="card-img-top img-fluid" src="images/pf.jpg" alt="Card image cap">
+            <div class="card-body">
+              <h4 class="card-title">CET PHOTOFACTORY</h4>
+              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional content. </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
-</div> -->
+  </div>
