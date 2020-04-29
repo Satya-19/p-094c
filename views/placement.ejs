@@ -31,7 +31,7 @@
         .sec-3{
             margin-top:0;
             height: auto;
-            background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Laboratory_Building.jpg);
+            background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Physics_Laboratory_2.jpg);
             background-size: cover;
             background-position:center;
             position: relative;
@@ -63,6 +63,9 @@
         .col-md-6 img {
             display: none;
         }
+        .noimg {
+            display: none;
+        }
         @media (max-width: 800px) {
             .main_sec {
                 height: auto;
@@ -81,6 +84,9 @@
             }
             .sec-2{
                 margin-top:3rem;
+            }
+            .noimg {
+                display: block;
             }
             .sec-1{
                 height:100vh;
@@ -131,7 +137,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 col-6">
+                    <div class="col-md-6 col-12">
                         <div class="chart-container-3">
                             <div class="pie-chart-container">
                                 <canvas id="pie-chartcanvas-4"></canvas>
@@ -140,7 +146,7 @@
                     </div>
                 </div><br>
                 <div class="row">
-                    <div class="col-12 img-fluid">
+                    <div class="col-12 img-fluid noimg">
                         <img src="images/writing.png" alt="" class="img-thumbnail">
                     </div>
                 </div>

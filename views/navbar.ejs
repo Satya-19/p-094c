@@ -1,29 +1,45 @@
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
 <style>
+  html, body {
+    font-family: 'Poppins', sans-serif;
+  }
   .navbar-nav a.nav-item {
       transition: all 0.1s ease-in-out;
-      color: #000 !important;
-   
+      color: #666 !important;
+      font-size: 17px;
+  }
+  .navbar-expand-lg {
+    box-sizing: border-box;
+    box-shadow: 0 2px 9px #ccc;
   }
   .logo{
-    width: auto;
+    width: 51px;
      margin-left:30px ;
-     height: 64px;
+     height: 70px;
   }
- 
-
-  /* .navbar-nav:hover a.nav-item {
-      padding-left: 10px;
-      padding-right: 10px;
-  } */
+ .brand-name{
+ font-size:1.2rem;
+ margin: .5rem 1rem;
+ color: rgb(0,155,255);
+ }
+ .vertical-line {
+  border-left: 2px solid rgba(255,174,25,.3);
+  margin: .8rem 0 .8rem .8rem;
+}
+ .college-brand {
+   display:flex;
+ }
   a.nav-item.active_nav_link {
       color: #000 !important;
       font-weight: 700;
       padding-left: 25px;
       padding-right: 25px;
   }
-  /* body {
-      padding-top: 90px;
-  } */
+  .brd {
+    color: #aaa;
+    font-size: 1.1rem;  
+  }
   .navbar-nav{
    margin-left:auto;
   }
@@ -37,7 +53,19 @@
     }
  .logo{
    height: 60px;
-   margin-left: 10px;
+   margin-left: 0;
+   width: 45px;
+ }
+ .college-brand {
+   width:75%
+ }
+ .brand-name{
+   font-size:.69rem;
+   width: 50%;
+ }
+ .brd {
+    color: #aaa;
+    font-size: .69rem;
  }
   }
 </style>
@@ -71,11 +99,14 @@ ready(() => {
     case '/placement': 
       nav_selector = 'a.nav-item:nth-child(4)'
       break;
-    case '/register': 
+    case '/team': 
       nav_selector = 'a.nav-item:nth-child(5)'
       break;
-    case '/contact': 
+    case '/register': 
       nav_selector = 'a.nav-item:nth-child(6)'
+      break;
+    case '/contact': 
+      nav_selector = 'a.nav-item:nth-child(7)'
       break;
   }
 
@@ -84,8 +115,8 @@ ready(() => {
 })
 </script>
 <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark" style="background-color: #fff !important ;top: 0;">
-  <span class="">
-      <a href="https://cet.edu.in"><img src="images/cet.png" class="logo"></a>
+  <span class="college-brand">
+      <a href="https://cet.edu.in"><img src="images/cet.png" class="logo"></a><div class="vertical-line"></div><p class="brand-name"><span class="brd"> Welcome to </span><br><span style="font-weight:bold;"> College of Engineering and Technology </span></p>
   </span>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
@@ -96,6 +127,7 @@ ready(() => {
       <a class="nav-item nav-link active text-uppercase" href="/about">About Us</a>
       <a class="nav-item nav-link active text-uppercase" href="/whycet">Why CET</a>
       <a class="nav-item nav-link active text-uppercase" href="/placement">Placements</a>
+      <a class="nav-item nav-link active text-uppercase" href="/team">Our Team</a>
       <a class="nav-item nav-link active text-uppercase" href="/register">Register</a>
       <a class="nav-item nav-link active text-uppercase" href="/contact">Contact Us</a>
     </div>
