@@ -1,48 +1,41 @@
 <style>
   .sec-2 {
-    /* background:rgba(255,255,255, 0.9); */
-
     background-position: center;
     background-size: cover;
     height: auto;
     padding: 10px 150px;
     margin-top: 40px;
   }
-  .box {
-    border-style: solid;
-    border-radius: 20px;
-    border-color: #000;
-    /* background: linear-gradient(90deg, rgba(211,211,211,1) 40%, rgba(255,255,255,1) 100%); */
-    background: radial-gradient(
-      circle,
-      rgba(211, 211, 211, 1) 40%,
-      rgba(255, 255, 255, 1) 100%
-    );
-    padding: 20px;
-  }
   .sec-2__p {
     width: 75%;
     text-align: justify;
     margin: 0 auto;
-    color: #000;
-  }
-  hr {
-    width: 70vw;
   }
   .principal-img {
     height: auto;
-    width: 14rem;
-    border-radius: 15px;
-    border-radius: 10%;
+    width: 10rem;
+    border-radius: 25%;
+    box-sizing: border-box;
+    box-shadow: 2px 6px 9px #666;
   }
   .principal-msg {
     text-align: justify;
-    word-spacing: 5px;
-    font-size: 20px;
-    margin-right: 20px;
-    margin-left: 20px;
+    word-spacing: 3px;
+    font-size: 18px;
+    color: #666;
+  }
+  .des {
+    display: none;
   }
   @media only screen and (max-width: 768px) {
+    .mob {
+      display: none;
+    }
+    .des {
+      display: block;
+      text-align: center;
+      margin-left: 1.5rem;
+    }
     .principal-msg {
       word-spacing: 1px;
       margin: 20px 0 0;
@@ -53,20 +46,25 @@
     }
   }
 </style>
-<div class="box">
-  <center>
-    <h1><b>Principal's Desk</b></h1>
-    <h4>Prof. (Dr.) P.K. Patra</h4>
-  </center>
-  <hr />
-  <div class="row align-items-center justify-content-center">
+<div class="container">
+  <div class="row">
+    <div class="des" style="color: #666;">
+      <h1><b>Principal's Desk</b></h1>
+      <h4>Prof. (Dr.) P.K. Patra</h4>
+      <br />
+    </div>
     <div class="col-md-3">
       <img
-        src="/images/principal-removebg-preview.png"
+        src="/images/principal-removebg1.png"
         class="img-fluid principal-img mx-auto d-block"
       />
     </div>
     <div class="col-md-9">
+      <div class="mob" style="color: #666;">
+        <h1><b>Principal's Desk</b></h1>
+        <h4>Prof. (Dr.) P.K. Patra</h4>
+        <br />
+      </div>
       <p class="principal-msg">
         On behalf of<b> College of Engineering and Technology</b>, Bhubaneswar,
         it is my pleasure to welcome you all to this beautiful campus. This

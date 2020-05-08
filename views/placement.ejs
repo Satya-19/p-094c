@@ -29,39 +29,10 @@
     <script src="https://d3js.org/d3.v4.js"></script>
     <title>Placement</title>
     <style>
-      .sec-1 {
-        margin-top: 0;
-        height: 83vh;
-        padding: 3rem 0rem;
-
-        background-image: linear-gradient(
-            129deg,
-            rgba(126, 255, 245, 0.7) 0%,
-            rgba(58, 227, 116, 0.9) 89%
-          ),
-          url(images/slider/CETB_Main_Office_Building.jpg);
-        background-size: cover;
-        background-position: top;
-        position: relative;
-
-        clip-path: polygon(0 0, 100% 0, 100% 68vh, 0 100%);
-      }
       .sec-3 {
         margin-top: 0;
         height: auto;
-        background-image: linear-gradient(
-            129deg,
-            rgba(126, 255, 245, 0.7) 0%,
-            rgba(58, 227, 116, 0.9) 89%
-          ),
-          url(images/CETB_Physics_Laboratory_2.jpg);
-        background-size: cover;
-        background-position: center;
-        position: relative;
         padding: 2rem 0 8rem 0;
-
-        /* clip-path: polygon(0 15vh, 100% 0, 100% 100vh, 0 100%); */
-        clip-path: polygon(0 0, 100% 0, 100% 86%, 0 100%);
       }
 
       .lgb {
@@ -110,18 +81,11 @@
         .noimg {
           display: block;
         }
-        .sec-1 {
-          height: 100vh;
-          padding-top: 10px;
-          padding-bottom: 0;
-          clip-path: polygon(0 0, 100% 0, 100% 88vh, 0 100%);
-        }
         .container h5 {
           font-size: 1rem;
         }
         .sec-3 {
           padding-top: 6rem;
-          clip-path: polygon(0 12vh, 100% 0%, 100% 100%, 0% 100%);
         }
       }
     </style>
@@ -135,7 +99,7 @@
           <center><h1 style="color: #000;">Placement Statistics</h1></center>
           <hr />
           <br />
-          <div class="row">
+          <div class="row" style="margin-bottom: 2em;">
             <div class="col-md-1"></div>
             <div class="col-md-10">
               <div class="chart-container-0">
