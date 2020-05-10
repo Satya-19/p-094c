@@ -9,6 +9,7 @@
     .card {
       border-radius: 1.25em;
     }
+
     .card-img-top {
       border-top-left-radius: 1.25em;
       border-top-right-radius: 1.25em;
@@ -18,10 +19,11 @@
   }
 
   @media (min-width: 768px) {
+
     /* show 3 items */
     .carousel-inner .active,
-    .carousel-inner .active + .carousel-item,
-    .carousel-inner .active + .carousel-item + .carousel-item {
+    .carousel-inner .active+.carousel-item,
+    .carousel-inner .active+.carousel-item+.carousel-item {
       display: block;
       padding: 0 30px;
     }
@@ -37,6 +39,7 @@
     .card {
       border-radius: 1.25em;
     }
+
     .card-img-top {
       border-top-left-radius: 1.25em;
       border-top-right-radius: 1.25em;
@@ -51,15 +54,9 @@
       font-weight: 600;
     }
 
-    .carousel-inner
-      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
-    .carousel-inner
-      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-      + .carousel-item,
-    .carousel-inner
-      .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)
-      + .carousel-item
-      + .carousel-item {
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left),
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item,
+    .carousel-inner .carousel-item.active:not(.carousel-item-right):not(.carousel-item-left)+.carousel-item+.carousel-item {
       transition: none;
     }
 
@@ -69,11 +66,7 @@
       transform: translate3d(0, 0, 0);
     }
 
-    .carousel-inner
-      .active.carousel-item
-      + .carousel-item
-      + .carousel-item
-      + .carousel-item {
+    .carousel-inner .active.carousel-item+.carousel-item+.carousel-item+.carousel-item {
       position: absolute;
       top: 0;
       right: -33.3333%;
@@ -83,13 +76,10 @@
     }
 
     /* left or forward direction */
-    .active.carousel-item-left + .carousel-item-next.carousel-item-left,
-    .carousel-item-next.carousel-item-left + .carousel-item,
-    .carousel-item-next.carousel-item-left + .carousel-item + .carousel-item,
-    .carousel-item-next.carousel-item-left
-      + .carousel-item
-      + .carousel-item
-      + .carousel-item {
+    .active.carousel-item-left+.carousel-item-next.carousel-item-left,
+    .carousel-item-next.carousel-item-left+.carousel-item,
+    .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item,
+    .carousel-item-next.carousel-item-left+.carousel-item+.carousel-item+.carousel-item {
       position: relative;
       transform: translate3d(-100%, 0, 0);
       visibility: visible;
@@ -106,13 +96,10 @@
     }
 
     /* right or prev direction */
-    .active.carousel-item-right + .carousel-item-prev.carousel-item-right,
-    .carousel-item-prev.carousel-item-right + .carousel-item,
-    .carousel-item-prev.carousel-item-right + .carousel-item + .carousel-item,
-    .carousel-item-prev.carousel-item-right
-      + .carousel-item
-      + .carousel-item
-      + .carousel-item {
+    .active.carousel-item-right+.carousel-item-prev.carousel-item-right,
+    .carousel-item-prev.carousel-item-right+.carousel-item,
+    .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item,
+    .carousel-item-prev.carousel-item-right+.carousel-item+.carousel-item+.carousel-item {
       position: relative;
       transform: translate3d(100%, 0, 0);
       visibility: visible;
@@ -129,11 +116,7 @@
     <div class="carousel-inner row w-100 mx-auto">
       <div class="carousel-item col-md-4 active">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/zairza-logo.png"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/zairza-logo.png" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">ZAIRZA</h4>
             <p class="card-text">
@@ -145,11 +128,7 @@
       </div>
       <div class="carousel-item col-md-4">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/ed.png"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/ed.png" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">ED CELL</h4>
             <p class="card-text">
@@ -161,11 +140,7 @@
       </div>
       <div class="carousel-item col-md-4">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/ceta.png"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/ceta.png" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">CETADEL</h4>
             <p class="card-text">
@@ -177,11 +152,7 @@
       </div>
       <div class="carousel-item col-md-4">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/energy.png"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/energy.png" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">ENERGY CLUB</h4>
             <p class="card-text">
@@ -193,11 +164,7 @@
       </div>
       <div class="carousel-item col-md-4">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/spectrum.png"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/spectrum.png" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">SPECTRUM</h4>
             <p class="card-text">
@@ -209,77 +176,44 @@
       </div>
       <div class="carousel-item col-md-4">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/nukkad.jpg"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/nukkad.jpg" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">NUKKAD</h4>
             <p class="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content.
+              Established in 2015, encourages students to show their exquisite talents.
             </p>
           </div>
         </div>
       </div>
       <div class="carousel-item col-md-4">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/biozo.jpg"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/biozo.jpg" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">BIOZO</h4>
             <p class="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content.
+              Established in 2016 to encourage students to explore the code of life.
             </p>
           </div>
         </div>
       </div>
       <div class="carousel-item col-md-4">
         <div class="card">
-          <img
-            class="card-img-top img-fluid"
-            src="images/pf.jpg"
-            alt="Card image cap"
-          />
+          <img class="card-img-top img-fluid" src="images/pf.jpg" alt="Card image cap" />
           <div class="card-body">
             <h4 class="card-title">CET PHOTOFACTORY</h4>
             <p class="card-text">
-              This is a longer card with supporting text below as a natural
-              lead-in to additional content.
+              Established in 2017, it clicks all the wonderful moments of the college.
             </p>
           </div>
         </div>
       </div>
     </div>
-    <a
-      class="carousel-control-prev"
-      href="#myCarousel"
-      role="button"
-      data-slide="prev"
-    >
-      <span
-        class="carousel-control-prev-icon"
-        aria-hidden="true"
-        style="background-color: #aaa;"
-      ></span>
+    <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true" style="background-color: #aaa;"></span>
       <span class="sr-only">Previous</span>
     </a>
-    <a
-      class="carousel-control-next"
-      href="#myCarousel"
-      role="button"
-      data-slide="next"
-    >
-      <span
-        class="carousel-control-next-icon"
-        aria-hidden="true"
-        style="background-color: #aaa;"
-      ></span>
+    <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true" style="background-color: #aaa;"></span>
       <span class="sr-only">Next</span>
     </a>
   </div>

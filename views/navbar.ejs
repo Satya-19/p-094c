@@ -1,76 +1,89 @@
-<link
-  href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
-  rel="stylesheet"
-/>
+<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
 
 <style>
   html,
   body {
     font-family: "Poppins", sans-serif;
   }
+
   .navbar-nav a.nav-item {
     transition: all 0.1s ease-in-out;
     color: #666 !important;
     font-size: 17px;
   }
+
   .navbar-expand-lg {
     box-sizing: border-box;
     box-shadow: 0 2px 9px #ccc;
   }
+
   .navbar-expand-lg {
     box-sizing: border-box;
     box-shadow: 0 2px 9px #ccc;
   }
+
   .logo {
     width: 51px;
     margin-left: 30px;
     height: 70px;
   }
+
   .brand-name {
     font-size: 1.2rem;
     margin: 0.5rem 1rem;
     color: rgb(0, 155, 255);
   }
+
   .vertical-line {
     border-left: 2px solid rgba(255, 174, 25, 0.3);
     margin: 0.8rem 0 0.8rem 0.8rem;
   }
+
   .college-brand {
     display: flex;
   }
+
   a.nav-item.active_nav_link {
     color: #000 !important;
     font-weight: 700;
     padding-left: 25px;
     padding-right: 25px;
   }
+
   .brd {
     color: #aaa;
     font-size: 1.1rem;
   }
+
   .navbar-nav {
     margin-left: auto;
   }
+
   .nav-link {
     margin-right: 20px;
   }
+
   @media only screen and (max-width: 768px) {
     .nav-link {
       margin-left: auto;
       margin-right: auto;
     }
+
     .logo {
       height: 60px;
       margin: 6px 0 0;
       width: 45px;
     }
+
     .college-brand {
       width: 75%;
     }
+
     .brand-name {
       font-size: 0.69rem;
       width: 50%;
     }
+
     .brd {
       color: #aaa;
       font-size: 0.69rem;
@@ -112,64 +125,37 @@
       case "/team":
         nav_selector = "a.nav-item:nth-child(5)";
         break;
-      case "/register":
-        nav_selector = "a.nav-item:nth-child(6)";
-        break;
       case "/contact":
-        nav_selector = "a.nav-item:nth-child(7)";
+        nav_selector = "a.nav-item:nth-child(6)";
         break;
     }
 
     console.log($(nav_selector).addClass("active_nav_link"));
   });
 </script>
-<nav
-  class="navbar sticky-top navbar-expand-lg navbar-light bg-dark"
-  style="background-color: #fff !important ; top: 0;"
->
+<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark"
+  style="background-color: #fff !important ; top: 0;">
   <span class="college-brand">
     <a href="https://cet.edu.in"><img src="images/cet.png" class="logo" /></a>
     <div class="vertical-line"></div>
     <p class="brand-name">
-      <span class="brd"> Welcome to </span><br /><span
-        style="font-weight: bold;"
-      >
+      <span class="brd"> Welcome to </span><br /><span style="font-weight: bold;">
         Training and Placement Cell
       </span>
     </p>
   </span>
-  <button
-    class="navbar-toggler"
-    type="button"
-    data-toggle="collapse"
-    data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup"
-    aria-expanded="false"
-    aria-label="Toggle navigation"
-  >
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active text-uppercase" href="/">Home</a>
-      <a class="nav-item nav-link active text-uppercase" href="/about"
-        >About Us</a
-      >
-      <a class="nav-item nav-link active text-uppercase" href="/whycet"
-        >Why CET</a
-      >
-      <a class="nav-item nav-link active text-uppercase" href="/placement"
-        >Placements</a
-      >
-      <a class="nav-item nav-link active text-uppercase" href="/team"
-        >Our Team</a
-      >
-      <a class="nav-item nav-link active text-uppercase" href="/register"
-        >Register</a
-      >
-      <a class="nav-item nav-link active text-uppercase" href="/contact"
-        >Contact Us</a
-      >
+      <a class="nav-item nav-link active text-uppercase" href="/about">About Us</a>
+      <a class="nav-item nav-link active text-uppercase" href="/whycet">Why CET</a>
+      <a class="nav-item nav-link active text-uppercase" href="/placement">Placements</a>
+      <a class="nav-item nav-link active text-uppercase" href="/team">Our Team</a>
+      <a class="nav-item nav-link active text-uppercase" href="/contact">Contact Us</a>
     </div>
   </div>
 </nav>
