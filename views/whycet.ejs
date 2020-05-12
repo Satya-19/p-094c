@@ -97,7 +97,27 @@
             cursor: pointer;
         }
 
+        .side {
+            margin-left: 4.5em;
+        }
+
+        .side1 {
+            margin-left: 5.5em;
+        }
+
         @media (max-width: 800px) {
+            .tour {
+                margin: 1em 0;
+            }
+
+            .tourName {
+                margin-left: 3.5em;
+            }
+
+            .side1 {
+                margin-left: 4.5em;
+            }
+
             .why {
                 padding: 1em 1em .5em;
             }
@@ -464,14 +484,14 @@
         <center>
             <h1 style="color: #666;font-weight: bold;">Places of Interest</h1>
         </center>
-        <br>
+        <br><br>
         <div class="row">
             <div class="col-md-3">
                 <div class="img-fluid" data-toggle="modal" data-target="#exampleModalCenter">
                     <div class="tour">
                         <img src="/images/image (1).png" alt="" class="img-thumbnail">
                     </div>
-                    <h4 class="tourName" style="margin-left: 5.5em;">PURI</h4>
+                    <h4 class="tourName side1">PURI</h4>
                 </div>
             </div>
             <div class="col-md-3">
@@ -495,12 +515,12 @@
                     <div class="tour">
                         <img src="/images/image (4).png" alt="" class="img-thumbnail">
                     </div>
-                    <h4 class="tourName" style="margin-left: 4.5em;">DHAULI</h4>
+                    <h4 class="tourName side">DHAULI</h4>
                 </div>
             </div>
         </div>
     </div>
-
+    <br>
     <!-- Modal -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
