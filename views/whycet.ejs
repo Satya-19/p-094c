@@ -27,11 +27,7 @@
             height: auto;
             padding-top: 2rem;
             padding-bottom: 4rem;
-            /* background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/back.jpg);    
-            background-size: cover;
-            background-position: center; */
             position: relative;
-            /* clip-path: polygon(0 0, 100% 0, 100% 81%, 0 100%); */
             font-size: 1rem;
             line-height: 10px;
         }
@@ -51,19 +47,11 @@
 
         .achievements {
             padding: 4rem 0 4rem 0;
-            /* background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Electrical_Design_and_Simulation_Laboratory.jpg);    
-            clip-path: polygon(0 18vh, 100% 0, 100% 70%, 0 91%);
-            background-size: cover;
-            background-position: bottom; */
             margin: 0 2rem 0 2rem;
         }
 
         #places {
             padding: 4rem 2rem 2rem 2rem;
-            /* background-image: linear-gradient(129deg, rgba(126,255,245,.7) 0%, rgba(58,227,116,.9) 89%), url(images/CETB_Electronic_Circuit_Laboratory.jpg);
-            clip-path: polygon(0 18vh, 100% 0, 100% 100%, 0 100%);
-             background-size: cover;
-            background-position: center; */
             margin: 0 2rem 1rem 2rem;
         }
 
@@ -110,13 +98,11 @@
             .sec-1 {
                 height: auto;
                 padding-bottom: 3rem;
-                /* clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%); */
                 margin: 1rem 1rem;
             }
 
             .achievements {
-                padding-bottom: 8rem;
-                /* clip-path: polygon(0 18vh, 100% 0, 100% 89%, 0 100%); */
+                padding-bottom: 2rem;
                 margin: 1rem 1rem;
                 height: auto;
             }
@@ -194,7 +180,7 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="why wow bounceInUp" data-wow-duration="1s">
+                            <div class="why wow bounceInUp" data-wow-duration="2s">
                                 <p>
                                     It deeply inculcates the zeal in students, to turn odds into favour
                                     and strive to reach a notch higher in each of their endeavours.
@@ -205,7 +191,7 @@
                     </div><br><br>
                     <div class="row">
                         <div class="col-md-12">
-                            <div class="why wow bounceInUp" data-wow-duration="1s">
+                            <div class="why wow bounceInUp" data-wow-duration="2s">
                                 <p>
                                     IOver 3 lacs state students appear for JEE Mains out of which only
                                     the meritorious few of Odisha and India pursue their graduation
@@ -335,35 +321,7 @@
         </div>
 
         <section class="achievements">
-            <div class="container">
-                <center>
-                    <h1 style="color: #666;font-weight: bold;">Recent Achivements</h1>
-                </center>
-                <br>
-
-                <div class="row">
-                    <div class="col-md-6">
-                        <p><b>Nikita Choudhary : </b> Paper Presentation at DPU China </p>
-                        <p><b>Bibhav Behera : </b> Jurassic World Cinematography team </p>
-                        <p><b>Juhi Samal: </b> European Biomaterials Conference (lst Prize) </p>
-                        <p><b>Krity Goyal : </b> Tata Steel Women of Mettle(Runner's Up) </p>
-                        <p><b>Tworit Dash : </b> Talk in FLOCK 2018 in Dresden, Germany </p>
-                        <p><b>Prasun Sukai : </b> AIR-54 GATE 2018 </p>
-                        <p><b>Pranay Piyusha Jena : </b> IES 2015 (AIR-42)</p>
-                        <p><b>Juhi Samal: </b> European Biomaterials Conference (lst Prize) </p>
-                    </div>
-                    <div class="col-md-1"></div>
-                    <div class="col-md-5">
-                        <p><b>Chandrakant Mallick: </b> OCS 2015 (Rank-20)</p>
-                        <p><b>Preetish Mohanty:</b> XAT-99.883 %ile, NMAT- 99 %ile </p>
-                        <p><b>Ashutosh Panda: </b> XAT-99.06 %ile </p>
-                        <p><b>Tarashish Mishra: </b> Seminar in Eurucamp, Germany</p>
-                        <p><b>Sagarika Nath : </b> IAS 2016 (Air-199) </p>
-                        <p><b>Partha Sarathi Tripathy : </b> IES 2015 (AIR-2) </p>
-
-                    </div>
-                </div>
-            </div>
+            <%- include('achievements') %>
         </section>
     </div>
 
