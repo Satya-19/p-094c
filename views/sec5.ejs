@@ -1,458 +1,151 @@
+<style>
+  /* Our Team
+-------------------------------------------------------*/
 
-    <link href="https://fonts.googleapis.com/css?family=EB+Garamond:400,700|Montserrat:300,400,400i,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.2/tailwind.min.css">
-    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/lozad.js/1.9.0/lozad.min.js"></script>
-    <style>
-      center {
-        cursor: pointer;
-      }
-        :root {
-        --gutter: 1.5rem;
-        --bg-color: #edf2f7;
-        --speed: 0.3s;
-        }
+  .our-team .team-row {
+    margin-left: -40px;
+    margin-right: -40px;
+  }
 
-        .project-list {
-        display: grid;
-        grid-gap: calc(var(--gutter) * 1.5 + 1vw);
-        grid-template-columns: 1rem;
-        grid-template-rows: minmax(10rem, 1fr);
-        grid-auto-flow: column;
-        grid-auto-columns: 320px;
-        overflow-x: scroll;
-        scroll-snap-type: x proximity;
-        scroll-snap-points-x: repeat(100%);
-        scroll-snap-type: mandatory;
-        scroll-snap-destination: 100% 0%;
-        padding-bottom: calc(.75 * var(--gutter));
-        margin-bottom: calc(-.25 * var(--gutter));
-        -webkit-overflow-scrolling: touch;
-        }
-        .project-list::-webkit-scrollbar {
-        display: none;
-        }
+  .our-team .team-wrap {
+    padding: 0 40px;
+  }
 
-        h1{
-            font-size: 2.5em;
-            margin-bottom: .5rem;
-            text-align: center;
-        }
+  .our-team .container-fluid {
+    padding: 0 50px;
+  }
 
-        @media (min-width: 800px) {
-        .project-list:hover .item {
-            opacity: 0.6;
-            filter: blur(2px);
-        }
-        }
+  .team-img img {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+    overflow: hidden;
+    width: 100%;
+  }
 
-        @media screen and (min-width: 640px) {
-        .mask-right {
-            mask: linear-gradient(-90deg, rgba(0, 0, 0, 0) 3%, black 20%);
-            -webkit-mask: linear-gradient(-90deg, rgba(0, 0, 0, 0) 3%, black 20%);
-        }
+  .team-member,
+  .team-img {
+    position: relative;
+    overflow: hidden;
+  }
 
-        footer ul.f-address {
-          padding: inherit;
-        }
-        }
+  .team-title {
+    margin: 30px 0 7px;
+  }
 
-        .flag {
-        transition: all var(--speed) ease;
-        transform: translate3d(6rem, -6rem, 0) rotate(45deg);
-        }
+  .overlay {
+    background-color: rgba(20, 20, 20, .7);
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
 
-        .project-list:before,
-        .project-list:after {
-        content: '';
-        width: 10px;
-        }
+  .team-details {
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    padding: 5%;
+    overflow: hidden;
+    width: 100%;
+    z-index: 2;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+  }
 
-        .item {
-        scroll-snap-align: center;
-        padding: calc(var(--gutter) / 2 * 1.5);
-        transition: all var(--speed);
-        }
-        .item:hover {
-        opacity: 1 !important;
-        filter: blur(0) !important;
-        }
-        .item:hover .flag {
-        transform: translate3d(4rem, -4rem, 0) rotate(45deg);
-        }
+  .team-details p {
+    color: #fff;
+  }
 
-        .item:nth-last-child {
-        margin-right: 5rem;
-        }
+  .team-img:hover .team-details {
+    opacity: 1;
+    margin-top: -80px;
+  }
 
-        .lozad {
-        transition: opacity var(--speed);
-        opacity: 1;
-        }
+  .team-img:hover .overlay {
+    opacity: 1;
+  }
 
-        /* .lozad.loaded {
-        opacity: 1;
-        } */
+  @media (max-width: 800px) {
+    .team-title {
+      margin: 15px 0 25px;
+    }
+  }
+</style>
+<div class="container">
+  <h1 class="head" style="margin: 1em 0;">Placement Committee</h1>
 
-        .toggled {
-        transition: opacity var(--speed);
-        transition-delay: var(--speed);
-        opacity: 1;
-        }
+  <div class="row team-row">
 
-        .no-scrollbar {
-        scrollbar-width: none;
-        margin-bottom: 0;
-        padding-bottom: 0;
-        }
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="http://deothemes.com/envato/enigma/html/img/team_1.jpg" alt="">
+          <div class="overlay">
+            <div class="team-details text-center">
+              <p>
+                <b style="font-size: 1.5em;">Dr. Saroj Kumar Pradhan</b><br><br>
+                Department of Mechanical Engineering (Training & Placement Coordinator) <br><br>
 
-        .no-scrollbar::-webkit-scrollbar {
-        display: none;
-        }
+                <i> E-mail ID: skpradhan@cet.edu.in</i>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h5 class="team-title">Dr. Saroj Kumar Pradhan</h5>
+      </div>
+    </div>
+    <!-- end team member -->
 
-        .is-active {
-        display: block;
-        }
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member text-center">
+        <div class="team-img">
+          <img src="http://deothemes.com/envato/enigma/html/img/team_2.jpg" alt="">
+          <div class="overlay">
+            <div class="team-details text-center">
+              <p>
+                <b style="font-size: 1.5em;">Prof. Samarjit Patnaik</b><br><br>
+                Department of Electrical Engineering
+                (Deputy Training & Placement Coordinator, Internship Coordinator) <br><br>
 
-        .icon, .toggle-me, .nav-item {
-        transition: all var(--speed) ease;
-        }
+                <i> E-mail ID: patnaik.samarjit@cet.edu.in</i>
+              </p>
+            </div>
+          </div>
+        </div>
+        <h5 class="team-title">Prof. Samarjit Patnaik</h5>
+      </div>
+    </div>
+    <!-- end team member -->
 
-        .is-toggled {
-        color: black;
-        }
-        .is-toggled .icon-default {
-        display: none;
-        }
-        .is-toggled .icon-active {
-        display: block;
-        }
+    <div class="col-md-4 col-sm-6 team-wrap">
+      <div class="team-member last text-center">
+        <div class="team-img">
+          <img src="http://deothemes.com/envato/enigma/html/img/team_3.jpg" alt="">
+          <div class="overlay">
+            <div class="team-details text-center">
+              <p>
+                <b style="font-size: 1.5em;">Dr. Bibhu Prasad Dash</b><br><br>
+                Department of Textile Engineering <br><br>
 
-        /* .nav-items:nth-child(1) a {
-        transition-delay: 0.25s;
-        }
-        .nav-items:nth-child(2) a {
-        transition-delay: 0.3s;
-        }
-        .nav-items:nth-child(3) a {
-        transition-delay: 0.35s;
-        }
-        .nav-items:nth-child(4) a {
-        transition-delay: 0.4s;
-        }
-        .nav-items:nth-child(5) a {
-        transition-delay: 0.45s;
-        }
-        .nav-items:nth-child(6) a {
-        transition-delay: 0.5s;
-        }
+                <i> E-mail ID: bpdash@cet.edu.in</i>
+              </p>
 
-        .toggle-target.is-active .nav-items a.nav-item {
-        transform: translate3D(0, 0, 0);
-        opacity: 1;
-        } */
-
-        .fade-1 {
-        transition: opacity 0.2s, transform 0.2s ease;
-        transform: translate3D(-4px, 0, 0);
-        transition-delay: 0.8s;
-        opacity: 0;
-        }
-
-        .fade-1 {
-        transition-delay: 0.8s;
-        }
-
-    </style>
-</head>
-<body>
-    
-<nav class="flex items-center justify-between flex-wrap bg-gray-200 p-6" role="navigation" style="display: none;">
-    <div class="flex items-center flex-shrink-0 text-gray-500 mr-6"><a class="w-36 sm:48" href="/" title="Home"><img class="logo m-2" src="http://acmelogos.com/images/logo-1.svg"/></a></div>
-    <div class="block md:hidden">
-      <button class="toggle-me flex items-center px-3 py-2 rounded text-blue-400 hover:border hover:text-black" id="toggle" aria-controls="menu">
-        <svg class="icon icon-default fill-current h-6 w-6 outline-none" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-          <title>Menu</title>
-          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
-        </svg>
-        <svg class="icon icon-active fill-current h-6 w-6 hidden outline-none" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 32 32">
-          <title>Close Menu</title>
-          <path d="M16 13.7L4.7 2.4 2.4 4.7 13.7 16 2.4 27.3l2.3 2.3L16 18.3l11.3 11.3 2.3-2.3L18.3 16 29.6 4.7l-2.3-2.3L16 13.7z"></path>
-        </svg>
-      </button>
-    </div> 
-      <!-- <div class="toggle-target w-full block flex-shrink hidden md:flex md:items-center md:w-auto">
-        <div class="nav-items text-sm md:flex-grow md:mr-4"><a class="nav-item text-center block p-2 mt-2 text-blue-800 md:mt-0 md:inline-block hover:text-gray-500" href="#">Docs</a><a class="nav-item text-center block p-2 mt-2 text-blue-800 md:mt-0 md:inline-block hover:text-gray-500" href="#">Examples</a></div>
-        <div class="text-center mx-auto block"><a class="nav-item text-sm inline-block mt-4 px-4 py-2 leading-none border rounded text-blue-500 border-blue-500 mt-4 md:mt-0 hover:border-black hover:text-black md:mt-0" href="#">Call to action</a></div>
-      </div> -->
-  </nav>
-  <!-- <section class="p-8 max-w-3xl mx-auto">
-    <h1 class="text-2xl font-bold">Horizontal scrolling cards demo<span class="ml-3 font-bold uppercase text-sm tracking-widest text-gray-600">CSS-only</span></h1>
-    <p class="mb-3 text-sm">In this exploration, I wanted to see how mobile-portrait-width cards might be more effectively organized using a simple design pattern of a scrolling horizontal list. It's implemented with CSS, and doesn't require any scripting for the layout or interactions. <a href="https://github.com/ApoorvSaxena/lozad.js">Lozad</a> is used for lazy-loading.</p>
-    <p class="mb-3 text-sm">There's some nice hover effects in place, and I use a simple CSS mask gradient on the edge to indicate there are more cards. <em>To-do:</em> Enable tabindex for accessibilty.</p>
-    <p class="mb-3 text-sm">You can read a more detailed write-up <a class="font-bold" at my href="https://dev.to/allanwhite/css-only-horizontally-scrolling-cards-with-snapping-pl0" title="Dev.To article">Dev.to blog</a>.</p>
-  </section> -->
-  <h1>Placement Committee</h1><hr><br>
-  <section class="project-list opacity-0 no-scrollbar mask-right lozad" data-toggle-class="toggled"><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Dr. Saroj Kumar Pradhan">
-      <figure>
-        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Dr. Saroj Kumar Pradhan">
-          <source srcset="https://source.unsplash.com/1tLpgLfKohQ/800x800" media="(min-width: 980px)"/>
-          <source srcset="https://source.unsplash.com/1tLpgLfKohQ/640x640" media="(min-width: 240px)"/>
-          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-          <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Dr. Saroj Kumar Pradhan"/></noscript>
-        </picture>
-        <figcaption>
-         <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Dr. Saroj Kumar Pradhan</h3>
-          <p class="caption text-xs leading-regular">Department of Mechanical Engineering (Training & Placement Coordinator)
-           <div class="caption text-xs leading-regular"> <i>E-mail ID: skpradhan@cet.edu.in</i></div>
-          </p></center>
-        </figcaption>
-      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Samarjit Patnaik">
-      <figure>
-        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/dtYGcdagOm0/400x400" data-alt="Prof. Samarjit Patnaik">
-          <source srcset="https://source.unsplash.com/dtYGcdagOm0/800x800" media="(min-width: 980px)"/>
-          <source srcset="https://source.unsplash.com/dtYGcdagOm0/640x640" media="(min-width: 240px)"/>
-          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-          <noscript><img src="https://source.unsplash.com/dtYGcdagOm0/400x400" alt="Prof. Samarjit Patnaik"/></noscript>
-        </picture>
-        <figcaption>
-          <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Samarjit Patnaik</h3>
-            <p class="caption text-xs leading-regular">Department of Electrical Engineering <br> (Deputy Training & Placement Coordinator, Internship Coordinator)
-             <div class="caption text-xs leading-regular"> <i> E-mail ID: patnaik.samarjit@cet.edu.in</i></div>
-            </p></center>
-        </figcaption>
-      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Dr. Durgesh Prasad Bagarty">
-      <figure>
-        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/1tLpgLfKohQ/400x400" data-alt="Dr. Durgesh Prasad Bagarty">
-          <source srcset="https://source.unsplash.com/1tLpgLfKohQ/800x800" media="(min-width: 980px)"/>
-          <source srcset="https://source.unsplash.com/1tLpgLfKohQ/640x640" media="(min-width: 240px)"/>
-          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-          <noscript><img src="https://source.unsplash.com/1tLpgLfKohQ/400x400" alt="Dr. Durgesh Prasad Bagarty"/></noscript>
-        </picture>
-        <figcaption>
-          <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Dr. Durgesh Prasad Bagarty</h3>
-            <p class="caption text-xs leading-regular">Department of Electrical Engineering
-             <div class="caption text-xs leading-regular"> <i>E-mail ID: dpbagarty@cet.edu.in</i></div>
-            </p></center>
-        </figcaption>
-      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Dr. Bibhu Prasad Dash">
-      <figure>
-        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Dr. Bibhu Prasad Dash">
-          <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-          <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-          <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Dr. Bibhu Prasad Dash"/></noscript>
-        </picture>
-        <figcaption>
-          <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Dr. Bibhu Prasad Dash</h3>
-            <p class="caption text-xs leading-regular">Department of Textile Engineering
-             <div class="caption text-xs leading-regular"> <i>E-mail ID: bpdash@cet.edu.in</i></div>
-            </p></center>
-        </figcaption>
-      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Dr. Aswini Kumar Dash">
-      <figure>
-        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/5Ui5glVjUAQ/400x400" data-alt="Dr. Aswini Kumar Dash">
-          <source srcset="https://source.unsplash.com/5Ui5glVjUAQ/800x800" media="(min-width: 980px)"/>
-          <source srcset="https://source.unsplash.com/5Ui5glVjUAQ/640x640" media="(min-width: 240px)"/>
-          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-          <noscript><img src="https://source.unsplash.com/5Ui5glVjUAQ/400x400" alt="Dr. Aswini Kumar Dash"/></noscript>
-        </picture>
-        <figcaption>
-          <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Dr. Aswini Kumar Dash</h3>
-            <p class="caption text-xs leading-regular">Department of Fashion & Apparel Technology
-             <div class="caption text-xs leading-regular"> <i>E-mail ID: akdash@cet.edu.in</i></div>
-            </p></center>
-        </figcaption>
-      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Sanjit Kumar Dash">
-        <figure>
-          <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Sanjit Kumar Dash">
-            <source srcset="https://source.unsplash.com/1tLpgLfKohQ/800x800" media="(min-width: 980px)"/>
-            <source srcset="https://source.unsplash.com/1tLpgLfKohQ/640x640" media="(min-width: 240px)"/>
-            <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-            <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Sanjit Kumar Dash"/></noscript>
-          </picture>
-          <figcaption>
-           <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Sanjit Kumar Dash</h3>
-            <p class="caption text-xs leading-regular">Department of Information Technology
-             <div class="caption text-xs leading-regular"> <i>E-mail ID: skdash@cet.edu.in</i></div>
-            </p></center>
-          </figcaption>
-        </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Susmita Pal">
-        <figure>
-          <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/dtYGcdagOm0/400x400" data-alt="Prof. Susmita Pal">
-            <source srcset="https://source.unsplash.com/dtYGcdagOm0/800x800" media="(min-width: 980px)"/>
-            <source srcset="https://source.unsplash.com/dtYGcdagOm0/640x640" media="(min-width: 240px)"/>
-            <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-            <noscript><img src="https://source.unsplash.com/dtYGcdagOm0/400x400" alt="Prof. Susmita Pal"/></noscript>
-          </picture>
-          <figcaption>
-            <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Susmita Pal</h3>
-              <p class="caption text-xs leading-regular">Department of Master of Computer Applications
-               <div class="caption text-xs leading-regular"> <i>E-mail ID: susmitapl@gmail.com</i></div>
-              </p></center>
-          </figcaption>
-        </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Manoranjan Panda">
-        <figure>
-          <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/1tLpgLfKohQ/400x400" data-alt="Prof. Manoranjan Panda">
-            <source srcset="https://source.unsplash.com/1tLpgLfKohQ/800x800" media="(min-width: 980px)"/>
-            <source srcset="https://source.unsplash.com/1tLpgLfKohQ/640x640" media="(min-width: 240px)"/>
-            <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-            <noscript><img src="https://source.unsplash.com/1tLpgLfKohQ/400x400" alt="Prof. Manoranjan Panda"/></noscript>
-          </picture>
-          <figcaption>
-            <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Manoranjan Panda</h3>
-              <p class="caption text-xs leading-regular">Department of Computer Science Engineering
-               <div class="caption text-xs leading-regular"> <i>E-mail ID: mpanda@cet.edu.in</i></div>
-              </p></center>
-          </figcaption>
-        </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Jitendra Naik">
-      <figure>
-        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Jitendra Naik">
-          <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-          <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-          <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Jitendra Naik"/></noscript>
-        </picture>
-        <figcaption>
-          <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Jitendra Naik</h3>
-            <p class="caption text-xs leading-regular">Department of Mechanical Engineering
-             <div class="caption text-xs leading-regular"> <i>E-mail ID: jnaik@cet.edu.in</i></div>
-            </p></center>
-        </figcaption>
-      </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Biswajit Majhi">
-        <figure>
-          <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Biswajit Majhi">
-            <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-            <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-            <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-            <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Biswajit Majhi"/></noscript>
-          </picture>
-          <figcaption>
-            <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Biswajit Majhi</h3>
-              <p class="caption text-xs leading-regular"> Department of Civil Engineering
-               <div class="caption text-xs leading-regular"> <i>E-mail ID: biswajeetmajhi982@gmail.com</i></div>
-              </p></center>
-          </figcaption>
-        </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Pramodini Sahu">
-          <figure>
-            <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Pramodini Sahu">
-              <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-              <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-              <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-              <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Pramodini Sahu"/></noscript>
-            </picture>
-            <figcaption>
-              <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Pramodini Sahu</h3>
-                <p class="caption text-xs leading-regular">Department of Civil Engineering
-                 <div class="caption text-xs leading-regular"> <i> E-mail ID: pramodinice@cet.edu.in</i></div>
-                </p></center>
-            </figcaption>
-          </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Minakhi Behera">
-            <figure>
-              <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Minakhi Behera">
-                <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-                <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-                <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-                <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Minakhi Behera"/></noscript>
-              </picture>
-              <figcaption>
-                <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Minakhi Behera</h3>
-                  <p class="caption text-xs leading-regular">Department of Electrical Engineering
-                   <div class="caption text-xs leading-regular"> <i>E-mail ID: mbeheraee@cet.edu.in</i></div>
-                  </p></center>
-              </figcaption>
-            </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Debi Prasad Dash">
-              <figure>
-                <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Debi Prasad Dash">
-                  <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-                  <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-                  <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-                  <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Debi Prasad Dash"/></noscript>
-                </picture>
-                <figcaption>
-                  <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Debi Prasad Dash</h3>
-                    <p class="caption text-xs leading-regular">Department of Instrumentation & Electronics Engineering
-                     <div class="caption text-xs leading-regular"> <i>E-mail ID: dpdashie@cet.edu.in</i></div>
-                    </p></center>
-                </figcaption>
-              </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Bijay Kumar Ekka">
-                <figure>
-                  <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Bijay Kumar Ekka">
-                    <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-                    <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-                    <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-                    <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Bijay Kumar Ekka"/></noscript>
-                  </picture>
-                  <figcaption>
-                    <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Bijay Kumar Ekka</h3>
-                      <p class="caption text-xs leading-regular">Department of Instrumentation & Electronics Engineering
-                       <div class="caption text-xs leading-regular"> <i>E-mail ID: bkekka@cet.edu.in</i></div>
-                      </p></center>
-                  </figcaption>
-                </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Suraj Kumar Nayak">
-                  <figure>
-                    <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Suraj Kumar Nayak">
-                      <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-                      <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-                      <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-                      <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Suraj Kumar Nayak"/></noscript>
-                    </picture>
-                    <figcaption>
-                      <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Suraj Kumar Nayak</h3>
-                        <p class="caption text-xs leading-regular">Department of Biotechnology
-                         <div class="caption text-xs leading-regular"> <i>E-mail ID: surajnayak3@gmail.com</i></div>
-                        </p></center>
-                    </figcaption>
-                  </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Biswajit Samantray">
-                    <figure>
-                      <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Biswajit Samantray">
-                        <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-                        <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-                        <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-                        <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Biswajit Samantray"/></noscript>
-                      </picture>
-                      <figcaption>
-                        <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Biswajit Samantray</h3>
-                          <p class="caption text-xs leading-regular">Department of Chemistry
-                           <div class="caption text-xs leading-regular"> <i> E-mail ID: biswajit@cet.edu.in</i></div>
-                          </p></center>
-                      </figcaption>
-                    </figure></a><a class="card item flex flex-col justify-start items-start shadow-md hover:shadow-lg hover:shadow-sm bg-white mb-4 rounded-sm" title="Prof. Bhawani Sankar Sa">
-                      <figure>
-                        <picture class="relative mb-4 overflow-hidden lozad" style="display: block; min-height: 1rem;" height="284" data-iesrc="https://source.unsplash.com/95GPGCq_cdg/400x400" data-alt="Prof. Bhawani Sankar Sa">
-                          <source srcset="https://source.unsplash.com/95GPGCq_cdg/800x800" media="(min-width: 980px)"/>
-                          <source srcset="https://source.unsplash.com/95GPGCq_cdg/640x640" media="(min-width: 240px)"/>
-                          <div class="flag absolute bg-red-500 w-24 h-24 right-0 top-0"></div>
-                          <noscript><img src="https://source.unsplash.com/95GPGCq_cdg/400x400" alt="Prof. Bhawani Sankar Sa"/></noscript>
-                        </picture>
-                        <figcaption>
-                          <center> <h3 class="headline-4 text-base font-bold leading-tight mb-1">Prof. Bhawani Sankar Sa</h3>
-                            <p class="caption text-xs leading-regular">Department of Planning
-                             <div class="caption text-xs leading-regular"> <i>E-mail ID: bhabaniplanning@cet.edu.in</i></div>
-                            </p></center>
-                        </figcaption>
-                      </figure></a>
-    </section>
-
-  <script>
-      (function() {
-        var toggler = document.querySelector('.toggle-me');
-        var toggleTarget = document.querySelector('.toggle-target');
-
-        toggler.addEventListener('click', function() {
-            toggler.toggleAttribute('aria-expanded');
-            toggleTarget.classList.toggle('is-active');
-            toggler.classList.toggle('is-toggled');
-        });
-    })();
-    const observer = lozad('.lozad', {
-        rootMargin: '100px 0px', // like css margin
-        // threshold: 0.1 // ratio of element convergence
-        loaded: function(el) {
-            // Custom implementation on a loaded element
-            el.classList.add('loaded');
-            // el.classList.remove('loading-blur');
-        }
-    });
-    observer.observe();
-  </script>
+            </div>
+          </div>
+        </div>
+        <h5 class="team-title">Dr. Bibhu Prasad Dash</h5>
+      </div>
+    </div>
+    <!-- end team member -->
+  </div>
+</div>

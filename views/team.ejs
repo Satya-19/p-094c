@@ -1,68 +1,231 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Our Team</title>
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
-    />
-    <link rel="stylesheet" href="stylesheets/home.css" />
-    <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon" />
-    <style>
-      .part {
-        width: 80%;
-        border: 1px solid #eee;
-        box-shadow: 0 2px 3px rgb(161, 180, 161);
-        padding: 10px;
-        margin: 10px auto;
-        box-sizing: border-box;
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Our Team</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+  <link rel="stylesheet" href="stylesheets/home.css" />
+  <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon" />
+  <style>
+    .main_sec {
+      height: 80vh;
+    }
+
+    .head {
+      font-size: 2.5em;
+      margin-bottom: 0.5rem;
+      text-align: center;
+      color: #666;
+      font-weight: bolder;
+    }
+
+    .our-team {
+      border: 2px solid #ff3232;
+      border-radius: 10px;
+      text-align: center;
+      margin: 10px;
+      z-index: 1;
+      position: relative;
+    }
+
+    .our-team:before,
+    .our-team:after {
+      content: "";
+      width: 100%;
+      height: 104%;
+      background: #ff3232;
+      position: absolute;
+      top: 50%;
+      left: 0;
+      z-index: -1;
+      transform: translateY(-50%) scaleX(0.3);
+      transition: all 0.3s ease 0s;
+    }
+
+    .our-team:after {
+      width: 106%;
+      left: 50%;
+      transform: translate(-50%, -50%) scaleY(0.25);
+    }
+
+    .our-team:hover:before {
+      transform: translateY(-50%) scaleX(0.7);
+    }
+
+    .our-team:hover:after {
+      transform: translate(-50%, -50%) scaleY(0.7);
+    }
+
+    .our-team img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      transition: all 0.3s ease 0s;
+    }
+
+    .our-team .team-content {
+      width: 93%;
+      padding: 25px 0 10px;
+      background: #ff4444;
+      position: absolute;
+      bottom: 50px;
+      left: 50%;
+      opacity: 0;
+      -webkit-clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+      clip-path: polygon(0% 15%, 15% 15%, 15% 0%, 85% 0%, 85% 15%, 100% 15%, 100% 85%, 85% 85%, 85% 100%, 15% 100%, 15% 85%, 0% 85%);
+      transform: translateX(-50%);
+      transition: all 0.3s cubic-bezier(0.5, 0.2, 0.1, 0.9);
+    }
+
+    .our-team:hover .team-content {
+      bottom: 10px;
+      opacity: 1;
+    }
+
+    .our-team .title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #fff;
+      letter-spacing: 1px;
+      text-transform: capitalize;
+      margin: 0;
+    }
+
+    .our-team .post {
+      display: block;
+      font-size: 14px;
+      color: #fff;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .our-team .social {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .our-team .social li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .our-team .social li a {
+      display: block;
+      width: 25px;
+      height: 25px;
+      /* line-height: 35px; */
+      border-radius: 50%;
+      background: #fff;
+      font-size: 17px;
+      color: #ff3232;
+      transition: all 0.3s ease 0s;
+    }
+
+    .our-team .social li a:hover {
+      background: linear-gradient(to bottom, #ff3232, darkred);
+      box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);
+      color: #fff;
+    }
+
+    @media only screen and (max-width: 990px) {
+      .our-team {
+        margin-bottom: 30px;
       }
-    </style>
-  </head>
-  <body>
-    <%- include('navbar') %>
 
-    <section class="part">
-      <div style="font-size: 2.5em; margin-bottom: 0.5rem; text-align: center;">
-        Training and Placement Officer
-      </div>
-      <hr />
-      <br />
-    </section>
+      .main_sec {
+        height: auto;
+      }
+    }
+  </style>
+</head>
 
-    <%- include('sec5') %>
+<body>
+  <%- include('navbar') %>
 
-    <div class="main_sec">
-      <div style="font-size: 2.5em; margin-bottom: 0.5rem; text-align: center;">
-        Student Volunteers
-      </div>
-      <hr />
-      <br />
+  <%- include('sec5') %>
+
+  <div class="main_sec">
+    <div class="head">
+      Student Volunteers
     </div>
+    <br />
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="our-team">
+            <img src="images/1001.jpg">
+            <div class="team-content">
+              <h3 class="title">Williamson</h3>
+              <span class="post">Web Developer</span>
+              <ul class="social">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="our-team">
+            <img src="images/1000.jpg">
+            <div class="team-content">
+              <h3 class="title">Kristiana</h3>
+              <span class="post">Web Designer</span>
+              <ul class="social">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="our-team">
+            <img src="images/1001.jpg">
+            <div class="team-content">
+              <h3 class="title">Williamson</h3>
+              <span class="post">Web Designer</span>
+              <ul class="social">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="our-team">
+            <img src="images/1000.jpg">
+            <div class="team-content">
+              <h3 class="title">Kristiana</h3>
+              <span class="post">Web Designer</span>
+              <ul class="social">
+                <li><a href="#"><i class="fab fa-facebook-f"></i></a></li>
+                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <%- include('footer') %>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <%- include('footer') %>
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
