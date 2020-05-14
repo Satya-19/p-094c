@@ -209,7 +209,7 @@
   left: 0;
   opacity: 0;
   z-index: 2;
-  transition: all 0.5s ease 0.3s;
+  transition: all 0.5s ease-in;
 }
 .our-team1:hover .social {
   opacity: 1;
