@@ -1,30 +1,267 @@
-.d-block {
-    width: 100%;
-    height: 100vh;
+.main_sec {
+  height: 80vh;
 }
 
-h1 {
-    margin-top: 30px;
-    margin-bottom: 20px;
+.head {
+  font-size: 2.5em;
+  margin-bottom: 0.5rem;
+  text-align: center;
+  color: #666;
+  font-weight: bolder;
 }
 
-@media (max-width: 800px) {
-    .d-block {
-        margin-top: 40px;
-        width: 100%;
-        height: 35vh;
-    }
+.our-team {
+  border: 2px solid rgb(0, 155, 255);
+  border-radius: 10px;
+  text-align: center;
+  margin: 10px;
+  z-index: 1;
+  position: relative;
 }
-.parallax {
-  /* The image used */
-  background-image: url("https://www.careeranna.com/articles/wp-content/uploads/2019/03/IIM-Nagpur-Placements-2019.jpg");
 
-  /* Set a specific height */
+.our-team:before,
+.our-team:after {
+  content: "";
+  width: 100%;
+  height: 104%;
+  background: rgb(0, 155, 255);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  z-index: -1;
+  transform: translateY(-50%) scaleX(0.3);
+  transition: all 0.3s ease 0s;
+}
+
+.our-team:after {
+  width: 106%;
+  left: 50%;
+  transform: translate(-50%, -50%) scaleY(0.25);
+}
+
+.our-team:hover:before {
+  transform: translateY(-50%) scaleX(0.7);
+}
+
+.our-team:hover:after {
+  transform: translate(-50%, -50%) scaleY(0.7);
+}
+
+.our-team img {
+  width: 100%;
   height: auto;
+  border-radius: 10px;
+  transition: all 0.3s ease 0s;
+}
 
-  /* Create the parallax scrolling effect */
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.our-team .team-content {
+  width: 93%;
+  padding: 25px 0 10px;
+  background: rgb(0, 155, 255);
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  opacity: 0;
+  -webkit-clip-path: polygon(
+    0% 15%,
+    15% 15%,
+    15% 0%,
+    85% 0%,
+    85% 15%,
+    100% 15%,
+    100% 85%,
+    85% 85%,
+    85% 100%,
+    15% 100%,
+    15% 85%,
+    0% 85%
+  );
+  clip-path: polygon(
+    0% 15%,
+    15% 15%,
+    15% 0%,
+    85% 0%,
+    85% 15%,
+    100% 15%,
+    100% 85%,
+    85% 85%,
+    85% 100%,
+    15% 100%,
+    15% 85%,
+    0% 85%
+  );
+  transform: translateX(-50%);
+  transition: all 0.3s cubic-bezier(0.5, 0.2, 0.1, 0.9);
+}
+
+.our-team:hover .team-content {
+  bottom: 10px;
+  opacity: 1;
+}
+
+.our-team .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: 1px;
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.our-team .post {
+  display: block;
+  font-size: 14px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.our-team .social {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.our-team .social li {
+  display: inline-block;
+  margin: 0 5px;
+}
+
+.our-team .social li a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  /* line-height: 35px; */
+  border-radius: 50%;
+  background: #fff;
+  font-size: 17px;
+  color: rgb(0, 155, 255);
+  transition: all 0.3s ease 0s;
+}
+
+.our-team .social li a:hover {
+  background: linear-gradient(to bottom, rgb(0, 155, 255), rgb(0, 255, 255));
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0.3);
+  color: #fff;
+}
+
+@media only screen and (max-width: 990px) {
+  .our-team {
+    margin-bottom: 30px;
+  }
+
+  .main_sec {
+    height: auto;
+  }
+}
+
+/* //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// */
+
+.our-team1 {
+  text-align: center;
+  transition: all 0.5s ease 0s;
+}
+.our-team1:hover {
+  box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3),
+    0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.our-team1 .pic {
+  overflow: hidden;
+  position: relative;
+}
+.our-team1 .pic:before,
+.our-team1 .pic:after {
+  content: "";
+  width: 200%;
+  height: 80%;
+  background: rgba(38, 37, 37, 0.8);
+  position: absolute;
+  top: -100%;
+  left: -4%;
+  transform: rotate(45deg);
+  transition: all 0.5s ease 0s;
+}
+.our-team1 .pic:after {
+  background: rgba(8, 75, 77, 0.8);
+  top: auto;
+  left: auto;
+  bottom: -100%;
+  right: -4%;
+}
+.our-team1:hover .pic:before {
+  top: 0;
+}
+.our-team1:hover .pic:after {
+  bottom: 0;
+}
+.our-team1 .pic img {
+  width: 100%;
+  height: auto;
+}
+.our-team1 .social {
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: absolute;
+  bottom: 45%;
+  left: 0;
+  opacity: 0;
+  z-index: 2;
+  transition: all 0.5s ease 0.3s;
+}
+.our-team1:hover .social {
+  opacity: 1;
+}
+.our-team1 .social li {
+  display: inline-block;
+}
+.our-team1 .social li a {
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  font-size: 20px;
+  color: #fff;
+  margin-right: 10px;
+  position: relative;
+  transition: all 0.3s ease 0s;
+}
+.our-team1 .social li a:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #db162f;
+  border-radius: 0 20px 20px 20px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.3s ease 0s;
+}
+.our-team1 .social li a:hover:after {
+  transform: rotate(180deg);
+}
+.our-team1 .team-content {
+  padding: 20px;
+}
+.our-team1 .title {
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #047168;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+}
+.our-team1 .post {
+  display: block;
+  font-size: 17px;
+  font-weight: 600;
+  color: #707070;
+  text-transform: capitalize;
+}
+@media only screen and (max-width: 990px) {
+  .our-team1 {
+    margin-bottom: 30px;
+  }
 }
