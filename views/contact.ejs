@@ -48,13 +48,17 @@
       margin-bottom: 0.5rem;
     }
 
+    .mar {
+      margin: 2rem 0 2rem 7em;
+    }
+
     .email {
       color: grey;
       font-size: 14px;
     }
 
     .space {
-      margin: 0 7em;
+      margin: 0 3em;
     }
 
     .contact {
@@ -121,9 +125,9 @@
     }
 
     .contact .content .info i {
-      font-size: 30px;
+      font-size: 40px;
       padding: 0;
-      margin: 0;
+      margin: 3px 0 0;
       color: #02434b;
       margin-right: 16px;
       text-align: center;
@@ -132,39 +136,35 @@
 
     .contact .content .info .lr,
     .contact .content .info .lr1 {
-      margin: 0 13px 0 3px;
+      margin: 5px 13px 0 5px;
     }
 
     .contact .content .info h4 {
-      font-size: 13px;
-      line-height: 1.4;
+      font-size: 17px;
+      margin-bottom: 5px;
     }
 
-    .contact .content .info h4 span {
-      font-size: 13px;
+    .left1 {
+      margin-left: 2em;
+    }
+
+    .contact .content .info span {
+      font-size: 16px;
       font-weight: 300;
       color: #999999;
     }
 
-    .cont {
-      margin: 0 13em;
-    }
-
     @media (max-width: 800px) {
+      .left1 {
+        margin-left: 15px;
+      }
+
       .space {
         margin: 0 auto;
       }
 
-      .mob {
-        width: 20%;
-      }
-
-      .mob2 {
-        width: 80%;
-      }
-
-      .cont {
-        margin: 0 2em;
+      .mar {
+        margin: 2rem 0;
       }
 
       .contact .content .info {
@@ -173,7 +173,13 @@
 
       .contact .content .info i {
         float: left;
-        margin-right: 30px;
+        font-size: 30px;
+      }
+
+      .contact .content .info h4,
+      .contact .content .info span {
+        font-size: 13px;
+        margin-bottom: 0;
       }
 
       .contact .content .info .lr {
@@ -194,47 +200,27 @@
 <body>
   <%- include('navbar') %>
 
-  <div class="container">
-    <section style="margin: 2rem auto;">
-      <center>
-        <h1 style="font-weight: bolder;color: #666;">Training and Placement Cell</h1>
-      </center>
-      <br />
+  <div class="container-fluid">
+    <center>
+      <h1 style="font-weight: bolder;color: #666;margin-top: 1em;">Training and Placement Cell</h1>
+    </center>
+    <section class="mar">
       <div class="row">
         <div class="space">
           <div class="card">
             <img src="https://specials-images.forbesimg.com/imageserve/1144022172/960x0.jpg?fit=scale" alt="John"
               style="width: 100%; margin-bottom: 1em;" />
             <h4>Dr. S.K. Pradhan</h4>
-            <p class="title">Prof-in-charge, T&P Cell</p>
-            <p class="email"><i>E-mail ID: skpradhan@cet.edu.in</i></p>
-            <!-- <p>Ph. No: +91 9437157631</p> -->
+            <p class="title">Prof-in-charge, Training & Placement Cell</p>
+            <!-- <p class="email"><i>E-mail ID: skpradhan@cet.edu.in</i></p> -->
             <div class="row" style="margin: 0 auto 1em auto;">
-              <a href="#"><i class="fab fa-twitter" style="margin: 0 10px;"></i></a>
+              <a href="mailto:skpradhan@cet.edu.in"><i class="fab fa-google" style="margin: 5px 10px 0"></i></a>
               <a href="#"><i class="fab fa-linkedin-in" style="margin: 0 10px;"></i></a>
-              <a href="#"><i class="fab fa-facebook-f" style="margin: 0 10px;"></i></a>
+              <a href="#"><i class="fab fa-facebook-f" style="margin: 5px 10px 0;"></i></a>
               <!-- <p><button>Contact</button></p> -->
             </div>
           </div>
         </div>
-        <div class="space">
-          <div class="card">
-            <img src="https://specials-images.forbesimg.com/imageserve/1144022172/960x0.jpg?fit=scale" alt="John"
-              style="width: 100%; margin-bottom: 1em;" />
-            <h4>Prof. Santanu Sen</h4>
-            <p class="title">Internship Coordinator, T&P Cell</p>
-            <p class="email"><i></i></p>
-            <!-- <p>Ph. No: +91 9437157631</p> -->
-            <div class="row" style="margin: 0 auto 1em auto;">
-              <a href="#"><i class="fab fa-twitter" style="margin: 0 10px;"></i></a>
-              <a href="#"><i class="fab fa-linkedin-in" style="margin: 0 10px;"></i></a>
-              <a href="#"><i class="fab fa-facebook-f" style="margin: 0 10px;"></i></a>
-              <!-- <p><button>Contact</button></p> -->
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
         <div class="space">
           <div class="card">
             <img src="https://specials-images.forbesimg.com/imageserve/1144022172/960x0.jpg?fit=scale" alt="John"
@@ -243,12 +229,10 @@
             <p class="title">
               Deputy Training and Placement Officer, T&P Cell
             </p>
-            <p class="email"><i>E-mail ID: patnaik.samarjit@cet.edu.in</i></p>
-            <!-- <p>Ph. No: +91 9437157631</p> -->
             <div class="row" style="margin: 0 auto 1em auto;">
-              <a href="#"><i class="fab fa-twitter" style="margin: 0 10px;"></i></a>
+              <a href="mailto:patnaik.samarjit@cet.edu.in"><i class="fab fa-google" style="margin: 5px 10px 0"></i></a>
               <a href="#"><i class="fab fa-linkedin-in" style="margin: 0 10px;"></i></a>
-              <a href="#"><i class="fab fa-facebook-f" style="margin: 0 10px;"></i></a>
+              <a href="#"><i class="fab fa-facebook-f" style="margin: 5px 10px 0;"></i></a>
               <!-- <p><button>Contact</button></p> -->
             </div>
           </div>
@@ -259,11 +243,10 @@
               style="width: 100%; margin-bottom: 1em;" />
             <h4>Dr. B.P. Dash</h4>
             <p class="title">Member, T&P Cell, HOD Textile Engineering</p>
-            <p class="email"><i>E-mail ID: bpdash@cet.edu.in</i></p>
             <div class="row" style="margin: 0 auto 1em auto;">
-              <a href="#"><i class="fab fa-twitter" style="margin: 0 10px;"></i></a>
+              <a href="mailto:bpdash@cet.edu.in"><i class="fab fa-google" style="margin: 5px 10px 0"></i></a>
               <a href="#"><i class="fab fa-linkedin-in" style="margin: 0 10px;"></i></a>
-              <a href="#"><i class="fab fa-facebook-f" style="margin: 0 10px;"></i></a>
+              <a href="#"><i class="fab fa-facebook-f" style="margin: 5px 10px 0;"></i></a>
             </div>
           </div>
         </div>
@@ -280,30 +263,40 @@
           <div class="content">
             <!-- Info-1 -->
             <div class="info">
-              <i class="fas fa-mobile-alt lr"></i>
-              <h4 class="d-inline-block">
-                PHONE :
-                <br />
-                <span>+91 9438688816</span>
-              </h4>
+              <div class="row">
+                <div class="col-md-1 col-2">
+                  <i class="fas fa-mobile-alt lr"></i>
+                </div>
+                <div class="col-md-9 col-9 left1">
+                  <h4> PHONE :</h4>
+                  <span> +91 9438688816</span>
+                </div>
+              </div>
             </div>
             <!-- Info-2 -->
             <div class="info">
-              <i class="far fa-envelope"></i>
-              <h4 class="d-inline-block">
-                EMAIL :
-                <br />
-                <span>placement@cet.edu.in</span>
-              </h4>
+              <div class="row">
+                <div class="col-md-1 col-2">
+                  <i class="far fa-envelope"></i>
+                </div>
+                <div class="col-md-9 col-9 left1">
+                  <h4>EMAIL :</h4>
+                  <span> placement@cet.edu.in</span>
+                </div>
+              </div>
             </div>
             <!-- Info-3 -->
             <div class="info">
-              <i class="fas fa-map-marker-alt mob lr1"></i>
-              <h4 class="d-inline-block mob2">
-                ADDRESS :<br />
-                <span>College of Engineering & Technology, Ghatikia,
-                  Bhubaneswar.</span>
-              </h4>
+              <div class="row">
+                <div class="col-md-1 col-2">
+                  <i class="fas fa-map-marker-alt mob lr1"></i>
+                </div>
+                <div class="col-md-9 col-9 left1">
+                  <h4>ADDRESS :</h4>
+                  <span> College of Engineering & Technology, Ghatikia,
+                    Bhubaneswar- 751003</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
