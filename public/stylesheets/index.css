@@ -49,6 +49,7 @@
 
 .our-team img {
   width: 100%;
+  cursor: pointer;
   height: 35vh;
   border-radius: 10px;
   transition: all 0.3s ease 0s;
@@ -56,6 +57,7 @@
 
 .our-team .team-content {
   width: 93%;
+  cursor: pointer;
   padding: 25px 0 10px;
   background: rgb(0, 155, 255);
   position: absolute;
@@ -169,6 +171,7 @@
 .our-team1:hover {
   box-shadow: 0 15px 10px -10px rgba(0, 0, 0, 0.5), 0 1px 4px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(0, 0, 0, 0.1) inset;
+    cursor: pointer;
 }
 .our-team1 .pic {
   overflow: hidden;
@@ -206,11 +209,12 @@
 .our-team1 .social {
   width: 100%;
   padding: 0;
+  font-size: 14px;
   margin: 0;
   list-style: none;
   position: absolute;
   color: white;
-  bottom: 45%;
+  bottom: 35%;
   left: 0;
   opacity: 0;
   z-index: 2;
@@ -223,16 +227,16 @@
   padding: 20px;
 }
 .our-team1 .title {
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   color: #047168;
   text-transform: uppercase;
   margin-bottom: 7px;
 }
 .our-team1 .post {
   display: block;
-  font-size: 17px;
+  font-size: 15px;
   font-weight: 600;
   color: #707070;
   text-transform: capitalize;
