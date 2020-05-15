@@ -1,423 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0, shrink-to-fit=no"
-    />
-    <link
-      href="https://fonts.googleapis.com/css?family=Quicksand"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
-    />
-    <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon" />
-    <title>Contact Us</title>
-    <style>
-      body {
-        background-color: #fcfcfc;
-      }
 
-      legend {
-        margin-top: 30px;
-      }
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no" />
+  <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+  <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon" />
+  <title>Contact Us</title>
+  <style>
+    body {
+      background-color: #fcfcfc;
+    }
 
-      .one {
-        font-size: 1.4em;
-        font-weight: bold;
-      }
+    legend {
+      margin-top: 30px;
+    }
 
-      .two {
-        font-size: 1.1em;
-      }
+    .one {
+      font-size: 1.4em;
+      font-weight: bold;
+    }
 
-      iframe {
-        width: 100%;
-        height: 40vh;
-        margin: 3em 0 3em;
-      }
+    .two {
+      font-size: 1.1em;
+    }
 
-      .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-        max-width: 300px;
-        margin: 1em;
-        text-align: center;
-      }
+    iframe {
+      width: 100%;
+      height: 40vh;
+      margin: 3em 0 3em;
+    }
 
-      .title {
-        color: #007bff;
-        font-weight: bold;
-        font-size: 18px;
-        margin-bottom: 0.5rem;
-      }
+    .card {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+      max-width: 300px;
+      margin: 1em;
+      text-align: center;
+    }
 
-      .mar {
-        margin: 2rem 0 2rem 7em;
-      }
+    .title {
+      color: #555;
+      font-weight: bold;
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+    }
 
-      .email {
-        color: grey;
-        font-size: 14px;
+    .email {
+      color: grey;
+      font-size: 14px;
+    }
+
+    .space {
+      margin: 0 3em;
+    }
+
+    .contact {
+      padding: 30px 0 60px 0;
+    }
+
+    #gmap_container {
+      margin: 2em 0;
+    }
+
+    h2 {
+      font-size: 30px;
+      font-weight: 700;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+
+    h2 span {
+      color: #007ccb;
+    }
+
+    .card img {
+      height: 280px;
+    }
+
+    .card h4 {
+      font-weight: 600;
+      margin-bottom: .88rem;
+    }
+
+    .contact .heading p {
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.7;
+      color: #999999;
+      margin: 20px 0 60px;
+      padding: 0;
+    }
+
+    .contact .form-control {
+      padding: 25px;
+      font-size: 13px;
+      margin-bottom: 10px;
+      background: #eeeeee;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    .contact button.btn {
+      padding: 10px;
+      border-radius: 10px;
+      font-size: 15px;
+      background: #007ccb;
+      color: #ffffff;
+    }
+
+    .contact .title h3 {
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .contact .title p {
+      font-size: 14px;
+      font-weight: 400;
+      color: #999;
+      line-height: 1.6;
+      margin: 0 0 40px;
+    }
+
+    .contact .content .info {
+      margin-top: 3em;
+    }
+
+    .contact .content .info i {
+      font-size: 38px;
+      padding: 0;
+      margin: 3px 0 0;
+      color: #02434b;
+      margin-right: 16px;
+      text-align: center;
+      width: 20px;
+    }
+
+    .contact .content .info .lr,
+    .contact .content .info .lr1 {
+      margin: 5px 13px 0 5px;
+    }
+
+    .contact .content .info h4 {
+      font-size: 17px;
+      font-weight: 600;
+      margin-bottom: 5px;
+    }
+
+    .left1 {
+      margin-left: 2em;
+    }
+
+    .contact .content .info span {
+      font-size: 15px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    @media (max-width: 800px) {
+      .left1 {
+        margin-left: 15px;
       }
 
       .space {
-        margin: 0 3em;
-      }
-
-      .contact {
-        padding: 30px 0 60px 0;
-      }
-
-      #gmap_container {
-        margin: 2em 0;
-      }
-
-      h2 {
-        font-size: 30px;
-        font-weight: 700;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      h2 span {
-        color: #007ccb;
-      }
-
-      .card img {
-        height: 330px;
-      }
-
-      .contact .heading p {
-        font-size: 15px;
-        font-weight: 400;
-        line-height: 1.7;
-        color: #999999;
-        margin: 20px 0 60px;
-        padding: 0;
-      }
-
-      .contact .form-control {
-        padding: 25px;
-        font-size: 13px;
-        margin-bottom: 10px;
-        background: #eeeeee;
-        border: 0;
-        border-radius: 10px;
-      }
-
-      .contact button.btn {
-        padding: 10px;
-        border-radius: 10px;
-        font-size: 15px;
-        background: #007ccb;
-        color: #ffffff;
-      }
-
-      .contact .title h3 {
-        font-size: 18px;
-        font-weight: 600;
-      }
-
-      .contact .title p {
-        font-size: 14px;
-        font-weight: 400;
-        color: #999;
-        line-height: 1.6;
-        margin: 0 0 40px;
+        margin: 0 auto;
       }
 
       .contact .content .info {
-        margin-top: 3em;
+        margin: 2rem 0;
       }
 
       .contact .content .info i {
-        font-size: 38px;
-        padding: 0;
-        margin: 3px 0 0;
-        color: #02434b;
-        margin-right: 16px;
-        text-align: center;
-        width: 20px;
+        float: left;
+        font-size: 30px;
       }
 
-      .contact .content .info .lr,
+      .contact .content .info h4,
+      .contact .content .info span {
+        font-size: 13px;
+        margin-bottom: 0;
+      }
+
+      .contact .content .info .lr {
+        margin: 0 27px 0 3px;
+      }
+
       .contact .content .info .lr1 {
-        margin: 5px 13px 0 5px;
+        margin: 10px 27px 0 3px;
       }
 
-      .contact .content .info h4 {
-        font-size: 17px;
-        margin-bottom: 5px;
-      }
-
-      .left1 {
+      .side {
         margin-left: 2em;
       }
+    }
+  </style>
+</head>
 
-      .contact .content .info span {
-        font-size: 15px;
-        font-weight: 600;
-        color: rgb(0, 155, 255);
-      }
+<body>
+  <%- include('navbar') %>
 
-      @media (max-width: 800px) {
-        .left1 {
-          margin-left: 15px;
-        }
-
-        .space {
-          margin: 0 auto;
-        }
-
-        .mar {
-          margin: 2rem 0;
-        }
-
-        .contact .content .info {
-          margin: 2rem 0;
-        }
-
-        .contact .content .info i {
-          float: left;
-          font-size: 30px;
-        }
-
-        .contact .content .info h4,
-        .contact .content .info span {
-          font-size: 13px;
-          margin-bottom: 0;
-        }
-
-        .contact .content .info .lr {
-          margin: 0 27px 0 3px;
-        }
-
-        .contact .content .info .lr1 {
-          margin: 10px 27px 0 3px;
-        }
-
-        .side {
-          margin-left: 2em;
-        }
-      }
-    </style>
-  </head>
-
-  <body>
-    <%- include('navbar') %>
-
-    <div class="container-fluid">
-      <center>
-        <h1 style="font-weight: bolder; color: #666; margin-top: 1em;">
-          Training and Placement Cell
-        </h1>
-      </center>
-      <section class="mar">
-        <div class="row">
-          <div class="space">
-            <div class="card">
-              <img
-                src="/images/TPO.jpeg"
-                alt="John"
-                style="width: 100%; margin-bottom: 1em;"
-              />
-              <h4>Dr. S.K. Pradhan</h4>
-              <p class="title" style="margin: 0 0.2rem 0.5rem 0.2rem;">
-                Training & Placement Officer, T&P Cell
-              </p>
-              <div style="margin: 0 auto 1em auto; font-size: 15px;">
-                <a href="mailtoskpradhan@cet.edu.in"
-                  ><i class="far fa-envelope" style="margin: 5px 8px 0;"></i
-                  ><i>skpradhan@cet.edu.in</i></a
-                ><br />
-                <a style="color: #007bff;"
-                  ><i
-                    class="fas fa-phone-volume"
-                    style="margin: 10px 8px 0;"
-                  ></i
-                  ><i><i>+91 94371 57631</i></i></a
-                >
-                <!-- <p><button>Contact</button></p> -->
-              </div>
-            </div>
-          </div>
-          <div class="space">
-            <div class="card">
-              <img
-                src="https://specials-images.forbesimg.com/imageserve/1144022172/960x0.jpg?fit=scale"
-                alt="John"
-                style="width: 100%; margin-bottom: 1em;"
-              />
-              <h4>Prof. Samarjit Patnaik</h4>
-              <p class="title">
-                Deputy Training and Placement Officer, Internship Coordinator
-              </p>
-              <div style="margin: 0 auto 1em auto; font-size: 15px;">
-                <a href="mailto:patnaik.samarjit@cet.edu.in"
-                  ><i class="far fa-envelope" style="margin: 5px 8px 0;"></i
-                  ><i>patnaik.samarjit@cet.edu.in</i></a
-                ><br />
-                <a style="color: #007bff;"
-                  ><i class="fas fa-phone-volume" style="margin-top: 5px;"></i
-                  ><i><i>+91 94384 88168</i></i></a
-                >
-                <!-- <p><button>Contact</button></p> -->
-              </div>
-            </div>
-          </div>
-          <div class="space">
-            <div class="card">
-              <img
-                src="/images/team/2.jpeg"
-                alt="John"
-                style="width: 100%; margin-bottom: 1em;"
-              />
-              <h4>Dr. B.P. Dash</h4>
-              <p class="title">Member - T&P Cell, HOD - Textile Engineering</p>
-              <div style="margin: 0 auto 1em auto; font-size: 15px;">
-                <a href="mailto:bpdash@cet.edu.in"
-                  ><i class="far fa-envelope" style="margin: 5px 8px 0;"></i
-                  ><i>bpdash@cet.edu.in</i></a
-                ><br />
-                <a style="color: #007bff;"
-                  ><i class="fas fa-phone-volume" style="margin-top: 5px;"></i
-                  ><i><i>+91 94373 85554</i></i></a
-                >
-                <!-- <p><button>Contact</button></p> -->
-              </div>
+  <div class="container-fluid">
+    <center>
+      <h1 style="font-weight: bolder; color: #666; margin-top: 1em;">
+        Training and Placement Cell
+      </h1>
+    </center>
+    <section class="d-flex justify-content-center" style="margin-top: 2rem;">
+      <div class="row">
+        <div class="space">
+          <div class="card">
+            <img src="/images/TPO.jpeg" alt="John" style="width: 100%; margin-bottom: 1em;" />
+            <h4>Dr. S.K. Pradhan</h4>
+            <p class="title" style="margin: 0 0.2rem 0.5rem 0.2rem;">
+              Training & Placement Officer, T&P Cell
+            </p>
+            <div style="margin: 0 auto 1em auto; font-size: 15px;">
+              <a><i class="far fa-envelope" style="margin: 5px 8px 0;"></i><i>skpradhan@cet.edu.in</i></a><br />
+              <a style="color: #212529;"><i class="fas fa-phone-volume" style="margin: 10px 8px 0;"></i><i><i>+91 94371
+                    57631</i></i></a>
+              <!-- <p><button>Contact</button></p> -->
             </div>
           </div>
         </div>
-      </section>
-    </div>
-
-    <h2 style="font-weight: bolder; margin-top: 2em;">
-      Contact <span> Us </span>
-    </h2>
-
-    <section class="contact" id="contact">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-5 side">
-            <div class="content">
-              <!-- Info-2 -->
-              <div class="info" style="margin-top: 2em;">
-                <div class="row">
-                  <div class="col-md-1 col-2">
-                    <i class="far fa-envelope"></i>
-                  </div>
-                  <div class="col-md-9 col-9 left1">
-                    <h4>EMAIL :</h4>
-                    <span> placement@cet.edu.in</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Info-1 -->
-              <div class="info">
-                <div class="row">
-                  <div class="col-md-1 col-2">
-                    <i class="fas fa-mobile-alt lr"></i>
-                  </div>
-                  <div class="col-md-9 col-9 left1">
-                    <h4>PHONE :</h4>
-                    <span> +91 9438688816</span>
-                  </div>
-                </div>
-              </div>
-              <!-- Info-3 -->
-              <div class="info">
-                <div class="row">
-                  <div class="col-md-1 col-2">
-                    <i class="fas fa-map-marker-alt mob lr1"></i>
-                  </div>
-                  <div class="col-md-9 col-9 left1">
-                    <h4>ADDRESS :</h4>
-                    <span>
-                      College of Engineering & Technology, Techno campus,
-                      Ghatikia, Kalinga Nagar, Bhubaneswar- 751003</span
-                    >
-                  </div>
-                </div>
-              </div>
+        <div class="space">
+          <div class="card">
+            <img src="https://specials-images.forbesimg.com/imageserve/1144022172/960x0.jpg?fit=scale" alt="John"
+              style="width: 100%; margin-bottom: 1em;" />
+            <h4>Prof. Samarjit Patnaik</h4>
+            <p class="title">
+              Deputy Training and Placement Officer, Internship Coordinator
+            </p>
+            <div style="margin: 0 auto 1em auto; font-size: 15px;">
+              <a><i class="far fa-envelope" style="margin: 5px 8px 0;"></i><i>patnaik.samarjit@cet.edu.in</i></a><br />
+              <a style="color: #212529;"><i class="fas fa-phone-volume" style="margin: 10px 8px 0;"></i><i><i>+91
+                    94384
+                    88168</i></i></a>
+              <!-- <p><button>Contact</button></p> -->
             </div>
           </div>
-
-          <div class="col-md-7">
-            <form>
-              <div class="row">
-                <div class="col-sm-6">
-                  <input type="text" class="form-control" placeholder="Name" />
-                </div>
-                <div class="col-sm-6">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Email"
-                  />
-                </div>
-                <div class="col-sm-12">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Subject"
-                  />
-                </div>
-              </div>
-              <div class="form-group">
-                <textarea
-                  class="form-control"
-                  rows="5"
-                  id="comment"
-                  placeholder="Message"
-                ></textarea>
-              </div>
-              <button class="btn btn-block" type="submit">Send Now!</button>
-            </form>
+        </div>
+        <div class="space">
+          <div class="card">
+            <img src="/images/team/2.jpeg" alt="John" style="width: 100%; margin-bottom: 1em;" />
+            <h4>Dr. B.P. Dash</h4>
+            <p class="title">Member - T&P Cell,<br> HOD - Textile Engineering</p>
+            <div style="margin: 0 auto 1em auto; font-size: 15px;">
+              <a><i class="far fa-envelope" style="margin: 5px 8px 0;"></i><i>bpdash@cet.edu.in</i></a><br />
+              <a style="color: #212529;"><i class="fas fa-phone-volume" style="margin: 10px 8px 0;"></i><i><i>+91
+                    94373
+                    85554</i></i></a>
+              <!-- <p><button>Contact</button></p> -->
+            </div>
           </div>
         </div>
       </div>
     </section>
+  </div>
 
+  <h2 style="font-weight: bolder; margin-top: 2em;">
+    Contact <span> Us </span>
+  </h2>
+
+  <section class="contact" id="contact">
     <div class="container">
-      <div id="gmap_container">
-        <iframe
-          title="cet-map"
-          id="gmap_canvas"
-          src="https://maps.google.com/maps?q=college%20of%20engineering%20and%20technology%2C%20bhubaneswar&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
-          scrolling="no"
-          marginheight="0"
-          marginwidth="0"
-          frameborder="0"
-        ></iframe>
+      <div class="row">
+        <div class="col-md-5 side">
+          <div class="content">
+            <!-- Info-2 -->
+            <div class="info" style="margin-top: 2em;">
+              <div class="row">
+                <div class="col-md-1 col-2">
+                  <i class="far fa-envelope"></i>
+                </div>
+                <div class="col-md-9 col-9 left1">
+                  <h4>EMAIL :</h4>
+                  <span> placement@cet.edu.in</span>
+                </div>
+              </div>
+            </div>
+            <!-- Info-1 -->
+            <div class="info">
+              <div class="row">
+                <div class="col-md-1 col-2">
+                  <i class="fas fa-mobile-alt lr"></i>
+                </div>
+                <div class="col-md-9 col-9 left1">
+                  <h4>PHONE :</h4>
+                  <span> +91 9438688816</span>
+                </div>
+              </div>
+            </div>
+            <!-- Info-3 -->
+            <div class="info">
+              <div class="row">
+                <div class="col-md-1 col-2">
+                  <i class="fas fa-map-marker-alt mob lr1"></i>
+                </div>
+                <div class="col-md-9 col-9 left1">
+                  <h4>ADDRESS :</h4>
+                  <span>
+                    College of Engineering & Technology, Techno campus,
+                    Ghatikia, Kalinga Nagar, Bhubaneswar - 751003</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-7">
+          <form>
+            <div class="row">
+              <div class="col-sm-6">
+                <input type="text" class="form-control" placeholder="Name" />
+              </div>
+              <div class="col-sm-6">
+                <input type="email" class="form-control" placeholder="Email" />
+              </div>
+              <div class="col-sm-12">
+                <input type="text" class="form-control" placeholder="Subject" />
+              </div>
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+            </div>
+            <button class="btn btn-block" type="submit">Send Now!</button>
+          </form>
+        </div>
       </div>
     </div>
-    <%- include('footer') %>
+  </section>
 
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
+  <div class="container">
+    <div id="gmap_container">
+      <iframe title="cet-map" id="gmap_canvas"
+        src="https://maps.google.com/maps?q=college%20of%20engineering%20and%20technology%2C%20bhubaneswar&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+        scrolling="no" marginheight="0" marginwidth="0" frameborder="0"></iframe>
+    </div>
+  </div>
+  <%- include('footer') %>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+    integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+    crossorigin="anonymous"></script>
+</body>
+
 </html>
