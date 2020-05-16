@@ -1,696 +1,668 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
-      crossorigin="anonymous"
-    />
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.0.8/css/all.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css"
-    />
 
-    <link rel="stylesheet" href="stylesheets/alumni.css" />
-    <link rel="stylesheet" href="stylesheets/home.css" />
-    <title>Why CET</title>
-    <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon" />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
-    <style>
-      body,
-      html {
-        background-color: #fcfcfc;
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.theme.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css" />
+
+  <link rel="stylesheet" href="stylesheets/alumni.css" />
+  <link rel="stylesheet" href="stylesheets/home.css" />
+  <title>Why CET</title>
+  <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+  <style>
+    body,
+    html {
+      background-color: #fcfcfc;
+    }
+
+    .sec-1 {
+      margin: 0 2rem 0 2rem;
+      height: auto;
+      padding-top: 2rem;
+      padding-bottom: 4rem;
+      position: relative;
+      font-size: 1rem;
+      line-height: 10px;
+    }
+
+    b {
+      font-size: large;
+    }
+
+    p {
+      font-size: 1.1em;
+    }
+
+    .main_sec {
+      display: block;
+      height: auto;
+    }
+
+    .achievements {
+      padding: 4rem 0 4rem 0;
+      margin: 0 2rem 0 2rem;
+    }
+
+    #places {
+      padding: 4rem 2rem 2rem 2rem;
+      margin: 0 2rem 1rem 2rem;
+    }
+
+    .why {
+      background-color: rgb(0, 155, 255);
+      border-radius: 50px;
+      text-align: center;
+      padding: 1em 7em 0.5em;
+    }
+
+    .why p {
+      line-height: 2;
+      font-weight: 600;
+      font-size: 19px;
+      color: #fcfcfc;
+    }
+
+    .tour img {
+      height: 28vh;
+      cursor: pointer;
+    }
+
+    .tour img:hover {
+      opacity: 0.7;
+    }
+
+    .head {
+      text-align: center;
+      color: #666;
+      margin: 1em 0 1em 0.5em;
+    }
+
+    @media (max-width: 800px) {
+      .head {
+        margin: 1em 0 1em 10px;
       }
 
-      .sec-1 {
-        margin: 0 2rem 0 2rem;
-        height: auto;
-        padding-top: 2rem;
-        padding-bottom: 4rem;
-        position: relative;
-        font-size: 1rem;
-        line-height: 10px;
-      }
-
-      b {
-        font-size: large;
-      }
-
-      p {
-        font-size: 1.1em;
-      }
-
-      .main_sec {
-        display: block;
-        height: auto;
-      }
-
-      .achievements {
-        padding: 4rem 0 4rem 0;
-        margin: 0 2rem 0 2rem;
-      }
-
-      #places {
-        padding: 4rem 2rem 2rem 2rem;
-        margin: 0 2rem 1rem 2rem;
+      .tour {
+        margin: 1em 0;
       }
 
       .why {
-        background-color: rgb(0, 155, 255);
-        border-radius: 50px;
-        text-align: center;
-        padding: 1em 7em 0.5em;
+        padding: 1em 1em 0.7em;
       }
 
-      .why p {
-        line-height: 2;
-        font-weight: 600;
-        font-size: 19px;
-        color: #fcfcfc;
+      .main_sec {
+        height: auto;
       }
 
-      .tour img {
-        height: 28vh;
-        cursor: pointer;
+      h5 {
+        font-size: 0.97em;
       }
 
-      .tour img:hover {
-        opacity: 0.7;
+      .sec-1 {
+        height: auto;
+        padding-bottom: 3rem;
+        margin: 1rem 1rem;
       }
 
-      .head {
-        text-align: center;
-        color: #666;
-        margin: 1em 0 1em 0.5em;
+      .achievements {
+        padding-bottom: 2rem;
+        margin: 1rem 1rem;
+        height: auto;
       }
 
-      @media (max-width: 800px) {
-        .head {
-          margin: 1em 0 1em 10px;
-        }
-        .tour {
-          margin: 1em 0;
-        }
-
-        .why {
-          padding: 1em 1em 0.7em;
-        }
-
-        .main_sec {
-          height: auto;
-        }
-
-        h5 {
-          font-size: 0.97em;
-        }
-
-        .sec-1 {
-          height: auto;
-          padding-bottom: 3rem;
-          margin: 1rem 1rem;
-        }
-
-        .achievements {
-          padding-bottom: 2rem;
-          margin: 1rem 1rem;
-          height: auto;
-        }
-
-        #places {
-          margin: 1rem 1rem;
-        }
-
-        .arrow {
-          margin-top: 2px;
-        }
+      #places {
+        margin: 1rem 1rem;
       }
-    </style>
-  </head>
 
-  <body>
-    <%- include('navbar') %>
-    <div class="sec-1">
-      <div class="container">
-        <center>
-          <h1 style="font-weight: bold; color: #666;">Why Recruit CETians</h1>
-        </center>
-        <br /><br />
-        <div class="row">
-          <div class="col-md-12 size">
-            <br />
-            <div class="row">
-              <div class="col-md-12">
-                <div class="why wow bounceInUp" data-wow-duration="1s">
-                  <p>
-                    Established by Government of The institute goes by the
-                    saying, "It is the spirit within you which persuades you to
-                    challenge your limitations, to discover the undiscovered and
-                    subvert the paradigm" in 1981.
-                  </p>
-                </div>
+      .arrow {
+        margin-top: 2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <%- include('navbar') %>
+  <center>
+    <h1 style="font-weight: bold; color: #666;margin-top: 1em;">Why Recruit CETians</h1>
+  </center>
+
+  <div class="wrapper">
+
+    <div class="cards d-flex justify-content-center">
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>01</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times  [ js-collapser ]"></i>
+          Established by Government of The institute goes by the
+          saying, "It is the spirit within you which persuades you to
+          challenge your limitations, to discover the undiscovered and
+          subvert the paradigm" in 1981.
+        </div>
+      </div>
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>02</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times [ js-collapser ]"></i>
+          It has been 37 years, (3rd oldest institute of Odisha) since
+          the establishment of CET and it is this spirit of the
+          institute that Cetians imbibe and carry forward wherever
+          they go.
+        </div>
+      </div>
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>03</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times [ js-collapser ]"></i>
+          CET-B has made it a legacy to set new benchmarks in
+          technical education, since its inception in 1981.
+        </div>
+      </div>
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>04</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times [ js-collapser ]"></i>
+          Excellent placement statistics which keeps on increasing
+          every academic session, through a dedicated T&P Cell.
+        </div>
+      </div>
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>05</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times [ js-collapser ]"></i>
+          It deeply inculcates the zeal in students, to turn odds into
+          favour and strive to reach a notch higher in each of their
+          endeavours.
+        </div>
+      </div>
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>06</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times [ js-collapser ]"></i>
+          Over 3 lacs state students appear for JEE Mains out of which
+          only the meritorious few of Odisha and India pursue their
+          graduation in the premier college of Odisha Govt, CET-B.
+        </div>
+      </div>
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>07</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times [ js-collapser ]"></i>
+          Expander
+        </div>
+      </div>
+
+      <div class=" card1 [ is-collapsed ] ">
+        <div class="card__inner [ js-expander ]">
+          <span>08</span>
+          <i class="far fa-folder"></i>
+        </div>
+        <div class="card__expander">
+          <i class="fas fa-times [ js-collapser ]"></i>
+          Expander
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="main_sec sec-5">
+    <div class="container">
+      <center>
+        <h1 style="color: #666; font-weight: bold;">Notable Alumni</h1>
+      </center>
+      <br />
+
+      <div class="row">
+        <div class="col-md-12">
+          <div id="testimonial-slider" class="owl-carousel">
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/101.png" />
               </div>
+              <h3 class="title">Purushottom Panda</h3>
+              <br />
+              <p class="description">
+                Executive Director Maruti Suzuki
+              </p>
             </div>
-            <br /><br />
-            <div class="row">
-              <div class="col-md-12">
-                <div class="why wow bounceInUp" data-wow-duration="2s">
-                  <p>
-                    It has been 37 years, (3rd oldest institute of Odisha) since
-                    the establishment of CET and it is this spirit of the
-                    institute that Cetians imbibe and carry forward wherever
-                    they go.
-                  </p>
-                </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/102.png" />
               </div>
+              <h3 class="title">Bharat Maharaj</h3>
+              <br />
+              <p class="description">
+                General Manager Pratt & Whitney
+              </p>
             </div>
-            <br /><br />
-            <div class="row">
-              <div class="col-md-12">
-                <div class="why wow bounceInUp" data-wow-duration="3s">
-                  <p>
-                    CET-B has made it a legacy to set new benchmarks in
-                    technical education, since its inception in 1981.
-                  </p>
-                </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/103.png" />
               </div>
+              <h3 class="title">Ronak Kumar Samantray</h3>
+              <br />
+              <p class="description">
+                Co-Founder of NowFloats Technologies
+              </p>
             </div>
-            <br /><br />
-            <div class="row">
-              <div class="col-md-12">
-                <div class="why wow bounceInUp" data-wow-duration="4s">
-                  <p>
-                    Excellent placement statistics which keeps on increasing
-                    every academic session, through a dedicated T&P Cell.
-                  </p>
-                </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/104.png" />
               </div>
+              <h3 class="title">Jyoti Prakash Mahapatra</h3>
+              <br />
+              <p class="description">
+                VP Sales & Marketing Knits Arvind Ltd
+              </p>
             </div>
-            <br /><br />
-            <div class="row">
-              <div class="col-md-12">
-                <div class="why wow bounceInUp" data-wow-duration="2s">
-                  <p>
-                    It deeply inculcates the zeal in students, to turn odds into
-                    favour and strive to reach a notch higher in each of their
-                    endeavours.
-                  </p>
-                </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/105.png" />
               </div>
+              <h3 class="title">Siddarth Nanda</h3>
+              <br />
+              <p class="description">
+                Program manager, Google Maps
+              </p>
             </div>
-            <br /><br />
-            <div class="row">
-              <div class="col-md-12">
-                <div class="why wow bounceInUp" data-wow-duration="2s">
-                  <p>
-                    Over 3 lacs state students appear for JEE Mains out of which
-                    only the meritorious few of Odisha and India pursue their
-                    graduation in the premier college of Odisha Govt, CET-B.
-                  </p>
-                </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/109.png" />
               </div>
+              <h3 class="title">Jyoti Ranjan Dash</h3>
+              <br />
+              <p class="description">
+                Design Head, Vardhaman Textile
+              </p>
+            </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/110.png" />
+              </div>
+              <h3 class="title">Pamela Sathpathy</h3>
+              <br />
+              <p class="description">
+                IAS Officer, Govt of India
+              </p>
+            </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/106.png" />
+              </div>
+              <h3 class="title">Manoj swain</h3>
+              <br />
+              <p class="description">
+                CEEMEA Rates Trading Deutsche Bank
+              </p>
+            </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/107.jpg" />
+              </div>
+              <h3 class="title">Sourav Das</h3>
+              <br />
+              <p class="description">
+                Founder & CEO of Eccellerx Meditech
+              </p>
+            </div>
+
+            <div class="testimonial">
+              <div class="pic">
+                <img src="images/108.png" />
+              </div>
+              <h3 class="title">Sagarika Nath</h3>
+              <br />
+              <p class="description">
+                IPS Officer, Govt of India
+              </p>
             </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="main_sec sec-5">
-      <div class="container">
-        <center>
-          <h1 style="color: #666; font-weight: bold;">Notable Alumni</h1>
-        </center>
-        <br />
+    <section class="achievements">
+      <%- include('achievements') %>
+    </section>
+  </div>
 
-        <div class="row">
-          <div class="col-md-12">
-            <div id="testimonial-slider" class="owl-carousel">
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/101.png" />
-                </div>
-                <h3 class="title">Purushottom Panda</h3>
-                <br />
-                <p class="description">
-                  Executive Director Maruti Suzuki
-                </p>
-              </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <script>
+    var $cell = $('.card1');
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/102.png" />
-                </div>
-                <h3 class="title">Bharat Maharaj</h3>
-                <br />
-                <p class="description">
-                  General Manager Pratt & Whitney
-                </p>
-              </div>
+    //open and close card when clicked on card
+    $cell.find('.js-expander').click(function () {
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/103.png" />
-                </div>
-                <h3 class="title">Ronak Kumar Samantray</h3>
-                <br />
-                <p class="description">
-                  Co-Founder of NowFloats Technologies
-                </p>
-              </div>
+      var $thisCell = $(this).closest('.card1');
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/104.png" />
-                </div>
-                <h3 class="title">Jyoti Prakash Mahapatra</h3>
-                <br />
-                <p class="description">
-                  VP Sales & Marketing Knits Arvind Ltd
-                </p>
-              </div>
+      if ($thisCell.hasClass('is-collapsed')) {
+        $cell.not($thisCell).removeClass('is-expanded').addClass('is-collapsed').addClass('is-inactive');
+        $thisCell.removeClass('is-collapsed').addClass('is-expanded');
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/105.png" />
-                </div>
-                <h3 class="title">Siddarth Nanda</h3>
-                <br />
-                <p class="description">
-                  Program manager, Google Maps
-                </p>
-              </div>
+        if ($cell.not($thisCell).hasClass('is-inactive')) {
+          //do nothing
+        } else {
+          $cell.not($thisCell).addClass('is-inactive');
+        }
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/109.png" />
-                </div>
-                <h3 class="title">Jyoti Ranjan Dash</h3>
-                <br />
-                <p class="description">
-                  Design Head, Vardhaman Textile
-                </p>
-              </div>
+      } else {
+        $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+        $cell.not($thisCell).removeClass('is-inactive');
+      }
+    });
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/110.png" />
-                </div>
-                <h3 class="title">Pamela Sathpathy</h3>
-                <br />
-                <p class="description">
-                  IAS Officer, Govt of India
-                </p>
-              </div>
+    //close card when click on cross
+    $cell.find('.js-collapser').click(function () {
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/106.png" />
-                </div>
-                <h3 class="title">Manoj swain</h3>
-                <br />
-                <p class="description">
-                  CEEMEA Rates Trading Deutsche Bank
-                </p>
-              </div>
+      var $thisCell = $(this).closest('.card1');
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/107.jpg" />
-                </div>
-                <h3 class="title">Sourav Das</h3>
-                <br />
-                <p class="description">
-                  Founder & CEO of Eccellerx Meditech
-                </p>
-              </div>
+      $thisCell.removeClass('is-expanded').addClass('is-collapsed');
+      $cell.not($thisCell).removeClass('is-inactive');
 
-              <div class="testimonial">
-                <div class="pic">
-                  <img src="images/108.png" />
-                </div>
-                <h3 class="title">Sagarika Nath</h3>
-                <br />
-                <p class="description">
-                  IPS Officer, Govt of India
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <section class="achievements">
-        <%- include('achievements') %>
-      </section>
-    </div>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script
-      type="text/javascript"
-      src="https://cdnjs.cloudflare.com/ajax/libs/owl-carousel/1.3.3/owl.carousel.min.js"
-    ></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
-    <script>
-      new WOW().init();
-      $(document).load(
-        jQuery(function ($) {
-          $(".owl-carousel").owlCarousel({
-            items: 2,
-            itemsDesktop: [1000, 2],
-            itemsDesktopSmall: [990, 2],
-            itemsTablet: [768, 1],
-            pagination: true,
-            navigation: false,
-            navigationText: ["", ""],
-            slideSpeed: 1000,
-            autoPlay: true,
-          });
-          jQuery(document).ready(function ($) {
-            var alterClass = function () {
-              var ww = document.body.clientWidth;
-              if (ww < 800) {
-                $(".fa").removeClass("fa-2x");
-                $("span").removeAttr("style");
-              } else if (ww >= 800) {
-                $(".fa").addClass("fa-2x");
-                //   $('span').css('float','right');
-              }
-            };
-            $(window).resize(function () {
-              alterClass();
-            });
-            //Fire it when the page first loads:
+    });
+  </script>
+  <script>
+    new WOW().init();
+    $(document).load(
+      jQuery(function ($) {
+        $(".owl-carousel").owlCarousel({
+          items: 2,
+          itemsDesktop: [1000, 2],
+          itemsDesktopSmall: [990, 2],
+          itemsTablet: [768, 1],
+          pagination: true,
+          navigation: false,
+          navigationText: ["", ""],
+          slideSpeed: 1000,
+          autoPlay: true,
+        });
+        jQuery(document).ready(function ($) {
+          var alterClass = function () {
+            var ww = document.body.clientWidth;
+            if (ww < 800) {
+              $(".fa").removeClass("fa-2x");
+              $("span").removeAttr("style");
+            } else if (ww >= 800) {
+              $(".fa").addClass("fa-2x");
+              //   $('span').css('float','right');
+            }
+          };
+          $(window).resize(function () {
             alterClass();
           });
-        })
-      );
-    </script>
+          //Fire it when the page first loads:
+          alterClass();
+        });
+      })
+    );
+  </script>
 
-    <div class="container">
-      <br />
-      <center>
-        <h1 style="color: #666; font-weight: bold;">Reaching Bhubaneswar</h1>
-      </center>
-      <br />
-      <div class="row">
-        <div class="col-md-3">
-          <div class="img-fluid bbsr" style="margin-left: 1em;">
-            <center>
-              <img src="/images/air.png" alt="" style="border-radius: 40%;" />
-            </center>
-          </div>
-          <h4 class="head">
-            Airways
-          </h4>
-          <p style="color: #666; text-align: center;">
-            The airport is about 10km from the Institute.
-          </p>
-        </div>
-        <div class="col-md-3">
-          <div class="img-fluid bbsr" style="margin-left: 1em;">
-            <center>
-              <img src="/images/rail.png" alt="" style="border-radius: 40%;" />
-            </center>
-          </div>
-          <h4 class="head">
-            Railways
-          </h4>
-          <p style="color: #666; text-align: center;">
-            The station is located about 11 km from the Institute.
-          </p>
-        </div>
-        <div class="col-md-3">
-          <div class="img-fluid bbsr">
-            <center>
-              <img src="/images/road.png" alt="" style="border-radius: 40%;" />
-            </center>
-          </div>
-          <h4 class="head">
-            Roadways
-          </h4>
-          <p style="color: #666; text-align: center;">
-            The Bus Stand is about 4km from the Institute.
-          </p>
-        </div>
-        <div class="col-md-3">
-          <div class="img-fluid bbsr">
-            <center>
-              <img src="/images/hosp.png" alt="" style="border-radius: 40%;" />
-            </center>
-          </div>
-          <h4 class="head">
-            Hospitality
-          </h4>
-          <p style="color: #666; text-align: center;">
-            The institute provides accomodation for corporate officials.
-          </p>
-        </div>
-      </div>
-    </div>
-    <div id="places">
-      <center>
-        <h1 style="color: #666; font-weight: bold;">Places of Interest</h1>
-      </center>
-      <br /><br />
-      <div class="row">
-        <div class="col-md-3">
-          <div
-            class="img-fluid"
-            data-toggle="modal"
-            data-target="#exampleModalCenter"
-          >
-            <div class="tour">
-              <img src="/images/image (1).png" alt="" class="img-thumbnail" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div
-            class="img-fluid"
-            data-toggle="modal"
-            data-target="#exampleModalCenter1"
-          >
-            <div class="tour">
-              <img src="/images/image (2).png" alt="" class="img-thumbnail" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div
-            class="img-fluid"
-            data-toggle="modal"
-            data-target="#exampleModalCenter2"
-          >
-            <div class="tour">
-              <img src="/images/image (3).png" alt="" class="img-thumbnail" />
-            </div>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div
-            class="img-fluid"
-            data-toggle="modal"
-            data-target="#exampleModalCenter3"
-          >
-            <div class="tour">
-              <img src="/images/image (4).png" alt="" class="img-thumbnail" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+  <div class="container">
     <br />
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+    <center>
+      <h1 style="color: #666; font-weight: bold;">Reaching Bhubaneswar</h1>
+    </center>
+    <br />
+    <div class="row">
+      <div class="col-md-3">
+        <div class="img-fluid bbsr" style="margin-left: 1em;">
+          <center>
+            <img src="/images/air.png" alt="" style="border-radius: 40%;" />
+          </center>
+        </div>
+        <h4 class="head">
+          Airways
+        </h4>
+        <p style="color: #666; text-align: center;">
+          The airport is about 10km from the Institute.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <div class="img-fluid bbsr" style="margin-left: 1em;">
+          <center>
+            <img src="/images/rail.png" alt="" style="border-radius: 40%;" />
+          </center>
+        </div>
+        <h4 class="head">
+          Railways
+        </h4>
+        <p style="color: #666; text-align: center;">
+          The station is located about 11 km from the Institute.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <div class="img-fluid bbsr">
+          <center>
+            <img src="/images/road.png" alt="" style="border-radius: 40%;" />
+          </center>
+        </div>
+        <h4 class="head">
+          Roadways
+        </h4>
+        <p style="color: #666; text-align: center;">
+          The Bus Stand is about 4km from the Institute.
+        </p>
+      </div>
+      <div class="col-md-3">
+        <div class="img-fluid bbsr">
+          <center>
+            <img src="/images/hosp.png" alt="" style="border-radius: 40%;" />
+          </center>
+        </div>
+        <h4 class="head">
+          Hospitality
+        </h4>
+        <p style="color: #666; text-align: center;">
+          The institute provides accomodation for corporate officials.
+        </p>
+      </div>
+    </div>
+  </div>
+  <div id="places">
+    <center>
+      <h1 style="color: #666; font-weight: bold;">Places of Interest</h1>
+    </center>
+    <br /><br />
+    <div class="row">
+      <div class="col-md-3">
+        <div class="img-fluid" data-toggle="modal" data-target="#exampleModalCenter">
+          <div class="tour">
+            <img src="/images/image (1).png" alt="" class="img-thumbnail" />
           </div>
-          <div class="modal-body">
-            <div class="img-fluid">
-              <img
-                src="https://i.pinimg.com/originals/cf/44/f6/cf44f60e97ae155f9e52e4f82ea24d33.jpg"
-                alt=""
-                class="img-thumbnail"
-              />
-            </div>
-            <h3>
-              <center><b> Puri </b></center>
-            </h3>
-            <p style="text-align: center; font-size: 0.95em;">
-              80 kms from the capital; with a world renowned sea beach and the
-              Godly abode of Lord Jagannath; one of the 4 Dhams of Hindu
-              Culture.
-            </p>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="img-fluid" data-toggle="modal" data-target="#exampleModalCenter1">
+          <div class="tour">
+            <img src="/images/image (2).png" alt="" class="img-thumbnail" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="img-fluid" data-toggle="modal" data-target="#exampleModalCenter2">
+          <div class="tour">
+            <img src="/images/image (3).png" alt="" class="img-thumbnail" />
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="img-fluid" data-toggle="modal" data-target="#exampleModalCenter3">
+          <div class="tour">
+            <img src="/images/image (4).png" alt="" class="img-thumbnail" />
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter1"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+  </div>
+  <br />
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="img-fluid">
+            <img src="https://i.pinimg.com/originals/cf/44/f6/cf44f60e97ae155f9e52e4f82ea24d33.jpg" alt=""
+              class="img-thumbnail" />
           </div>
-          <div class="modal-body">
-            <div class="img-fluid">
-              <img
-                src="https://www.nomadicweekends.com/wp-content/uploads/2019/04/Simlipal-Palpala-River.jpg"
-                alt=""
-                class="img-thumbnail"
-              />
-            </div>
-            <h4>
-              <center><b> Similipal </b></center>
-            </h4>
-            <p style="text-align: center; font-size: 0.95em;">
-              250 kms from Bhubaneswar; home of tigers, leopards, elephants,
-              chital, sambar and 304 species of birds.
-            </p>
-          </div>
+          <h3>
+            <center><b> Puri </b></center>
+          </h3>
+          <p style="text-align: center; font-size: 0.95em;">
+            80 kms from the capital; with a world renowned sea beach and the
+            Godly abode of Lord Jagannath; one of the 4 Dhams of Hindu
+            Culture.
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter2"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter1" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="img-fluid">
+            <img src="https://www.nomadicweekends.com/wp-content/uploads/2019/04/Simlipal-Palpala-River.jpg" alt=""
+              class="img-thumbnail" />
           </div>
-          <div class="modal-body">
-            <div class="img-fluid">
-              <img
-                src="https://images.assettype.com/swarajya/2018-07/db2d2a75-41f0-4bd8-9f05-35a534a3d5ff/f6f42413_abf2_4b4d_9142_beef1d4cde0c.jpg?w=1280&q=100&fmt=pjpeg&auto=format"
-                alt=""
-                class="img-thumbnail"
-              />
-            </div>
-            <h4>
-              <center><b> Konark </b></center>
-            </h4>
-            <p style="text-align: center; font-size: 0.95em;">
-              65 kms from the capital; 13th Century built Sun Temple; an UNESCO
-              World Heritage Site.
-            </p>
-          </div>
+          <h4>
+            <center><b> Similipal </b></center>
+          </h4>
+          <p style="text-align: center; font-size: 0.95em;">
+            250 kms from Bhubaneswar; home of tigers, leopards, elephants,
+            chital, sambar and 304 species of birds.
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <!-- Modal -->
-    <div
-      class="modal fade"
-      id="exampleModalCenter3"
-      tabindex="-1"
-      role="dialog"
-      aria-labelledby="exampleModalCenterTitle"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog modal-dialog-centered">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button
-              type="button"
-              class="close"
-              data-dismiss="modal"
-              aria-label="Close"
-            >
-              <span aria-hidden="true">&times;</span>
-            </button>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter2" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="img-fluid">
+            <img
+              src="https://images.assettype.com/swarajya/2018-07/db2d2a75-41f0-4bd8-9f05-35a534a3d5ff/f6f42413_abf2_4b4d_9142_beef1d4cde0c.jpg?w=1280&q=100&fmt=pjpeg&auto=format"
+              alt="" class="img-thumbnail" />
           </div>
-          <div class="modal-body">
-            <div class="img-fluid">
-              <img
-                src="https://www.dhauli.net/images/shanti-stupa-dhauli.jpg"
-                alt=""
-                class="img-thumbnail"
-              />
-            </div>
-            <h4>
-              <center><b> Dhauli </b></center>
-            </h4>
-            <p style="text-align: center; font-size: 0.95em;">
-              Located in Bhubaneswar; is a Buddhist Shrine with edicts made by
-              Emperor Ashoka after his turn of belief.
-            </p>
-          </div>
+          <h4>
+            <center><b> Konark </b></center>
+          </h4>
+          <p style="text-align: center; font-size: 0.95em;">
+            65 kms from the capital; 13th Century built Sun Temple; an UNESCO
+            World Heritage Site.
+          </p>
         </div>
       </div>
     </div>
+  </div>
 
-    <div>
-      <section>
-        <%- include('footer') %>
-      </section>
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter3" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="img-fluid">
+            <img src="https://www.dhauli.net/images/shanti-stupa-dhauli.jpg" alt="" class="img-thumbnail" />
+          </div>
+          <h4>
+            <center><b> Dhauli </b></center>
+          </h4>
+          <p style="text-align: center; font-size: 0.95em;">
+            Located in Bhubaneswar; is a Buddhist Shrine with edicts made by
+            Emperor Ashoka after his turn of belief.
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 
-    <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
-  </body>
+  <div>
+    <section>
+      <%- include('footer') %>
+    </section>
+  </div>
+
+  <!-- <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script> -->
+</body>
+
 </html>
