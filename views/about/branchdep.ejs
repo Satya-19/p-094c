@@ -56,15 +56,17 @@
   <div class="container" style="background-color: #fcfcfc;">
     <div class="col-12">
       <div class="img-fluid">
-        <img src="/images/masters.png" alt="" class="img-thumbnail">
-      </div>
-    </div><br><br>
-    <div class="col-12">
-      <div class="img-fluid">
-        <img src="/images/bachelors.png" alt="" class="img-thumbnail">
+        <img src="/images/masters.png" alt="" class="img-thumbnail" />
       </div>
     </div>
-  </div><br>
+    <br /><br />
+    <div class="col-12">
+      <div class="img-fluid">
+        <img src="/images/bachelors.png" alt="" class="img-thumbnail" />
+      </div>
+    </div>
+  </div>
+  <br />
 </div>
 
 <script>
@@ -131,22 +133,22 @@
     type: "bar",
     data: {
       labels: [
-        "Architecture",
-        "Biotech",
-        "Civil",
         "Computer Science",
-        "Electrical",
-        "Fashion & Apparel",
-        "Electronics & Instrumentation",
         "Information Technology",
+        "Electronics & Instrumentation",
+        "Electrical",
         "Mechanical",
-        "Planning",
+        "Civil",
         "Textile",
+        "Fashion & Apparel",
+        "Biotech",
+        "Architecture",
+        "Planning",
       ],
       datasets: [
         {
           label: " ",
-          data: [17, 27, 134, 70, 148, 20, 113, 66, 140, 43, 62],
+          data: [70, 66, 113, 148, 140, 134, 60, 20, 27, 17, 43],
           borderWidth: 1,
           backgroundColor: gradient,
         },
@@ -182,13 +184,13 @@
             },
             ticks: {
               callback: function (t) {
-                if (t.length == 16) return 'CSE';
-                if (t.length == 17) return 'F&AT';
-                if (t.length == 22) return 'IT';
-                if (t.length == 29) return 'I&E';
+                if (t.length == 16) return "CSE";
+                if (t.length == 17) return "F&AT";
+                if (t.length == 22) return "IT";
+                if (t.length == 29) return "I&E";
                 else return t;
-              }
-            }
+              },
+            },
           },
         ],
       },
@@ -203,9 +205,9 @@
         callbacks: {
           title: function (t, d) {
             return d.labels[t[0].index];
-          }
-        }
-      }
+          },
+        },
+      },
     },
   });
 </script>
