@@ -39,17 +39,26 @@
 
 .card__inner {
   width: 100%;
-  padding: 30px;
+  padding: 20px;
+  padding-top: 33px;
+  height: 17vh;
   position: relative;
   cursor: pointer;
   background-color: #949fb0;
   color: #eceef1;
   border-radius: 13px;
-  font-size: 1.5em;
+  font-size: 1.1rem;
+  font-weight: 600;
   text-transform: uppercase;
   text-align: center;
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
+}
+
+@media (max-width: 800px) {
+  .card__inner {
+    height: 22vh;
+  }
 }
 
 .card__inner:after {
@@ -59,7 +68,7 @@
 
 .card__inner .far {
   width: 100%;
-  margin-top: .25em;
+  margin-top: 1.2em;
 }
 
 .card__expander {
@@ -156,10 +165,6 @@
       margin-left: calc(-125% - 10px);
   }
 
-  .card1:nth-of-type(3n+4) {
-      clear: left;
-  }
-
   .card__expander {
       width: calc(220% + 30px);
   }
@@ -168,10 +173,6 @@
 @media screen and (min-width: 768px) and (max-width: 991px) {
   .card1:nth-of-type(2n+2) .card__expander {
       margin-left: calc(-100% - 30px);
-  }
-
-  .card1:nth-of-type(2n+3) {
-      clear: left;
   }
 
   .card__expander {
