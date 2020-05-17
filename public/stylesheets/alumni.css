@@ -78,13 +78,13 @@
   width: 100%;
   border-radius: 13px;
   position: relative;
+  font-size: .95em;
   display: -webkit-box;
   display: flex;
   -webkit-box-pack: center;
   justify-content: center;
   -webkit-box-align: center;
   align-items: center;
-  text-transform: uppercase;
   color: #eceef1;
 }
 
