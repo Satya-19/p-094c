@@ -65,6 +65,11 @@
     }
 
     @media (max-width: 800px) {
+      .nodis {
+        display: none;
+        height: 0;
+      }
+
       .main_sec {
         height: auto;
       }
@@ -122,36 +127,38 @@
               </div>
             </div>
           </div>
-          <div class="col-md-1"></div>
-          <div class="col-md-10">
+          <div class="col-md-1 nodis"></div>
+          <div class="col-md-10 nodis">
             <div class="chart-container-0">
               <div class="pie-chart-container">
                 <canvas id="pie-chartcanvas-1"></canvas>
               </div>
             </div>
           </div>
+          <br />
         </div>
-        <br />
-        <div class="row">
-          <div class="col-md-6">
+
+        <div class="row nodis">
+          <div class="col-md-6 nodis">
             <div class="chart-container-1">
               <div class="pie-chart-container">
                 <canvas id="pie-chartcanvas-2"></canvas>
               </div>
             </div>
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 nodis">
             <div class="chart-container-2">
               <div class="pie-chart-container">
                 <canvas id="pie-chartcanvas-3"></canvas>
               </div>
             </div>
           </div>
+          <br />
         </div>
-        <br />
+
         <div class="row">
           <div class="col-12 img-fluid noimg">
-            <img src="images/writing.png" alt="" class="img-thumbnail" />
+            <img src="images/stats.png" alt="" class="img-thumbnail" />
           </div>
         </div>
       </div>
