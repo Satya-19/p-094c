@@ -1,4 +1,7 @@
-<link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+<link
+  href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+  rel="stylesheet"
+/>
 
 <style>
   html,
@@ -11,6 +14,7 @@
     transition: all 0.1s ease-in-out;
     color: #666 !important;
     font-size: 16px;
+    font-size-adjust: 0.6;
   }
 
   .navbar-expand-lg {
@@ -32,6 +36,7 @@
 
   .brand-name {
     font-size: 1.2rem;
+    font-size-adjust: 0.55;
     margin: auto 1rem;
     color: rgb(0, 155, 255);
   }
@@ -76,7 +81,7 @@
     }
 
     .vertical-line {
-      margin-left: .4rem;
+      margin-left: 0.4rem;
     }
 
     .logo {
@@ -145,32 +150,62 @@
     console.log($(nav_selector).addClass("active_nav_link"));
   });
 </script>
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark"
-  style="background-color: #fff !important ; top: 0;">
+<nav
+  class="navbar sticky-top navbar-expand-lg navbar-light bg-dark"
+  style="background-color: #fff !important ; top: 0;"
+>
   <span class="college-brand">
-    <a class="d-flex align-items-center" href="https://cet.edu.in" target="_blank"><img src="images/cet.png"
-        class="logo" /></a>
+    <a
+      class="d-flex align-items-center"
+      href="https://cet.edu.in"
+      target="_blank"
+      ><img src="images/cet.png" class="logo"
+    /></a>
     <div class="vertical-line"></div>
     <p class="brand-name">
-      <span class="brd"> Training and Placement Cell</span><br /><span class="weight">
+      <span class="brd"> Training and Placement Cell</span><br /><span
+        class="weight"
+      >
         College of Engineering & Technology
       </span>
     </p>
   </span>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
-    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
     <div class="navbar-nav">
       <a class="nav-item nav-link active text-uppercase" href="/">Home</a>
-      <a class="nav-item nav-link active text-uppercase" href="/about">About Us</a>
-      <a class="nav-item nav-link active text-uppercase" href="/whycet">Why CET</a>
-      <a class="nav-item nav-link active text-uppercase" href="/placement">Placements</a>
-      <a class="nav-item nav-link text-uppercase" href="/pdf/Placement_Brochure_CET_BBSR_2021.pdf "
-        title="Placement Brochure" target="_blank">Brochure</a>
-      <a class="nav-item nav-link active text-uppercase" href="/team">Our Team</a>
-      <a class="nav-item nav-link active text-uppercase" href="/contact">Contact Us</a>
+      <a class="nav-item nav-link active text-uppercase" href="/about"
+        >About Us</a
+      >
+      <a class="nav-item nav-link active text-uppercase" href="/whycet"
+        >Why CET</a
+      >
+      <a class="nav-item nav-link active text-uppercase" href="/placement"
+        >Placements</a
+      >
+      <a
+        class="nav-item nav-link text-uppercase"
+        href="/pdf/Placement_Brochure_CET_BBSR_2021.pdf "
+        title="Placement Brochure"
+        target="_blank"
+        >Brochure</a
+      >
+      <a class="nav-item nav-link active text-uppercase" href="/team"
+        >Our Team</a
+      >
+      <a class="nav-item nav-link active text-uppercase" href="/contact"
+        >Contact Us</a
+      >
     </div>
   </div>
 </nav>
