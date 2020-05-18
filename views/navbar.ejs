@@ -7,11 +7,17 @@
     font-size-adjust: 0.45;
   }
 
+  nav {
+    background-color: #fff !important;
+    top: 0;
+    height: 12vh;
+  }
+
   .navbar-nav a.nav-item {
     transition: all 0.1s ease-in-out;
     color: #666 !important;
     font-size: 16px;
-    font-size-adjust: .53;
+    font-size-adjust: 0.53;
   }
 
   .navbar-expand-lg {
@@ -33,14 +39,14 @@
 
   .brand-name {
     font-size: 1.2rem;
-    font-size-adjust: .5;
+    font-size-adjust: 0.5;
     margin: auto 1rem;
     color: rgb(0, 155, 255);
   }
 
   .vertical-line {
     border-left: 2px solid rgba(255, 174, 25, 0.3);
-    margin: 0.8rem 0 0.8rem 0.8rem;
+    margin: 1.1rem 0 1.1rem 0.8rem;
   }
 
   .college-brand {
@@ -72,13 +78,17 @@
   }
 
   @media only screen and (max-width: 768px) {
+    nav {
+      height: auto;
+    }
+
     .nav-link {
       margin-left: auto;
       margin-right: auto;
     }
 
     .vertical-line {
-      margin-left: 0.4rem;
+      margin: 0.8rem 0 0.8rem 0.4rem;
     }
 
     .logo {
@@ -147,8 +157,7 @@
     console.log($(nav_selector).addClass("active_nav_link"));
   });
 </script>
-<nav class="navbar sticky-top navbar-expand-lg navbar-light bg-dark"
-  style="background-color: #fff !important ; top: 0;">
+<nav class="navbar sticky-top navbar-expand-lg navbar-light">
   <span class="college-brand">
     <a class="d-flex align-items-center" href="https://cet.edu.in" target="_blank"><img src="images/cet.png"
         class="logo" /></a>
