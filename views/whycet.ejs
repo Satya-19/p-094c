@@ -59,7 +59,7 @@
         .blog-slider {
           min-height: 500px;
           height: auto;
-          margin: 180px auto;
+          margin: 120px auto;
         }
       }
       @media screen and (max-height: 500px) and (min-width: 992px) {
@@ -152,6 +152,7 @@
       @media screen and (max-width: 576px) {
         .blog-slider__img {
           width: 95%;
+          height: 30vh;
         }
       }
       @media screen and (max-height: 500px) and (min-width: 992px) {
@@ -206,7 +207,7 @@
         .blog-slider__pagination {
           transform: translateX(-50%);
           left: 50% !important;
-          top: 205px;
+          top: 145px;
           width: 100% !important;
           display: flex;
           justify-content: center;
@@ -241,6 +242,15 @@
         .blog-slider__pagination .swiper-pagination-bullet-active {
           height: 11px;
           width: 30px;
+        }
+      }
+      @media (max-width: 800px) {
+        .blog-slider__text {
+          margin: 10px;
+          margin-top: 3rem;
+        }
+        .first {
+          margin-bottom: 4rem;
         }
       }
     </style>
@@ -385,7 +395,9 @@
     <div class="main_sec sec-5">
       <div class="container">
         <center>
-          <h1 style="color: #666; font-weight: bold;">Notable Alumni</h1>
+          <h1 class="uptop" style="color: #666; font-weight: bold;">
+            Notable Alumni
+          </h1>
         </center>
         <br />
 

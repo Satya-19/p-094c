@@ -66,6 +66,9 @@ p {
 }
 
 @media (max-width: 800px) {
+  .uptop {
+    margin-top: 10rem;
+  }
   .head {
     margin: 1em 0 1em 10px;
   }
