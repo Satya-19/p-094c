@@ -13,10 +13,6 @@ html {
   line-height: 10px;
 }
 
-b {
-  font-size: large;
-}
-
 p {
   font-size: 1.1em;
 }
@@ -70,6 +66,9 @@ p {
 }
 
 @media (max-width: 800px) {
+  p {
+    font-size: 0.9rem;
+  }
   .uptop {
     margin-top: 10rem;
   }
