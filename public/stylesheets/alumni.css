@@ -170,7 +170,7 @@ p {
   margin-bottom: 15px;
 }
 .testimonial .title {
-  font-size: 24px;
+  font-size: 23px;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -179,9 +179,7 @@ p {
 }
 .testimonial .sml {
   font-size: 21px;
-}
-.testimonial .smll {
-  font-size: 23px;
+  padding-bottom: 6px;
 }
 .testimonial .post {
   display: inline-block;
@@ -213,7 +211,7 @@ p {
   .testimonial .description {
     position: static;
   }
-  .testimonial .title {
+  .testimonial .title, .testimonial .sml {
     font-size: 20px;
   }
   .testimonial .description {
