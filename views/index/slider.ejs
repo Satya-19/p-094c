@@ -1,13 +1,15 @@
 <style>
   header .item {
-    height: 100vh;
+    height: 90vh;
     position: relative;
   }
+
   header .item img {
     width: 100%;
     height: 100%;
     object-fit: fill;
   }
+
   header .item .cover {
     padding: 75px 0;
     position: absolute;
@@ -19,11 +21,13 @@
     display: flex;
     align-items: center;
   }
+
   header .item .cover .header-content {
     position: relative;
     padding: 56px;
     overflow: hidden;
   }
+
   header .item .cover .header-content .line {
     content: "";
     display: inline-block;
@@ -36,6 +40,7 @@
     -webkit-clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
     clip-path: polygon(0 0, 60% 0, 36% 100%, 0 100%);
   }
+
   header .item .cover .header-content h2 {
     font-weight: 600;
     font-size: 40px;
@@ -43,19 +48,22 @@
     word-spacing: 3px;
     color: #fff;
   }
+
   header .item .cover .header-content h1 {
-    font-size: 56px;
+    font-size: 48px;
     font-weight: 600;
     margin: 5px 0 20px;
     word-spacing: 3px;
     color: #fff;
   }
+
   header .item .cover .header-content h4 {
     font-size: 24px;
     font-weight: 300;
     line-height: 36px;
     color: #fff;
   }
+
   header .owl-item.active h1 {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -64,6 +72,7 @@
     animation-name: fadeInDown;
     animation-delay: 0.3s;
   }
+
   header .owl-item.active h2 {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -72,6 +81,7 @@
     animation-name: fadeInDown;
     animation-delay: 0.3s;
   }
+
   header .owl-item.active h4 {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -80,6 +90,7 @@
     animation-name: fadeInUp;
     animation-delay: 0.3s;
   }
+
   header .owl-item.active .line {
     -webkit-animation-duration: 1s;
     animation-duration: 1s;
@@ -89,6 +100,7 @@
     animation-delay: 0.3s;
     /* object-fit: cover; */
   }
+
   header .owl-nav .owl-prev {
     position: absolute;
     left: 15px;
@@ -105,16 +117,20 @@
     z-index: 1000;
     border-radius: 0;
   }
+
   header .owl-nav .owl-prev span {
     font-size: 1.6875rem;
     color: #fff;
   }
+
   header .owl-nav .owl-prev:focus {
     outline: 0;
   }
+
   header .owl-nav .owl-prev:hover {
     background: #000 !important;
   }
+
   header .owl-nav .owl-next {
     position: absolute;
     right: 15px;
@@ -131,30 +147,42 @@
     z-index: 1000;
     border-radius: 0;
   }
+
   header .owl-nav .owl-next span {
     font-size: 1.6875rem;
     color: #fff;
   }
+
   header .owl-nav .owl-next:focus {
     outline: 0;
   }
+
   header .owl-nav .owl-next:hover {
     background: #000 !important;
   }
+
   header:hover .owl-prev {
     left: 0px;
     opacity: 1;
   }
+
   header:hover .owl-next {
     right: 0px;
     opacity: 1;
   }
+
   @media (max-width: 800px) {
     header .item .cover .header-content h1 {
-      font-size: 45px;
+      font-size: 40px;
     }
+
+    header .item .cover .header-content h2 {
+      font-size: 36px;
+    }
+
     header .item .cover .header-content h4 {
       font-size: 20px;
+      line-height: 30px;
     }
   }
 </style>
@@ -173,10 +201,7 @@
       </div>
     </div>
     <div class="item">
-      <img
-        src="images/slider/CETB_Main_Office_Building.jpg"
-        alt="images not found"
-      />
+      <img src="images/slider/CETB_Main_Office_Building.jpg" alt="images not found" />
       <div class="cover">
         <div class="container">
           <div class="header-content">
