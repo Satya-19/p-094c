@@ -24,7 +24,7 @@
   }
 
   .timeline ul li {
-    background: #67C;
+    background: #67c;
     position: relative;
     margin: 0 auto;
     width: 5px;
@@ -37,7 +37,7 @@
   }
 
   .timeline ul li:before {
-    content: '';
+    content: "";
     background: #faf8eb;
     position: absolute;
     left: 50%;
@@ -75,8 +75,8 @@
   }
 
   .timeline ul li .content:before {
-    content: '';
-    background: #67C;
+    content: "";
+    background: #67c;
     position: absolute;
     top: 0px;
     width: 38px;
@@ -86,9 +86,13 @@
   .timeline ul li:nth-child(odd) .content {
     left: 50px;
     background: #005077;
-    background: -webkit-linear-gradient(-45deg, #56BC83, #67CC8E);
+    background: -webkit-linear-gradient(-45deg, #56bc83, #67cc8e);
     /* background: linear-gradient(-45deg, #56BC83, #67C); */
-    background: linear-gradient(90deg, rgba(0, 212, 255, .6) 0%, rgba(125, 67, 229, 1) 90%);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 0.6) 0%,
+      rgba(125, 67, 229, 1) 90%
+    );
   }
 
   .timeline ul li:nth-child(odd) .content:before {
@@ -98,9 +102,13 @@
   .timeline ul li:nth-child(even) .content {
     left: calc(-450px - 45px);
     background: #005077;
-    background: -webkit-linear-gradient(45deg, #56BC83, #67CC8E);
+    background: -webkit-linear-gradient(45deg, #56bc83, #67cc8e);
     /* background: linear-gradient(45deg, #56BC83, #67C); */
-    background: linear-gradient(90deg, rgba(0, 212, 255, .6) 0%, rgba(125, 67, 229, 1) 100%);
+    background: linear-gradient(
+      90deg,
+      rgba(0, 212, 255, 0.6) 0%,
+      rgba(125, 67, 229, 1) 100%
+    );
   }
 
   .timeline ul li:nth-child(even) .content:before {
@@ -135,10 +143,14 @@
 
     .timeline ul li:nth-child(even) .content {
       left: 45px;
-      background: #67CC8E;
-      background: -webkit-linear-gradient(-45deg, #56BC83, #67CC8E);
+      background: #67cc8e;
+      background: -webkit-linear-gradient(-45deg, #56bc83, #67cc8e);
       /* background: linear-gradient(-45deg, #56BC83, #67CC8E); */
-      background: linear-gradient(90deg, rgba(0, 212, 255, .6) 0%, rgba(125, 67, 229, 1) 100%);
+      background: linear-gradient(
+        90deg,
+        rgba(0, 212, 255, 0.6) 0%,
+        rgba(125, 67, 229, 1) 100%
+      );
     }
 
     .timeline ul li:nth-child(even) .content:before {
@@ -148,76 +160,67 @@
 </style>
 
 <section class="timeline">
-
   <ul>
     <li>
       <div class="content">
-        <h2>
-
-        </h2>
+        <h2></h2>
         <p>Established by Government of Odisha in 1981</p>
       </div>
     </li>
     <li>
       <div class="content">
-        <h2>
-
-        </h2>
-        <p>Top rankers in JEE Main from the state prefer CET as their first choice after NIT Rourkela</p>
+        <h2></h2>
+        <p>
+          Top rankers in JEE Main from the state prefer CET as one of their
+          prime choices
+        </p>
       </div>
     </li>
     <li>
       <div class="content">
-        <h2>
-
-        </h2>
-        <p>NBA accredited for 6 Departments - Civil, Electrical, Instrumentation & Electronics, Mechanical, Textile and MCA.</p>
+        <h2></h2>
+        <p>
+          NBA accredited for 6 Departments - Civil, Electrical, Instrumentation
+          & Electronics, Mechanical, Textile and MCA
+        </p>
       </div>
     </li>
     <li>
       <div class="content">
-        <h2>
-
-        </h2>
+        <h2></h2>
         <p>NAAC – ‘A’ Grade accredited</p>
       </div>
     </li>
     <li>
       <div class="content">
-        <h2>
-
-        </h2>
+        <h2></h2>
         <p>Granted autonomous status by UGC till 2027</p>
       </div>
     </li>
-    <li>
-    </li>
+    <li></li>
   </ul>
 </section>
 
 <script>
   /* Check the location of each element */
-  $('.content').each(function (i) {
-
+  $(".content").each(function (i) {
     var bottom_of_object = $(this).offset().top + $(this).outerHeight();
     var bottom_of_window = $(window).height();
 
     if (bottom_of_object > bottom_of_window) {
-      $(this).addClass('hidden');
+      $(this).addClass("hidden");
     }
   });
 
-
   $(window).scroll(function () {
     /* Check the location of each element hidden */
-    $('.hidden').each(function (i) {
-
+    $(".hidden").each(function (i) {
       var bottom_of_object = $(this).offset().top + $(this).outerHeight();
       var bottom_of_window = $(window).scrollTop() + $(window).height();
 
       /* If the object is completely visible in the window, fadeIn it */
       if (bottom_of_window > bottom_of_object) {
-        $(this).animate({ 'opacity': '1' }, 700);
+        $(this).animate({ opacity: "1" }, 700);
       }
     });
   });
