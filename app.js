@@ -24,6 +24,10 @@ app.use(robots(__dirname + '/robots.txt'));
 
 app.use('/', indexRouter);
 
+app.get('/sitemap.xml', function (req, res) {
+  res.sendFile(__dirname + '/sitemap.xml');
+});
+
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
   next(createError(404));
