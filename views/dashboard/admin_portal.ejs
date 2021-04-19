@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="/stylesheets/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <title>Profile</title>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+          <div class="sidebar-wrapper">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">
+                  <i class="material-icons">dashboard</i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/prevplacement">
+                  <i class="material-icons">unarchive</i>
+                  <p>Previous Placements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/userpage">
+                  <i class="material-icons">person</i>
+                  <p>User Profile</p>
+                </a>
+              </li>
+              <% if (currentUser.role == "admin") { %>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <i class="material-icons">engineering</i>
+                  <p>Admin Portal</p>
+                </a>
+              </li>
+              <% } %>
+              <li class="nav-item ">
+                <a class="nav-link" href="/logout">
+                  <i class="material-icons">language</i>
+                  <p>Logout</p>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+              <div class="navbar-wrapper">
+                <a class="navbar-brand" href="javascript:;">Admin Dashboard</a>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end">
+                <form class="navbar-form">
+                    <div class="input-group no-border">
+                      <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search Company..." style="font-size: 16px;">
+                      <button type="button" class="btn btn-white btn-round btn-just-icon">
+                        <i class="material-icons">search</i>
+                        <div class="ripple-container"></div>
+                      </button>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-rose">
+                      <span class="card-title">Company List </span>
+                        <a href="/adminform">
+                          <button type="button" class="btn btn-lg btn-success" style="float: right;">Create Form</button>
+                        </a>
+                      </h4>
+                      <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
+                    </div>
+                    <div class="card-body table-responsive">
+                      <table class="table table-hover" id="myTable">
+                        <thead class="text-rose">
+                          <th>Sl. No.</th>
+                          <th>Name</th>
+                          <th>Last Date for Registration</th>
+                          <th>Download</th>
+                          <th>Edit</th>
+                          <th>Delete</th>
+                        </thead>
+                        <tbody>
+                        <% var i = 1 %>
+                        <% compa. forEach(function(data) { %>
+                            <tr>
+                                <td><%= i++ %></td>
+                                <td><%= data.name %></td>
+                                <td><%= new Date(data.date.getTime() - 86400000).toDateString() %></td>
+                                <td>
+                                  <a href="/form/<%= data.slug %>/download">
+                                    <button type="button" rel="tooltip" title="Download Responses" class="btn btn-link btn-md">
+                                      Download
+                                    </button>
+                                  </a>
+                                </td>
+                                <td>
+                                    <a href="/form/<%= data.slug %>/update/<%= data._id %>">
+                                        <button type="submit" rel="tooltip" title="Edit Form" class="btn btn-primary btn-link btn-md">
+                                          <i class="material-icons">edit</i>
+                                        </button>
+                                      </a>
+                                </td>
+                                <td>
+                                  <form action="/form/<%= data.slug %>/delete/<%= data._id %>" method="POST">
+                                    <button type="submit" rel="tooltip" title="Remove Form" class="btn btn-danger btn-link btn-md">
+                                      <i class="material-icons" style="margin-left: 8px;">delete</i>
+                                    </button>
+                                  </form>
+                                </td>
+                            </tr>
+                        <% }); %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--   Core JS Files   -->
+      <script src="/javascripts/jquery.min.js"></script>
+      <script src="/javascripts/popper.min.js"></script>
+      <script src="/javascripts/bootstrap-material-design.min.js"></script>
+      <script src="/javascripts/bootstrap-notify.js"></script>
+      <script src="/javascripts/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+      <% if(msg && msg.length > 0) { %>
+      <script>
+        md = {
+          showNotification2: function(from, align) {
+
+          let message
+          $.notify({
+            icon: "add_alert",
+            message: "<%= msg %>"
+
+          }, {
+            type: 'success',
+            timer: 3,
+            placement: {
+              from: from,
+              align: align
+            }
+          });
+        }}
+
+          md.showNotification2('top', 'center')
+      </script>
+      <% } else if(err) { %>
+        <script>
+          md = {
+            showNotification2: function(from, align) {  
+            let message
+            $.notify({
+              icon: "add_alert",
+              message: "<%= err %>"
+  
+            }, {
+              type: 'danger',
+              timer: 3,
+              placement: {
+                from: from,
+                align: align
+              }
+            });
+          }}
+  
+            md.showNotification2('top', 'center')
+        </script>
+        <% } %>
+      <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[1];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+      </script>
+</body>
+</html>

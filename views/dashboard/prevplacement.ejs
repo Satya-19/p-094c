@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="/stylesheets/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <title>Previous Placements</title>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+          <div class="sidebar-wrapper">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">
+                  <i class="material-icons">dashboard</i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <i class="material-icons">unarchive</i>
+                  <p>Previous Placements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/userpage">
+                  <i class="material-icons">person</i>
+                  <p>User Profile</p>
+                </a>
+              </li>
+              <% if (currentUser.role == "admin") { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin_portal?msg=Welcome Admin">
+                  <i class="material-icons">engineering</i>
+                  <p>Admin Portal</p>
+                </a>
+              </li>
+              <% } %>
+              <li class="nav-item ">
+                <a class="nav-link" href="/logout">
+                  <i class="material-icons">language</i>
+                  <p>Logout</p>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+              <div class="navbar-wrapper">
+                <a class="navbar-brand" href="javascript:;">Previous Placement Drives</a>
+              </div>
+              <button id="toggleIcon" class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end">
+                <form class="navbar-form mr-4" action="#">
+                    <div class="input-group no-border">
+                      <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search Company..." style="font-size: 16px;">
+                      <button type="button" class="btn btn-white btn-round btn-just-icon navbar-toggler" onclick="toggleSidebar()">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="material-icons">search</i>
+                        <div class="ripple-container"></div>
+                      </button>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-success">
+                      <span class="card-title">Previous Placements</span>
+                      <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
+                    </div>
+                    <div class="card-body table-responsive">
+                      <table class="table table-hover" id="myTable">
+                        <thead class="text-success">
+                          <th>Sl. No.</th>
+                          <th>Name</th>
+                          <th>Last Date for Applying</th>
+                          <th>Have you Applied</th>
+                        </thead>
+                        <tbody>
+                        <% var i = 1 %>
+                        <% compa.forEach(function(data) { %>
+                            <tr>
+                                <td><%= i++ %></td>
+                                <td><%= data.name %></td>
+                                <td><%= new Date(data.date.getTime() - 86400000).toDateString() %></td>
+                                <% if(data.data.includes(currentUser._id)) { %>
+                                    <td>Yes</td>
+                                <% } else { %>
+                                    <td>No</td>
+                                <% } %>
+                            </tr>
+                        <% }); %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--   Core JS Files   -->
+      <script src="/javascripts/jquery.min.js"></script>
+      <script src="/javascripts/popper.min.js"></script>
+      <script src="/javascripts/bootstrap-material-design.min.js"></script>
+      <script src="/javascripts/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+      <script>
+        function myFunction() {
+        var input, filter, table, tr, td, i, txtValue;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        table = document.getElementById("myTable");
+        tr = table.getElementsByTagName("tr");
+        for (i = 0; i < tr.length; i++) {
+          td = tr[i].getElementsByTagName("td")[1];
+          if (td) {
+            txtValue = td.textContent || td.innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+              tr[i].style.display = "";
+            } else {
+              tr[i].style.display = "none";
+            }
+          }
+        }
+      }
+      function toggleSidebar(){
+        $('#toggleIcon').toggleClass('toggled');
+      }
+      </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="/stylesheets/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <title>Profile</title>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+          <div class="sidebar-wrapper">
+            <ul class="nav">
+              <li class="nav-item active  ">
+                <a class="nav-link" href="/profile">
+                  <i class="material-icons">dashboard</i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/prevplacement">
+                  <i class="material-icons">unarchive</i>
+                  <p>Previous Placements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/userpage">
+                  <i class="material-icons">person</i>
+                  <p>User Profile</p>
+                </a>
+              </li>
+              <% if (currentUser.role == "admin") { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin_portal?msg=Welcome Admin">
+                  <i class="material-icons">engineering</i>
+                  <p>Admin Portal</p>
+                </a>
+              </li>
+              <% } %>
+              <li class="nav-item ">
+                <a class="nav-link" href="/logout">
+                  <i class="material-icons">language</i>
+                  <p>Logout</p>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+              <div class="navbar-wrapper">
+                <h3 class="navbar-brand font-weight-bold"><%= company.name %> Form Details</h3>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-tabs card-header-rose">
+                      <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                          <span class="nav-tabs-title">Details</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="profile">
+                            <form action="/form/<%= company.slug %>/apply/<%= currentUser.username %>" method="GET">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <div class="form-group" style="text-align: justify;">
+                                                <%- company.desc %> 
+                                                <br>
+                                                <b>Note: </b> The last date to apply is <b><i><%= new Date(company.date.getTime() - 86400000).toDateString() %></b></i><br><br><br>
+                                                <center>
+                                                  <% if(msg == "not found") { %>
+                                                      <button type="submit" class="btn btn-lg btn-success">Apply</button>
+                                                  <% } else { %>
+                                                      <button type="button" class="btn btn-lg btn-success" disabled>Already Applied</button>
+                                                  <% } %>
+                                            </center>
+                                        </div>
+                                    </div>
+                                </div>
+                              </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--   Core JS Files   -->
+      <script src="/javascripts/jquery.min.js"></script>
+      <script src="/javascripts/popper.min.js"></script>
+      <script src="/javascripts/bootstrap-material-design.min.js"></script>
+      <script src="/javascripts/bootstrap-notify.js"></script>
+      <script src="/javascripts/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+</body>
+</html>

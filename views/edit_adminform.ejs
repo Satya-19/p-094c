@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="Training and Placement Cell, College of Engineering and Technology, Bhubaneshwar." />
+    <meta name="keywords"
+        content="CET Bhubaneshwar Placement Website, CET B Placement Website, College of Engineering and Technology, Bhubaneshwar" />
+    <meta name="owner" content="CET Bhubaneshwar" />
+    <meta name="author" content="CET Bhubaneshwar" />
+    <meta name="generator" content="cet.edu.in" />
+    <meta name="msapplication-config" content="none" />
+
+    <meta property="og:title" content="The Official Placement Website of CET, Bhubaneshwar" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://placement.cet.edu.in/team" />
+    <meta property="og:image" content="http://placement.cet.edu.in/images/cet.png" />
+    <meta property="og:site_name" content="CET Bhubaneshwar" />
+    <meta property="og:description"
+        content="Training and Placement Cell, College of Engineering and Technology, Bhubaneshwar." />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <link rel="stylesheet" href="/stylesheets/home.css" />
+    <link rel="stylesheet" href="/stylesheets/index.css" />
+    <link rel="shortcut icon" href="/images/cet.ico" type="image/x-icon" />
+    
+    <title>Admin Form</title>
+</head>
+<body>
+    <div class="container">
+        <form action="/form/<%= compa.slug %>/update/<%= compa._id %>" method="post" class="form-horizontal" role="form" style="margin: 2em 0;">
+
+            <h2 style="text-align: center;">Company Form </h2><br>
+            <div class="form-group">
+                <label for="Name" class="col-sm-3 control-label">Name: </label>
+                <div class="col-sm-12">
+                    <input type="text" name="name" class="form-control" value="<%= compa.name %>" autofocus required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Description" class="col-sm-3 control-label">Description:</label>
+                <div class="col-sm-12">
+                    <textarea name="desc" class="form-control" cols="30" rows="10" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Date" class="col-sm-3 control-label">Last Date for Form Submission: </label>
+                <div class="col-sm-12">
+                    <input type="date" class="form-control" name="date" value="<%= compa.date %>" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="URL" class="col-sm-3 control-label">Form URL:</label>
+                <div class="col-sm-12">
+                    <input type="text" name="slug" class="form-control" value="<%= compa.slug %>" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Mandatory Fields to Submit: </label>
+                <div class="col-sm-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <% if(compa.requiredFields.includes('Name')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Name" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Name</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Name">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Name</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('Email')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Email" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Email</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Email">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Email</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('RegdNo')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="RegdNo" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Registration Number</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="RegdNo">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Registration Number</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('ContactNo')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="ContactNo" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Contact Number</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="ContactNo">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Contact Number</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('DOB')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="DOB" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Date of Birth</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="DOB">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Date of Birth</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('Gender')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Gender" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Gender</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Gender">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Gender</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('Branch')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Branch" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Branch</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Branch">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Branch</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('Category')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Category" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Category</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Category">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Category</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('TenPercentage')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TenPercentage" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">10th Percentage</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TenPercentage">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">10th Percentage</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('TenBoard')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TenBoard" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">10th Board</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TenBoard">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">10th Board</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('YOPTen')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOPTen" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">10th YOP</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOPTen">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">10th YOP</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('CGPA')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="CGPA" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">CGPA</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="CGPA">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">CGPA</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('TwelvePercentage')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TwelvePercentage" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">12th Percentage</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TwelvePercentage">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">12th Percentage</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('TwelveBoard')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TwelveBoard" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">12th Board</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TwelveBoard">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">12th Board</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('YOPTwelve')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOPTwelve" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">12th YOP</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOPTwelve">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">12th YOP</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('Backlogs')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Backlogs</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Backlogs</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('DiplomaPercentage')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="DiplomaPercentage" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Diploma Percentage</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="DiplomaPercentage">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Diploma Percentage</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('DiplomaBoard')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="DiplomaBoard" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Diploma Board</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="DiplomaBoard">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Diploma Board</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('YOPDiploma')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOPDiploma" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Diploma YOP</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOPDiploma">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Diploma YOP</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('YearGap')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YearGap" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Year Gap</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YearGap">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Year Gap</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+            </div>
+            <center>
+                <button type="submit" class="btn btn-lg btn-primary">Update</button>
+            </center>
+        </form>
+        <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.1/showdown.min.js"></script>
+        <script>
+            var simplemde = new SimpleMDE({ forceSync: true });
+            var converter = new showdown.Converter()
+            var md = converter.makeMarkdown(`<%- compa.desc %>`)
+            simplemde.value(md)
+        </script>
+    </div>
+</body>
+</html>

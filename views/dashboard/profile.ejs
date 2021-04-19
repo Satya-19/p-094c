@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="/stylesheets/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <title>Profile</title>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+          <div class="sidebar-wrapper">
+            <ul class="nav">
+              <li class="nav-item active  ">
+                <a class="nav-link" href="#">
+                  <i class="material-icons">dashboard</i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/prevplacement">
+                  <i class="material-icons">unarchive</i>
+                  <p>Previous Placements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/userpage">
+                  <i class="material-icons">person</i>
+                  <p>User Profile</p>
+                </a>
+              </li>
+              <% if (currentUser.role == "admin") { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin_portal?msg=Welcome Admin">
+                  <i class="material-icons">engineering</i>
+                  <p>Admin Portal</p>
+                </a>
+              </li>
+              <% } %>
+              <li class="nav-item ">
+                <a class="nav-link" href="/logout">
+                  <i class="material-icons">language</i>
+                  <p>Logout</p>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+              <div class="navbar-wrapper">
+                <h1 class="navbar-brand font-weight-bold">Welcome <%= student.Name.split(' ')[0] %></h1>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-lg-4 col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-tabs card-header-primary">
+                      <div class="nav-tabs-navigation">
+                        <div class="nav-tabs-wrapper">
+                          <span class="nav-tabs-title"><h4>Applied for</h4></span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="tab-content">
+                        <div class="tab-pane active" id="profile">
+                          <table class="table">
+                            <tbody>
+                            <% data2.forEach(function(data) { %>
+                              <tr>
+                                <td>
+                                  <div class="form-check">
+                                  </div>
+                                </td>
+                                <td><%= data.name %></td>
+                                <td class="td-actions text-right">
+                                    <form action="/form/<%= data.slug %>" method="POST">
+                                        <button type="submit" rel="tooltip" class="btn btn-danger btn-link btn-sm">
+                                            Deregister
+                                        </button>
+                                    </form>
+                                </td>
+                              </tr>
+                              <% }); %>
+                            </tbody>
+                          </table>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-8 col-md-12">
+                  <div class="card">
+                    <div class="card-header card-header-warning">
+                      <span class="card-title">Upcoming Placements</span>
+                      <!-- <p class="card-category">New employees on 15th September, 2016</p> -->
+                    </div>
+                    <div class="card-body table-responsive">
+                      <table class="table table-hover">
+                        <thead class="text-warning">
+                          <th>Sl. No.</th>
+                          <th>Name</th>
+                          <th>Last Date to Apply</th>
+                          <th>Registration Link</th>
+                        </thead>
+                        <tbody>
+                        <% var i = 1 %>
+                        <% data1.forEach(function(data) { %>
+                            <tr>
+                                <td><%= i++ %></td>
+                                <td><%= data.name %></td>
+                                <td><%= new Date(data.date.getTime() - 86400000).toDateString() %></td>
+                                <td><a href="/form/<%= data.slug %>"><%= data.slug %></a></td>
+                            </tr>
+                        <% }); %>
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!--   Core JS Files   -->
+      <script src="/javascripts/jquery.min.js"></script>
+      <script src="/javascripts/popper.min.js"></script>
+      <script src="/javascripts/bootstrap-material-design.min.js"></script>
+      <script src="/javascripts/bootstrap-notify.js"></script>
+      <script src="/javascripts/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+      <% if(msg) { %>
+      <script>
+        md = {
+          showNotification2: function(from, align) {
+          let message
+          $.notify({
+            icon: "add_alert",
+            message: "<%= msg %>"
+
+          }, {
+            type: 'success',
+            timer: 3,
+            placement: {
+              from: from,
+              align: align
+            }
+          });
+        }}
+
+          md.showNotification2('top', 'center')
+      </script>
+      <% } %>
+      <% if(err) { %>
+        <script>
+          md = {
+            showNotification2: function(from, align) {  
+            let message
+            $.notify({
+              icon: "add_alert",
+              message: "<%= err %>"
+  
+            }, {
+              type: 'danger',
+              timer: 3,
+              placement: {
+                from: from,
+                align: align
+              }
+            });
+          }}
+  
+            md.showNotification2('top', 'center')
+        </script>
+        <% } %>
+</body>
+</html>

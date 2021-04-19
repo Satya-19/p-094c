@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="description"
+        content="Training and Placement Cell, College of Engineering and Technology, Bhubaneshwar." />
+    <meta name="keywords"
+        content="CET Bhubaneshwar Placement Website, CET B Placement Website, College of Engineering and Technology, Bhubaneshwar" />
+    <meta name="owner" content="CET Bhubaneshwar" />
+    <meta name="author" content="CET Bhubaneshwar" />
+    <meta name="generator" content="cet.edu.in" />
+    <meta name="msapplication-config" content="none" />
+
+    <meta property="og:title" content="The Official Placement Website of CET, Bhubaneshwar" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="http://placement.cet.edu.in/team" />
+    <meta property="og:image" content="http://placement.cet.edu.in/images/cet.png" />
+    <meta property="og:site_name" content="CET Bhubaneshwar" />
+    <meta property="og:description"
+        content="Training and Placement Cell, College of Engineering and Technology, Bhubaneshwar." />
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <link rel="stylesheet" href="stylesheets/home.css" />
+    <link rel="stylesheet" href="stylesheets/index.css" />
+    <link rel="shortcut icon" href="images/cet.ico" type="image/x-icon" />
+    
+    <title>Admin Form</title>
+
+    <style>
+        .mob {
+            display: none;
+        }
+        .desk {
+            display: block;
+        }
+
+        @media (max-width: 912px) {
+            .mob {
+                display: block;
+            }
+            .desk {
+                display: none;
+            }    
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <form action="/adminform" method="post" class="form-horizontal" role="form" style="margin: 2em 0;">
+
+            <h2 style="text-align: center;">Company Form </h2><br>
+            <div class="form-group">
+                <label for="Name" class="col-sm-3 control-label">Name: </label>
+                <div class="col-sm-12">
+                    <input type="text" name="name" class="form-control" autofocus required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Description" class="col-sm-3 control-label">Description:</label>
+                <div class="col-sm-12">
+                    <textarea name="desc" class="form-control box" cols="30" rows="10" required></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Date" class="col-sm-3 control-label">Last Date for Form Submission: </label>
+                <div class="col-sm-12">
+                    <input type="date" class="form-control" name="date" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="URL" class="col-sm-3 control-label">Form URL:</label>
+                <div class="col-sm-12">
+                    <input type="text" name="slug" class="form-control" required>
+                </div>
+            </div>
+            <br><br>
+            <div class="form-group">
+                <label for="requiredFields" class="col-sm-3 control-label">Mandatory Fields to Submit: </label>
+                <div class="col-sm-12">
+                    <table class="table table-bordered desk">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Name">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Name</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Email">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Email</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="ContactNo">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Contact Number</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="RegdNo">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Registration Number</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="DOB">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Date of Birth</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Gender">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Gender</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Branch">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Branch</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Category">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Category</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TenPercentage">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">10th Percentage</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TenBoard">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">10th Board</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="YOPTen">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">10th YOP</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="CGPA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">CGPA</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TwelvePercentage">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">12th Percentage</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TwelveBoard">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">12th Board</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="YOPTwelve">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">12th YOP</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Backlogs</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="DiplomaPercentage">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Diploma Percentage</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="DiplomaBoard">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Diploma Board</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="YOPDiploma">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Diploma YOP</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YearGap">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Year Gap</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table class="table table-bordered mob">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Name">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Name</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Email">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Email</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="ContactNo">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Contact Number</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="RegdNo">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Registration Number</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="DOB">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Date of Birth</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="Gender">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Gender</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="Branch">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Branch</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="Category">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Category</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="TenPercentage">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">10th Percentage</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="TenBoard">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">10th Board</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="YOPTen">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">10th YOP</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="CGPA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">CGPA</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TwelvePercentage">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">12th Percentage</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TwelveBoard">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">12th Board</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="YOPTwelve">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">12th YOP</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Backlogs">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Backlogs</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="DiplomaPercentage">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Diploma Percentage</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="DiplomaBoard">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Diploma Board</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="YOPDiploma">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Diploma YOP</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="YearGap">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-4">Year Gap</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                </div>
+            </div>
+            <center>
+                <button type="submit" class="btn btn-lg btn-primary">Create</button>
+            </center>
+        </form>
+        <script>
+            var simplemde = new SimpleMDE({ forceSync: true });
+        </script>
+    </div>
+</body>
+</html>

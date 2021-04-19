@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="/stylesheets/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <title>Profile</title>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+    <div class="wrapper ">
+      <div class="sidebar-wrapper">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">
+                  <i class="material-icons">dashboard</i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/prevplacement">
+                  <i class="material-icons">unarchive</i>
+                  <p>Previous Placements</p>
+                </a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <i class="material-icons">person</i>
+                  <p>User Profile</p>
+                </a>
+              </li>
+              <% if (currentUser.role == "admin") { %>
+              <li class="nav-item">
+                <a class="nav-link" href="/admin_portal?msg=Welcome Admin">
+                  <i class="material-icons">engineering</i>
+                  <p>Admin Portal</p>
+                </a>
+              </li>
+              <% } %>
+              <li class="nav-item ">
+                <a class="nav-link" href="/logout">
+                  <i class="material-icons">language</i>
+                  <p>Logout</p>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+              <div class="navbar-wrapper">
+                <a class="navbar-brand" href="javascript:;"><%= student.Name.split(' ')[0] %>'s Profile</a>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end">
+                <form class="navbar-form" action="#" style="display: none;">
+                    <div class="input-group no-border">
+                      <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search Company...">
+                      <button type="button" class="btn btn-white btn-round btn-just-icon  navbar-toggler">
+                        <span class="sr-only">Toggle navigation</span>
+                        <i class="material-icons">search</i>
+                        <div class="ripple-container"></div>
+                      </button>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+              <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                      <div class="card-header card-header-info">
+                        <span class="card-title">Your Profile</span>
+                      </div>
+                      <div class="card-body">
+                        <form>
+                          <div class="row">
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Name</label>
+                                <input type="text" class="form-control" value="<%= student.Name %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Registration Number</label>
+                                <input type="text" class="form-control" value="<%= student.RegdNo %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Email address</label>
+                                <input type="email" class="form-control" value="<%= student.Email %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Category</label>
+                                  <input type="email" class="form-control" value="<%= student.Category %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Contact Number</label>
+                                <input type="text" class="form-control" value="<%= student.ContactNo %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Degree</label>
+                                <input type="text" class="form-control" value="" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Branch</label>
+                                  <input type="text" class="form-control" value="<%= student.Branch %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Gender</label>
+                                  <input type="text" class="form-control" value="<%= student.Gender %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Date of Birth (mm-dd-yyyy)</label>
+                                <input type="text" class="form-control" value="<%= student.DOB %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">10th Percentage</label>
+                                <input type="text" class="form-control" value="<%= student.TenPercentage %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">10th Board</label>
+                                  <input type="text" class="form-control" value="<%= student.TenBoard %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">10th Year of Passing</label>
+                                  <input type="text" class="form-control" value="<%= student.YOPTen %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <% if(student.YOPTwelve != undefined && student.YOPTwelve.toString().startsWith("20")) { %>
+                          <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Physically Challenged</label>
+                                  <input type="text" class="form-control" value="<%= student.PhyCha %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">12th Percentage</label>
+                                <input type="text" class="form-control" value="<%= student.TwelvePercentage %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">12th Board</label>
+                                  <input type="text" class="form-control" value="<%= student.TwelveBoard %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">12th Year of Passing</label>
+                                  <input type="text" class="form-control" value="<%= student.YOPTwelve %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <% } %>
+                          <% if(student.YOPDiploma != undefined && student.YOPDiploma.toString().startsWith("20")) { %>
+                          <div class="row">
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Physically Challenged</label>
+                                  <input type="text" class="form-control" value="<%= student.PhyCha %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                            <div class="col-md-3">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Diploma Percentage</label>
+                                <input type="text" class="form-control" value="<%= student.DiplomaPercentage %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Diploma Board</label>
+                                  <input type="text" class="form-control" value="<%= student.DiplomaBoard %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Diploma Year of Passing</label>
+                                  <input type="text" class="form-control" value="<%= student.YOPDiploma %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <% } %>
+                          <div class="row">
+                            <div class="col-md-6">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Present Adress</label>
+                                <input type="text" class="form-control" value="<%= student.PresentAddress %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Permanent Adress</label>
+                                  <input type="text" class="form-control" value="<%= student.PermanentAddress %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-5">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Father's Name</label>
+                                <input type="text" class="form-control" value="<%= student.FatherName %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Father's Occupation</label>
+                                <input type="text" class="form-control" value="<%= student.FatherOccupation %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Father's Contact No</label>
+                                  <input type="text" class="form-control" value="<%= student.FatherCN %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-5">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Mother's Name</label>
+                                <input type="text" class="form-control" value="<%= student.MotherName %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-4">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Mother's Occupation</label>
+                                <input type="text" class="form-control" value="<%= student.MotherOccupation %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Mother's Contact No</label>
+                                  <input type="text" class="form-control" value="<%= student.MotherCN %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="row">
+                            <div class="col-md-2">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Year Gap</label>
+                                <input type="text" class="form-control" value="<%= student.YearGap %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <div class="col-md-2">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">Backlogs</label>
+                                <input type="text" class="form-control" value="<%= student.Backlogs %>" disabled style="cursor: default;">
+                              </div>
+                            </div>
+                            <!-- <div class="col-md-2">
+                              <div class="form-group">
+                                <label class="bmd-label-floating">CGPA</label>
+                                <input type="text" class="form-control" value="<%= student.CGPA %>" disabled style="cursor: default;">
+                              </div>
+                            </div> -->
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Aadhar Number</label>
+                                  <input type="text" class="form-control" value="<%= student.Aadhar %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">PAN Number</label>
+                                  <input type="text" class="form-control" value="<%= student.PAN %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                          </div>
+                          <div class="clearfix"></div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+            </div>
+          </div>
+          <footer class="footer">
+            <div class="container-fluid">
+                <div class="copyright">
+                    If you find any anomaly in your data, contact your respective placement coordinator for any necessary action.
+                </div>
+            </div>
+          </footer>
+        </div>
+      </div>
+      <!--   Core JS Files   -->
+      <script src="/javascripts/jquery.min.js"></script>
+      <script src="/javascripts/popper.min.js"></script>
+      <script src="/javascripts/bootstrap-notify.js"></script>
+      <script src="/javascripts/bootstrap-material-design.min.js"></script>
+      <script src="/javascripts/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+</body>
+</html>
