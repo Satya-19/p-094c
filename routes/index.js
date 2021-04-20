@@ -2,8 +2,7 @@ var express = require('express');
 var showdown = require('showdown');
 var company = require('../models/companySchema');
 var Database = require('../models/placementSchema');
-var json2xls = require('json2xls');
-
+ 
 var router = express.Router();
 
 /* GET home page. */
@@ -54,13 +53,27 @@ router.get('/contact', (req, res) => {
 
 let students = {};
 
-router.get('/profile', isLoggedIn, async (req, res) => {
+router.get('/profile', isLoggedIn, async (req, res, next) => {
   const NowDate = new Date();
-  const upcoming_placements = await company.find({ date: { $gt: NowDate }})
-  const student_data = await Database.findOne({ RegdNo: req.user.username })
-  students[req.user.username] = student_data
+  let upcoming_placements = [], registered_companies = []
+  
+  try {
+    upcoming_placements = await company.find({ date: { $gt: NowDate }})
+  } catch (err) {
+      return next(err)
+  }
+  try {
+    const student_data = await Database.findOne({ RegdNo: req.user.username })
+    students[req.user.username] = student_data
+  } catch (err) {
+      return next(err)
+  }
 
-  const registered_companies = await company.find({ data: students[req.user.username]._id })
+  try {
+    registered_companies = await company.find({ data: students[req.user.username]._id })
+  } catch (err) {
+      return next(err)
+  }
 
   let err, msg
   if(req.query.msg)
@@ -198,7 +211,7 @@ router.post("/form/:name/delete/:id", isAdmin, (req, res, next) => {
 })
 
 router.get("/form/:name/download", isAdmin, (req, res, next) => {
-  company.findOne({ slug: req.params.name}).lean().exec((err, data) => {
+  company.findOne({ slug: req.params.name }).lean().exec((err, data) => {
     if(err)
       return next(err)
     else {
@@ -214,7 +227,7 @@ router.get("/form/:name/download", isAdmin, (req, res, next) => {
         if(err)
           return next(err)
 
-        res.xls("data.xlsx", stud)
+        res.xls(data.name + " data.xlsx", stud)
       })
     }
   })

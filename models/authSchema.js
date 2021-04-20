@@ -2,7 +2,11 @@ const mongoose = require('mongoose'),
       localmongoose = require('passport-local-mongoose')
 
 const authSchema = new mongoose.Schema({
-    username: String,
+    username: {
+        type: String,
+        unique: true
+    },
+    email: String,
     password: String,
     role: { 
         type: String, 
