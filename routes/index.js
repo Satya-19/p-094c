@@ -34,6 +34,9 @@ router.get('/whycet', (req, res) => {
 
 /* GET login page. */
 router.get('/login', (req, res) => {
+  if(req.session.userData != undefined)
+    return res.redirect('/profile')
+    
   let err, msg
   if(req.query.msg)
     msg = req.query.msg
@@ -51,26 +54,30 @@ router.get('/contact', (req, res) => {
 
 // **************************************************************************************** //
 
-let students = {};
 
 router.get('/profile', isLoggedIn, async (req, res, next) => {
   const NowDate = new Date();
-  let upcoming_placements = [], registered_companies = []
+  let upcoming_placements = [], registered_companies = [], student_data = {}
   
   try {
     upcoming_placements = await company.find({ date: { $gt: NowDate }})
   } catch (err) {
       return next(err)
   }
-  try {
-    const student_data = await Database.findOne({ RegdNo: req.user.username })
-    students[req.user.username] = student_data
-  } catch (err) {
-      return next(err)
+
+  if(req.session.userData == undefined) {
+    try {
+      student_data = await Database.findOne({ RegdNo: req.user.username })
+      req.session.userData = student_data
+    } catch (err) {
+        return next(err)
+    }
+  } else {
+    student_data = req.session.userData
   }
 
   try {
-    registered_companies = await company.find({ data: students[req.user.username]._id })
+    registered_companies = await company.find({ data: student_data._id })
   } catch (err) {
       return next(err)
   }
@@ -81,7 +88,7 @@ router.get('/profile', isLoggedIn, async (req, res, next) => {
   else if(req.query.err)
     err = req.query.err
 
-  return res.render('dashboard/profile', { data1: upcoming_placements, data2: registered_companies, student: students[req.user.username], err, msg })
+  return res.render('dashboard/profile', { data1: upcoming_placements, data2: registered_companies, student: student_data, err, msg })
 })
 
 router.get("/prevplacement", isLoggedIn, (req, res, next) => {
@@ -93,7 +100,7 @@ router.get("/prevplacement", isLoggedIn, (req, res, next) => {
     else if(!compa.length)
       res.render('dashboard/prevplacement', { compa, msg: "No Companies" })
     else {
-      res.render('dashboard/prevplacement', { compa, student: students[req.user.username] })
+      res.render('dashboard/prevplacement', { compa })
     }
   })
 })
@@ -108,16 +115,16 @@ router.get('/admin_portal', isAdmin, (req, res) => {
 
   company.find({}, (error, compa) => {
     if(error)
-      res.render('dashboard/admin_portal', { compa, student: students[req.user.username], err, msg })
+      res.render('dashboard/admin_portal', { compa, err, msg })
     else if(!compa.length)
       res.render('dashboard/admin_portal', { compa, err: "No Companies Found", msg })
     else
-      res.render('dashboard/admin_portal', { compa, student: students[req.user.username], err, msg })
+      res.render('dashboard/admin_portal', { compa, err, msg })
   })
 })
 
 router.get('/userpage', isLoggedIn, (req, res) => {
-  res.render('dashboard/user_page', { student: students[req.user.username] })
+  res.render('dashboard/user_page', { student: req.session.userData })
 })
 
 router.get('/adminform', isAdmin, (req, res) => {
@@ -151,23 +158,23 @@ router.get("/form/:name", isLoggedIn, (req, res, next) => {
     var flag = 0 
 
     for(var i = 0; i < compa.data.length; i++) {
-      if(compa.data[i].equals(students[req.user.username]._id)) {
+      if(compa.data[i].equals(req.session.userData._id)) {
         flag = 1
         break
       }
     }
 
     if(flag) {
-      return res.render("dashboard/company", { company: compa, student: students[req.user.username], msg: "found" })
+      return res.render("dashboard/company", { company: compa, student: req.session.userData, msg: "found" })
     }
-    return res.render("dashboard/company", { company: compa, student: students[req.user.username], msg: "not found" })
+    return res.render("dashboard/company", { company: compa, student: req.session.userData, msg: "not found" })
       
   })
 })
 
 router.post("/form/:name", isLoggedIn, (req, res, next) => {
   company.findOneAndUpdate({ slug: req.params.name }, 
-  { $pull: { data: students[req.user.username]._id }}, { new: true },
+  { $pull: { data: req.session.userData._id }}, { new: true },
   (err) => {
     if(err) {
       console.log(err)
@@ -239,16 +246,16 @@ router.get("/form/:name/apply/:regno", isLoggedIn, (req, res, next) => {
        return next(err);
     }
     if(!company){
-      return res.sendStatus(404);
+      return res.redirect('/profile?err=No Company Found');
     }
 
     for(var i = 0; i < company.data.length; i++) {
-      if(company.data[i].equals(students[req.user.username]._id)) {
+      if(company.data[i].equals(req.session.userData._id)) {
         return res.redirect('/profile?err=You have aready registered')
       }
     }
 
-    company.data.push(students[req.user.username]);
+    company.data.push(req.session.userData);
     company.save((err) => {
       if(err){
         return next(err);

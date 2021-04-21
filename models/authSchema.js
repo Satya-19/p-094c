@@ -8,6 +8,10 @@ const authSchema = new mongoose.Schema({
     },
     email: String,
     password: String,
+    active: {
+        type: Boolean,
+        default: false
+    },
     role: { 
         type: String, 
         default: 'student' 
