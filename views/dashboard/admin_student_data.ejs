@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
+    <link href="/stylesheets/material-dashboard.css?v=2.1.2" rel="stylesheet" />
+    <title>Profile</title>
+</head>
+<body>
+  <%- include('../partials/navbar') %>
+    <div class="wrapper ">
+        <div class="sidebar" data-color="purple" data-background-color="white">
+          <div class="sidebar-wrapper">
+            <ul class="nav">
+              <li class="nav-item">
+                <a class="nav-link" href="/profile">
+                  <i class="material-icons">dashboard</i>
+                  <p>Dashboard</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/prevplacement">
+                  <i class="material-icons">unarchive</i>
+                  <p>Previous Placements</p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="/userpage">
+                  <i class="material-icons">person</i>
+                  <p>User Profile</p>
+                </a>
+              </li>
+              <% if (currentUser.role == "admin") { %>
+              <li class="nav-item active">
+                <a class="nav-link" href="#">
+                  <i class="material-icons">engineering</i>
+                  <p>Admin Portal</p>
+                </a>
+              </li>
+              <% } %>
+              <li class="nav-item ">
+                <a class="nav-link" href="/logout">
+                  <i class="material-icons">language</i>
+                  <p>Logout</p>
+                </a>
+              </li> 
+            </ul>
+          </div>
+        </div>
+        <div class="main-panel">
+          <!-- Navbar -->
+          <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
+            <div class="container-fluid">
+              <div class="navbar-wrapper">
+                <a class="navbar-brand" href="javascript:;"><%= student.Name.split(' ')[0] %>'s Profile</a>
+              </div>
+              <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+                <span class="navbar-toggler-icon icon-bar"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end">
+                <form class="navbar-form" style="display: none;">
+                    <div class="input-group no-border">
+                      <input type="text" id="myInput" onkeyup="myFunction()" class="form-control" placeholder="Search Company..." style="font-size: 16px;">
+                      <button type="button" class="btn btn-white btn-round btn-just-icon">
+                        <i class="material-icons">search</i>
+                        <div class="ripple-container"></div>
+                      </button>
+                    </div>
+                  </form>
+              </div>
+            </div>
+          </nav>
+          <!-- End Navbar -->
+          <div class="content">
+            <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                      <div class="card">
+                        <div class="card-header card-header-rose">
+                          <span class="card-title">Profile</span>
+                          <span class="card-title" style="float: right;"> Eligible for Further Placements: <span style="margin: 0 1em;">NO</span></span>
+                        </div>
+                        <div class="card-body">
+                          <form method="POST" action="/admin_portal/<%= student.RegdNo %>">
+                            <div class="row">
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Name</label>
+                                  <input type="text" class="form-control" name="Name" value="<%= student.Name %>">
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Registration Number</label>
+                                  <input type="text" class="form-control" name="RegdNo" value="<%= student.RegdNo %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Email address</label>
+                                  <input type="email" class="form-control" name="Email" value="<%= student.Email %>">
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Category</label>
+                                    <input type="email" class="form-control" name="Category" value="<%= student.Category %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Contact Number</label>
+                                  <input type="text" class="form-control" name="ContactNo" value="<%= student.ContactNo %>">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Degree</label>
+                                  <input type="text" class="form-control" value="">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Branch</label>
+                                    <input type="text" class="form-control" name="Branch" value="<%= student.Branch %>">
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Gender</label>
+                                    <input type="text" class="form-control" name="Gender" value="<%= student.Gender %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Date of Birth (mm-dd-yyyy)</label>
+                                  <input type="text" class="form-control" name="DOB" value="<%= student.DOB %>">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">10th Percentage</label>
+                                  <input type="text" class="form-control" name="TenPercentage" value="<%= student.TenPercentage %>">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">10th Board</label>
+                                    <input type="text" class="form-control" name="TenBoard" value="<%= student.TenBoard %>">
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">10th Year of Passing</label>
+                                    <input type="text" class="form-control" name="YOPTen" value="<%= student.YOPTen %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <% if(student.YOPTwelve != undefined && student.YOPTwelve.toString().startsWith("20")) { %>
+                            <div class="row">
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Physically Challenged</label>
+                                    <input type="text" class="form-control" name="PhyCha" value="<%= student.PhyCha %>">
+                                  </div>
+                                </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">12th Percentage</label>
+                                  <input type="text" class="form-control" name="TwelvePercentage" value="<%= student.TwelvePercentage %>">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">12th Board</label>
+                                    <input type="text" class="form-control" name="TwelveBoard" value="<%= student.TwelveBoard %>">
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">12th Year of Passing</label>
+                                    <input type="text" class="form-control" name="YOPTwelve" value="<%= student.YOPTwelve %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <% } %>
+                            <% if(student.YOPDiploma != undefined && student.YOPDiploma.toString().startsWith("20")) { %>
+                            <div class="row">
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Physically Challenged</label>
+                                    <input type="text" class="form-control" name="PhyCha" value="<%= student.PhyCha %>">
+                                  </div>
+                                </div>
+                              <div class="col-md-3">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Diploma Percentage</label>
+                                  <input type="text" class="form-control" name="DiplomaPercentage" value="<%= student.DiplomaPercentage %>">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Diploma Board</label>
+                                    <input type="text" class="form-control" name="DiplomaBoard" value="<%= student.DiplomaBoard %>">
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Diploma Year of Passing</label>
+                                    <input type="text" class="form-control" name="YOPDiploma" value="<%= student.YOPDiploma %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <% } %>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Present Adress</label>
+                                  <input type="text" class="form-control" name="PresentAddress" value="<%= student.PresentAddress %>">
+                                </div>
+                              </div>
+                              <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Permanent Adress</label>
+                                    <input type="text" class="form-control" name="PermanentAddress" value="<%= student.PermanentAddress %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Father's Name</label>
+                                  <input type="text" class="form-control" name="FatherName" value="<%= student.FatherName %>">
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Father's Occupation</label>
+                                  <input type="text" class="form-control" name="FatherOccupation" value="<%= student.FatherOccupation %>">
+                                </div>
+                              </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Father's Contact No</label>
+                                    <input type="text" class="form-control" name="FatherCN" value="<%= student.FatherCN %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-5">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Mother's Name</label>
+                                  <input type="text" class="form-control" name="MotherName" value="<%= student.MotherName %>">
+                                </div>
+                              </div>
+                              <div class="col-md-4">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Mother's Occupation</label>
+                                  <input type="text" class="form-control" name="MotherOccupation" value="<%= student.MotherOccupation %>">
+                                </div>
+                              </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Mother's Contact No</label>
+                                    <input type="text" class="form-control" name="MotherCN" value="<%= student.MotherCN %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Year Gap</label>
+                                  <input type="text" class="form-control" name="YearGap" value="<%= student.YearGap %>">
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">Backlogs</label>
+                                  <input type="text" class="form-control" name="Backlogs" value="<%= student.Backlogs %>">
+                                </div>
+                              </div>
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">CGPA</label>
+                                  <input type="text" class="form-control" name="CGPA" value="<%= student.CGPA %>">
+                                </div>
+                              </div>
+                              <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Aadhar Number</label>
+                                    <input type="text" class="form-control" name="Aadhar" value="<%= student.Aadhar %>">
+                                  </div>
+                                </div>
+                                <div class="col-md-3">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">PAN Number</label>
+                                    <input type="text" class="form-control" name="PAN" value="<%= student.PAN %>">
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="form-group">
+                                        <label class="bmd-label-floating">Eligible for Further Placements</label>
+                                        <input type="text" class="form-control" value="No">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="clearfix"></div>
+                            <div style="float: right;">
+                                <button class="btn btn-danger btn-lg" onclick="window.location='/admin_portal?msg='" type="cancel">Cancel</button>
+                                <button class="btn btn-rose btn-lg" style="margin-right: 1.5em;" type="submit">Update</button>
+                            </div>
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+              </div>
+          </div>
+        </div>
+      </div>
+      <!--   Core JS Files   -->
+      <script src="/javascripts/jquery.min.js"></script>
+      <script src="/javascripts/popper.min.js"></script>
+      <script src="/javascripts/bootstrap-material-design.min.js"></script>
+      <script src="/javascripts/bootstrap-notify.js"></script>
+      <script src="/javascripts/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
+</body>
+</html>

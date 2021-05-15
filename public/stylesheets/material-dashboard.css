@@ -11293,10 +11293,18 @@ fieldset[disabled][disabled] .btn-group-raised .btn,
 .btn.btn-lg,
 .btn-group-lg>.btn,
 .btn-group-lg .btn {
-  padding: 1.125rem 2.25rem;
+  padding: .8rem 1.6rem;
   font-size: 0.875rem;
   line-height: 1.333333;
   border-radius: 0.2rem;
+}
+
+@media screen and (max-width: 800px) {
+  .btn.btn-lg,
+  .btn-group-lg>.btn,
+  .btn-group-lg .btn {
+    padding: .5rem .6rem;
+  }
 }
 
 .btn.btn-sm,
@@ -13718,7 +13726,7 @@ fieldset[disabled] .form-group .form-control {
 .navbar {
   border: 0;
   border-radius: 3px;
-  padding: 0.625rem 0;
+  /* padding: 0.625rem 0; */
   margin-bottom: 20px;
   height: auto !important;
   color: #555;
@@ -13851,6 +13859,12 @@ fieldset[disabled] .form-group .form-control {
   padding: 0.625rem 0;
   font-weight: 300;
   margin-left: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+  .dashboard-mobile {
+    display: none;
+  }
 }
 
 .navbar>.container {

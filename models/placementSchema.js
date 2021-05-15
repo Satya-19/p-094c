@@ -42,7 +42,6 @@ const PlacementSchema = new mongoose.Schema({
     Aadhar: String,
     PAN: String,
     DL: String,
-    Resume: String,
     Eligibility: String
 })
 

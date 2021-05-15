@@ -146,6 +146,25 @@ router.post('/adminform', isAdmin, (req, res) => {
   })
 })
 
+router.post('/admin_portal/EditStud', isAdmin, (req, res, next) => {
+  Database.findOne({ RegdNo: req.body.regdno }, (err, stud) => {
+    if(err || !stud)
+      next(err)
+      // return res.redirect('/admin_portal?err=No Student Exists with the Given Regd No')
+    else
+      res.render('dashboard/admin_student_data', { student: stud })
+  })
+})
+
+router.post('/admin_portal/:regdno', isAdmin, (req, res) => {
+  Database.findOneAndUpdate({ RegdNo: req.params.regdno }, req.body, (err, data) => {
+    if(err)
+      return res.redirect('/admin_portal?err=Some Error Occured')
+    else
+      res.redirect("/admin_portal?msg=Student's Data Updated Successfully")
+  })
+})
+
 router.get("/form/:name", isLoggedIn, (req, res, next) => {
   company.findOne({ slug: req.params.name }, (err, compa) => {
     if(err){
