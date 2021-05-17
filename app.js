@@ -8,7 +8,7 @@ var cookieParser = require('cookie-parser');
 var json2xls = require('json2xls')
 var logger = require('morgan');
 
-mongoose.connect("mongodb+srv://admin:placement@cluster0.3ls3m.mongodb.net/Placement?retryWrites=true&w=majority", {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

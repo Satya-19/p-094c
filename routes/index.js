@@ -146,11 +146,10 @@ router.post('/adminform', isAdmin, (req, res) => {
   })
 })
 
-router.post('/admin_portal/EditStud', isAdmin, (req, res, next) => {
+router.post('/admin_portal/EditStud', isAdmin, (req, res) => {
   Database.findOne({ RegdNo: req.body.regdno }, (err, stud) => {
     if(err || !stud)
-      next(err)
-      // return res.redirect('/admin_portal?err=No Student Exists with the Given Regd No')
+      return res.redirect('/admin_portal?err=No Student Exists with the Given Regd No')
     else
       res.render('dashboard/admin_student_data', { student: stud })
   })
@@ -162,6 +161,15 @@ router.post('/admin_portal/:regdno', isAdmin, (req, res) => {
       return res.redirect('/admin_portal?err=Some Error Occured')
     else
       res.redirect("/admin_portal?msg=Student's Data Updated Successfully")
+  })
+})
+
+router.get('/admin_portal/database', isAdmin, (req, res) => {
+  Database.find({}, "-_id").lean().exec((err, data) => {
+    if(err)
+      return res.redirect('/admin_portal?err=There seems to be a problem. Please try later.')
+
+    res.xls("Current Database.xlsx", data)
   })
 })
 
@@ -272,6 +280,32 @@ router.get("/form/:name/apply/:regno", isLoggedIn, (req, res, next) => {
       if(company.data[i].equals(req.session.userData._id)) {
         return res.redirect('/profile?err=You have aready registered')
       }
+    }
+
+    const { MinTenPerc, MinTwePerc, MinBack, MinBCGPA, MinMCGPA, MinYearGap } = company.Eligibility
+    
+    if(MinTenPerc > req.session.userData.TenPercentage) {
+      return res.redirect("/profile?err=Your 10th Percentage doesn't meet the Eligibility Criteria")
+    }
+    
+    if(MinTwePerc > req.session.userData.TwelvePercentage || MinTwePerc > req.session.userData.DiplomaPercentage) {
+      return res.redirect("/profile?err=Your 12th or Diploma Percentage doesn't meet the Eligibility Criteria")
+    }
+    
+    if(MinBack < req.session.userData.Backlogs) {
+      return res.redirect("/profile?err=Your Active Backlogs doesn't meet the Eligibility Criteria")
+    }
+    
+    if(MinBCGPA > req.session.userData.BCGPA) {
+      return res.redirect("/profile?err=Your Bachelors Degree CGPA doesn't meet the Eligibility Criteria")
+    }
+    
+    if(req.session.userData.MCGPA != 0 && MinMCGPA > req.session.userData.MCGPA) {
+      return res.redirect("/profile?err=Your Masters Degree CGPA doesn't meet the Eligibility Criteria")
+    }
+    
+    if(MinYearGap < req.session.userData.YearGap) {
+      return res.redirect("/profile?err=Your Number of Year Gaps doesn't meet the Eligibility Criteria")
     }
 
     company.data.push(req.session.userData);

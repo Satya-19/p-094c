@@ -62,10 +62,49 @@
                 </div>
             </div>
             <br><br>
+            <h4 style="text-align: center;">Eligibility Criteria</h4><hr><br>
             <div class="form-group">
-                <label for="email" class="col-sm-3 control-label">Mandatory Fields to Submit: </label>
+                <label for="Minimum 10th Percentage" class="col-sm-4 control-label">Minimum 10th Percentage</label>
                 <div class="col-sm-12">
-                    <table class="table table-bordered">
+                    <input type="text" name="MinTenPerc" class="form-control" value="<%= compa.Eligibility.MinTenPerc %>" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum 12th Percentage" class="col-sm-4 control-label">Minimum 12th/Diploma Percentage</label>
+                <div class="col-sm-12">
+                    <input type="text" name="MinTwePerc" class="form-control" value="<%= compa.Eligibility.MinTwePerc %>" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum Active Backlogs" class="col-sm-4 control-label">Minimum Active Backlogs</label>
+                <div class="col-sm-12">
+                    <input type="text" name="MinBack" class="form-control" value="<%= compa.Eligibility.MinBack %>" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum B.Tech CGPA" class="col-sm-4 control-label">Minimum Bachelors CGPA</label>
+                <div class="col-sm-12">
+                    <input type="text" name="MinBCGPA" class="form-control" value="<%= compa.Eligibility.MinBCGPA %>" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum M.Tech CGPA" class="col-sm-4 control-label">Minimum Masters CGPA</label>
+                <div class="col-sm-12">
+                    <input type="text" name="MinMCGPA" class="form-control" value="<%= compa.Eligibility.MinMCGPA %>">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum YearGap Allowed" class="col-sm-3 control-label">Minimum YearGap Allowed</label>
+                <div class="col-sm-12">
+                    <input type="text" name="MinYearGap" class="form-control" value="<%= compa.Eligibility.MinYearGap %>" required>
+                </div>
+            </div>
+            <br><br>
+            <h4 style="text-align: center;">Mandatory Fields to Submit</h4><hr><br>
+            <div class="form-group">
+                <label for="email" class="col-sm-3 control-label">Tick Necessary </label>
+                <div class="col-sm-12">
+                    <table class="table table-bordered" style="font-size: 14px;">
                         <thead>
                             <tr>
                                 <th scope="col">Select</th>
@@ -204,6 +243,68 @@
                                 <% } %>
                             </tr>
                             <tr>
+                                <% if(compa.requiredFields.includes('Degree')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Degree" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Degree</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="Degree">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Degree</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('YOP')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="YOP" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Year of Passing</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="YOP">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Year of Passing</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('PhyCha')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="PhyCha" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Physically Challenged</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="PhyCha">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Physically Challenged</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('BCGPA')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="BCGPA" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Bachelors Degree CGPA</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="BCGPA">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Bachelors Degree CGPA</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
                                 <% if(compa.requiredFields.includes('TenPercentage')) { %>
                                     <td>
                                         <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="TenPercentage" checked>
@@ -249,19 +350,19 @@
                                         <span class="col-sm-2 col-5">10th YOP</span>
                                     </td>
                                 <% } %>
-                                <% if(compa.requiredFields.includes('CGPA')) { %>
+                                <% if(compa.requiredFields.includes('MCGPA')) { %>
                                     <td>
-                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="CGPA" checked>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MCGPA" checked>
                                     </td>
                                     <td>
-                                        <span class="col-sm-2 col-5">CGPA</span>
+                                        <span class="col-sm-2 col-5">Masters Degree CGPA</span>
                                     </td>
                                 <% } else { %>
                                     <td>
-                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="CGPA">
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MCGPA">
                                     </td>
                                     <td>
-                                        <span class="col-sm-2 col-5">CGPA</span>
+                                        <span class="col-sm-2 col-5">Masters Degree CGPA</span>
                                     </td>
                                 <% } %>
                             </tr>
@@ -311,19 +412,19 @@
                                         <span class="col-sm-2 col-5">12th YOP</span>
                                     </td>
                                 <% } %>
-                                <% if(compa.requiredFields.includes('Backlogs')) { %>
+                                <% if(compa.requiredFields.includes('TwelveMarksheet')) { %>
                                     <td>
-                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs" checked>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TwelveMarksheet" checked>
                                     </td>
                                     <td>
-                                        <span class="col-sm-2 col-5">Backlogs</span>
+                                        <span class="col-sm-2 col-5">12th Marksheet</span>
                                     </td>
                                 <% } else { %>
                                     <td>
-                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs">
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TwelveMarksheet">
                                     </td>
                                     <td>
-                                        <span class="col-sm-2 col-5">Backlogs</span>
+                                        <span class="col-sm-2 col-5">12th Marksheet</span>
                                     </td>
                                 <% } %>
                             </tr>
@@ -373,6 +474,68 @@
                                         <span class="col-sm-2 col-5">Diploma YOP</span>
                                     </td>
                                 <% } %>
+                                <% if(compa.requiredFields.includes('Honours')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Honours" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Completed Honours</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Honours">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Completed Honours</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('FatherName')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherName" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Father's Name</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherName">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Father's Name</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('FatherOccupation')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherOccupation" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Father's Occupation</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherOccupation">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Father's Occupation</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('FatherCN')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherCN" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Father's Contact Number</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherCN">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Father's Contact Number</span>
+                                    </td>
+                                <% } %>
                                 <% if(compa.requiredFields.includes('YearGap')) { %>
                                     <td>
                                         <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YearGap" checked>
@@ -389,13 +552,138 @@
                                     </td>
                                 <% } %>
                             </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('MotherName')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherName" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Mother's Name</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherName">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Mother's Name</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('MotherOccupation')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherOccupation" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Mother's Occupation</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherOccupation">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Mother's Occupation</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('MotherCN')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherCN" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Mother's Contact Number</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherCN">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Mother's Contact Number</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('Backlogs')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Active Backlogs</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Active Backlogs</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('PresentAddress')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PresentAddress" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Present Address</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PresentAddress">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Present Address</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('PermanentAddress')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PermanentAddress" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Permanent Address</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PermanentAddress">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Permanent Address</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('Aadhar')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Aadhar" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Aadhar Number</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Aadhar">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">Aadhar Number</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('PAN')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PAN" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">PAN Number</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PAN">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">PAN Number</span>
+                                    </td>
+                                <% } %>
+                            </tr>
                         </tbody>
                     </table>
                     <br>
                 </div>
             </div>
             <center>
-                <button type="submit" class="btn btn-lg btn-primary">Update</button>
+                <button class="btn btn-lg" onclick="window.location='/admin_portal?msg='" type="cancel">Cancel</button>
+                <button style="margin-left: 2em;" type="submit" class="btn btn-lg btn-primary">Update</button>
             </center>
         </form>
         <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>

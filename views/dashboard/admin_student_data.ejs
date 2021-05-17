@@ -34,7 +34,7 @@
               </li>
               <% if (currentUser.role == "admin") { %>
               <li class="nav-item active">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="/admin_portal">
                   <i class="material-icons">engineering</i>
                   <p>Admin Portal</p>
                 </a>
@@ -83,7 +83,7 @@
                       <div class="card">
                         <div class="card-header card-header-rose">
                           <span class="card-title">Profile</span>
-                          <span class="card-title" style="float: right;"> Eligible for Further Placements: <span style="margin: 0 1em;">NO</span></span>
+                          <span class="card-title" style="float: right;"> Eligible for Further Placements: <span style="margin: 0 1em;"><%= student.Eligibility %></span></span>
                         </div>
                         <div class="card-body">
                           <form method="POST" action="/admin_portal/<%= student.RegdNo %>">
@@ -123,7 +123,7 @@
                               <div class="col-md-3">
                                 <div class="form-group">
                                   <label class="bmd-label-floating">Degree</label>
-                                  <input type="text" class="form-control" value="">
+                                  <input type="text" class="form-control" value="<%= student.Degree %>">
                                 </div>
                               </div>
                               <div class="col-md-3">
@@ -224,6 +224,35 @@
                             <div class="row">
                               <div class="col-md-6">
                                 <div class="form-group">
+                                  <label class="bmd-label-floating">10th marksheet</label>
+                                  <a href="<%= student.TenMarksheet %>" target="_blank">
+                                    <input type="text" class="form-control" value="<%= student.TenMarksheet %>" disabled style="cursor: pointer;">
+                                  </a>
+                                </div>
+                              </div>
+                              <% if(student.YOPTwelve != undefined && student.YOPTwelve.toString().startsWith("20")) { %>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">12th marksheet</label>
+                                    <a href="<%= student.TwelveMarksheet %>" target="_blank">
+                                      <input type="text" class="form-control" value="<%= student.TwelveMarksheet %>" disabled style="cursor: pointer;">
+                                    </a>
+                                  </div>
+                                </div>
+                              <% } else if(student.YOPDiploma != undefined && student.YOPDiploma.toString().startsWith("20")) { %>
+                                <div class="col-md-6">
+                                  <div class="form-group">
+                                    <label class="bmd-label-floating">Diploma marksheet</label>
+                                    <a href="<%= student.DiplomaMarksheet %>" target="_blank">
+                                      <input type="text" class="form-control" value="<%= student.DiplomaMarksheet %>" disabled style="cursor: pointer;">
+                                    </a>
+                                  </div>
+                                </div>
+                              <% } %>
+                            </div>
+                            <div class="row">
+                              <div class="col-md-6">
+                                <div class="form-group">
                                   <label class="bmd-label-floating">Present Adress</label>
                                   <input type="text" class="form-control" name="PresentAddress" value="<%= student.PresentAddress %>">
                                 </div>
@@ -290,8 +319,8 @@
                               </div>
                               <div class="col-md-2">
                                 <div class="form-group">
-                                  <label class="bmd-label-floating">CGPA</label>
-                                  <input type="text" class="form-control" name="CGPA" value="<%= student.CGPA %>">
+                                  <label class="bmd-label-floating">Bachelors Degree CGPA</label>
+                                  <input type="text" class="form-control" name="BCGPA" value="<%= student.BCGPA %>">
                                 </div>
                               </div>
                               <div class="col-md-3">
@@ -311,7 +340,7 @@
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="bmd-label-floating">Eligible for Further Placements</label>
-                                        <input type="text" class="form-control" value="No">
+                                        <input type="text" class="form-control" value="<%= student.Eligibility %>">
                                     </div>
                                 </div>
                             </div>

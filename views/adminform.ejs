@@ -38,6 +38,7 @@
         }
         .desk {
             display: block;
+            font-size: 14.5px;
         }
 
         @media (max-width: 912px) {
@@ -81,8 +82,47 @@
                 </div>
             </div>
             <br><br>
+            <h4 style="text-align: center;">Eligibility Criteria</h4><hr>
             <div class="form-group">
-                <label for="requiredFields" class="col-sm-3 control-label">Mandatory Fields to Submit: </label>
+                <label for="Minimum 10th Percentage" class="col-sm-4 control-label">Minimum 10th Percentage</label>
+                <div class="col-sm-12">
+                    <input type="text" name="Eligibility.MinTenPerc" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum 12th Percentage" class="col-sm-4 control-label">Minimum 12th / Diploma Percentage</label>
+                <div class="col-sm-12"> 
+                    <input type="text" name="Eligibility.MinTwePerc" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum Active Backlogs" class="col-sm-4 control-label">Minimum Active Backlogs</label>
+                <div class="col-sm-12">
+                    <input type="text" name="Eligibility.MinBack" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum B.Tech CGPA" class="col-sm-4 control-label">Minimum Bachelors CGPA</label>
+                <div class="col-sm-12">
+                    <input type="text" name="Eligibility.MinBCGPA" class="form-control" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum M.Tech CGPA" class="col-sm-4 control-label">Minimum Masters CGPA</label>
+                <div class="col-sm-12">
+                    <input type="text" name="Eligibility.MinMCGPA" class="form-control">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Minimum YearGap Allowed" class="col-sm-3 control-label">Minimum YearGap Allowed</label>
+                <div class="col-sm-12">
+                    <input type="text" name="Eligibility.MinYearGap" class="form-control" required>
+                </div>
+            </div>
+            <br><br>
+            <h4 style="text-align: center;">Mandatory Fields to Submit</h4><hr>
+            <div class="form-group">
+                <label for="requiredFields" class="col-sm-3 control-label">Tick Necessary: </label>
                 <div class="col-sm-12">
                     <table class="table table-bordered desk">
                         <thead>
@@ -152,6 +192,32 @@
                             </tr>
                             <tr>
                                 <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Degree">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Degree</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOP">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Year of Passing</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PhyCha">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Physically Challenged</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="BCGPA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Bachelor's Degree CGPA</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TenPercentage">
                                 </td>
                                 <td>
@@ -170,10 +236,10 @@
                                     <span class="col-sm-2 col-5">10th YOP</span>
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="CGPA">
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MCGPA">
                                 </td>
                                 <td>
-                                    <span class="col-sm-2 col-5">CGPA</span>
+                                    <span class="col-sm-2 col-5">Master's Degree CGPA</span>
                                 </td>
                             </tr>
                             <tr>
@@ -196,10 +262,10 @@
                                     <span class="col-sm-2 col-5">12th YOP</span>
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs">
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TwelveMarksheet">
                                 </td>
                                 <td>
-                                    <span class="col-sm-2 col-5">Backlogs</span>
+                                    <span class="col-sm-2 col-5">12th Marksheet</span>
                                 </td>
                             </tr>
                             <tr>
@@ -222,10 +288,88 @@
                                     <span class="col-sm-2 col-5">Diploma YOP</span>
                                 </td>
                                 <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Honours">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Completed Honours</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherName">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Father's Name</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherOccupation">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Father's Occupation</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="FatherCN">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Father's Contact Number</span>
+                                </td>
+                                <td>
                                     <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YearGap">
                                 </td>
                                 <td>
                                     <span class="col-sm-2 col-5">Year Gap</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherName">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Mother's Name</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherOccupation">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Mother's Occupation</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MotherCN">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Mother's Contact Number</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Backlogs">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Active Backlogs</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PresentAddress">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Present Address</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PermanentAddress">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Permanent Address</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Aadhar">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Aadhar Number</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PAN">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">PAN Number</span>
                                 </td>
                             </tr>
                         </tbody>
@@ -298,6 +442,20 @@
                             </tr>
                             <tr>
                                 <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Degree">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Degree</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="YOP">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Year of Passing</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
                                     <input type="checkbox" name="requiredFields" class="form-check-input col-sm-2 col-2" value="TenPercentage">
                                 </td>
                                 <td>
@@ -318,10 +476,10 @@
                                     <span class="col-sm-2 col-4">10th YOP</span>
                                 </td>
                                 <td>
-                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="CGPA">
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="BCGPA">
                                 </td>
                                 <td>
-                                    <span class="col-sm-2 col-4">CGPA</span>
+                                    <span class="col-sm-2 col-4">Bachelor's Degree CGPA</span>
                                 </td>
                             </tr>
                             <tr>
@@ -380,13 +538,70 @@
                                     <span class="col-sm-2 col-4">Year Gap</span>
                                 </td>
                             </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PhyCha">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Physically Challenged</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="MCGPA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Masters Degree CGPA</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="TwelveMarksheet">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">12th Marksheet</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Honours">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Completed Honours</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PresentAddress">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Present Address</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PermanentAddress">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Permanent Address</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="Aadhar">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Aadhar Number</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="PAN">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">PAN Number</span>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                     <br>
                 </div>
             </div>
             <center>
-                <button type="submit" class="btn btn-lg btn-primary">Create</button>
+                <button class="btn btn-lg" onclick="window.location='/admin_portal?msg='" type="cancel">Cancel</button>
+                <button style="margin-left: 2em;" type="submit" class="btn btn-lg btn-primary">Create</button>
             </center>
         </form>
         <script>

@@ -8,6 +8,14 @@ const companySchema = new mongoose.Schema({
         unique: true
     },
     date: Date,
+    Eligibility: {
+        MinTenPerc: Number,
+        MinTwePerc: Number,
+        MinBack: Number,
+        MinBCGPA: Number,
+        MinMCGPA: Number,
+        MinYearGap: Number,
+    },
     requiredFields: [String],
     data: [
         {

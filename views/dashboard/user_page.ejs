@@ -84,7 +84,7 @@
                     <div class="card">
                       <div class="card-header card-header-info">
                         <span class="card-title">Your Profile</span>
-                        <span class="card-title" style="float: right;"> Eligible for Further Placements: <span style="color: red;margin: 0 1em;">NO</span></span>
+                        <span class="card-title" style="float: right;"> Eligible for Further Placements: <span style="margin: 0 1em;"><%= student.Eligibility %></span></span>
                       </div>
                       <div class="card-body">
                         <form>
@@ -124,7 +124,7 @@
                             <div class="col-md-3">
                               <div class="form-group">
                                 <label class="bmd-label-floating">Degree</label>
-                                <input type="text" class="form-control" value="" disabled style="cursor: default;">
+                                <input type="text" class="form-control" value="<%= student.Degree %>" disabled style="cursor: default;">
                               </div>
                             </div>
                             <div class="col-md-3">
