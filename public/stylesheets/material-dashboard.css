@@ -15655,7 +15655,7 @@ fieldset[disabled] .form-group.is-focused .togglebutton label {
 
   .sidebar .nav li a,
   .sidebar .nav li .dropdown-menu a {
-    color: #FFF;
+    /* color: #FFF; */
   }
 }
 
@@ -19236,7 +19236,7 @@ Copyright (c) 2015 Daniel Eden
     height: 100%;
     width: 100%;
     position: absolute;
-    background-color: #282828;
+    background-color: #fff;
     display: block;
     content: "";
     z-index: 1;

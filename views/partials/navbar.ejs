@@ -134,6 +134,11 @@
       font-size: 19px;
     }
   }
+  @media screen and (max-width:1000px){
+    .dashboard-mobile{
+      display: none;
+    }
+  }
 </style>
 
 <script>
@@ -221,3 +226,14 @@
       </div>
     </div>
 </nav>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<script>
+  $(".navbar-toggler").on("click",function(){
+    if($("#navbarNavAltMarkup").hasClass("show")){
+      console.log("hey")
+      $("nav .navbar").css("height","auto");
+    }
+  })
+</script>
