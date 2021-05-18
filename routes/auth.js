@@ -62,7 +62,7 @@ router.post('/register', (req, res) => {
                 })
 
                 transporter.sendMail({
-                    from: 'Placement Cell, CET Bhubaneswar',
+                    from: 'placementcet2022@gmail.com',
                     to: nUser.email,
                     subject: `New Account Created by the User Bearing Registration Number ${nUser.username}`,
                     text: `Dear Student,\n\nWe recieved a request to create a new account for Placement Website. If this wasn't you, please change your password here immediately: https://placement-web.herokuapp.com/forgotpassword , otherwise please go to the following link to verify your account:\nhttps://placement-web.herokuapp.com/verifyaccount/${accountRequest._id}\n\nThis link is valid only for 1 day for the student bearing Registration Number ${nUser.username}. So kindly verify your email within 24 hours.\n\nRegards,\nPlacement Cell CET Bhubaneswar.`
@@ -133,7 +133,7 @@ router.post('/forgotpassword', (req, res, next) => {
             })
 
             transporter.sendMail({
-                from: 'Placement Cell, CET Bhubaneswar',
+                from: 'placementcet2022@gmail.com',
                 to: stud.email,
                 subject: 'Reset Password for Your Account',
                 text: `Dear Student,\n\nWe recieved a request to reset your password for Placement Website. If this wasn't you, you can safely ignore this email, otherwise please go to the following link to reset your password:\nhttps://placement-web.herokuapp.com/resetpassword/${passwordRequest._id}\n\nThis link is valid only for 1 day for the student bearing Registration Number ${stud.username}. So kindly change your password within 24 hours.\n\nRegards,\nPlacement Cell CET Bhubaneswar.`
