@@ -76,7 +76,8 @@
         password.onchange = validatePassword;
         confirm_password.onkeyup = validatePassword;
     </script>
-    <% if(msg) { %>
+
+    <% if(success && success.length > 0) { %>
       <script>
         md = {
           showNotification2: function(from, align) {
@@ -85,7 +86,7 @@
           let message
           $.notify({
             // icon: "add_alert",
-            message: "<%= msg %>"
+            message: "<%= success %>"
 
           }, {
             type: 'success',
@@ -99,8 +100,7 @@
 
           md.showNotification2('top', 'center')
       </script>
-      <% } %>
-      <% if(err) { %>
+      <% } else if(error && error.length > 0) { %>
         <script>
           md = {
             showNotification2: function(from, align) {
@@ -109,7 +109,7 @@
             let message
             $.notify({
               // icon: "add_alert",
-              message: "<%= err %>"
+              message: "<%= error %>"
   
             }, {
               type: 'danger',
@@ -123,6 +123,29 @@
   
             md.showNotification2('top', 'center')
         </script>
-        <% } %>
+        <% } else if(msg && msg.length > 0) { %>
+          <script>
+            md = {
+              showNotification2: function(from, align) {
+              type = ['', 'info', 'danger', 'success', 'warning', 'rose', 'primary'];
+    
+              let message
+              $.notify({
+                // icon: "add_alert",
+                message: "<%= msg %>"
+    
+              }, {
+                type: 'success',
+                timer: 3,
+                placement: {
+                  from: from,
+                  align: align
+                }
+              });
+            }}
+    
+              md.showNotification2('top', 'center')
+          </script>
+          <% } %>
   </body>
 </html>

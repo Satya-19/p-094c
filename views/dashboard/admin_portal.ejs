@@ -91,7 +91,7 @@
                 </div>
                 <div class="col-md-5">
                   <form action="/admin_portal/EditStud" method="post">
-                    <input type="text" name="regdno" style="font-size: 16px;" placeholder="Enter student's registration number" class="form-control">
+                    <input type="text" name="regdno" style="font-size: 16px;" placeholder="Enter student's registration number" class="form-control" required>
                     <button type="submit" class="btn btn-success btn-lg">Search</button> 
                   </form>
                 </div>
@@ -168,7 +168,7 @@
       <script src="/javascripts/bootstrap-material-design.min.js"></script>
       <script src="/javascripts/bootstrap-notify.js"></script>
       <script src="/javascripts/material-dashboard.js?v=2.1.2" type="text/javascript"></script>
-      <% if(msg && msg.length > 0) { %>
+      <% if(success && success.length > 0) { %>
       <script>
         md = {
           showNotification2: function(from, align) {
@@ -176,7 +176,7 @@
           let message
           $.notify({
             icon: "add_alert",
-            message: "<%= msg %>"
+            message: "<%= success %>"
 
           }, {
             type: 'success',
@@ -190,14 +190,14 @@
 
           md.showNotification2('top', 'center')
       </script>
-      <% } else if(err) { %>
+      <% } else if(error && error.length > 0) { %>
         <script>
           md = {
             showNotification2: function(from, align) {  
             let message
             $.notify({
               icon: "add_alert",
-              message: "<%= err %>"
+              message: "<%= error %>"
   
             }, {
               type: 'danger',

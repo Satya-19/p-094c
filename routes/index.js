@@ -36,14 +36,8 @@ router.get('/whycet', (req, res) => {
 router.get('/login', (req, res) => {
   if(req.session.userData != undefined)
     return res.redirect('/profile')
-    
-  let err, msg
-  if(req.query.msg)
-    msg = req.query.msg
-  else if(req.query.err)
-    err = req.query.err
 
-  res.render('login_student', { err, msg });
+  res.render('login_student', { msg: "" });
 });
 
 /* GET contact us page. */
@@ -82,13 +76,7 @@ router.get('/profile', isLoggedIn, async (req, res, next) => {
       return next(err)
   }
 
-  let err, msg
-  if(req.query.msg)
-    msg = req.query.msg
-  else if(req.query.err)
-    err = req.query.err
-
-  return res.render('dashboard/profile', { data1: upcoming_placements, data2: registered_companies, student: student_data, err, msg })
+  return res.render('dashboard/profile', { data1: upcoming_placements, data2: registered_companies, student: student_data })
 })
 
 router.get("/prevplacement", isLoggedIn, (req, res, next) => {
@@ -97,29 +85,24 @@ router.get("/prevplacement", isLoggedIn, (req, res, next) => {
 
     if(err)
       next(err)
-    else if(!compa.length)
-      res.render('dashboard/prevplacement', { compa, msg: "No Companies" })
-    else {
+    else if(!compa.length) {
+      req.flash("error", "No Companies Found")
+      res.render('dashboard/prevplacement', { compa })
+    } else {
       res.render('dashboard/prevplacement', { compa })
     }
   })
 })
 
 router.get('/admin_portal', isAdmin, (req, res) => {
-
-  let err, msg
-  if (req.query.err)
-    err = req.query.err
-  else if (req.query.msg)
-    msg = req.query.msg
-
   company.find({}, (error, compa) => {
     if(error)
-      res.render('dashboard/admin_portal', { compa, err, msg })
-    else if(!compa.length)
-      res.render('dashboard/admin_portal', { compa, err: "No Companies Found", msg })
-    else
-      res.render('dashboard/admin_portal', { compa, err, msg })
+      res.render('dashboard/admin_portal', { compa })
+    else if(!compa.length) {
+      req.flash("error", "No Companies Found")
+      res.render('dashboard/admin_portal', { compa })
+    } else
+      res.render('dashboard/admin_portal', { compa })
   })
 })
 
@@ -140,34 +123,43 @@ router.post('/adminform', isAdmin, (req, res) => {
 
   company.create({ ...req.body, desc: html, date: udate }, (err) => {
     if(err){
-      return res.redirect('/admin_portal?err=A form with the given URL already exists');
+      req.flash("error", "A form with the given URL already exists")
+      return res.redirect('/admin_portal');
     }
-    return res.redirect('/admin_portal?msg=Form Created Successfully');
+
+    req.flash("success", "Form Created Successfully")
+    return res.redirect('/admin_portal');
   })
 })
 
 router.post('/admin_portal/EditStud', isAdmin, (req, res) => {
   Database.findOne({ RegdNo: req.body.regdno }, (err, stud) => {
-    if(err || !stud)
-      return res.redirect('/admin_portal?err=No Student Exists with the Given Regd No')
-    else
+    if(err || !stud) {
+      req.flash("error", "No Student Exists with the Given Regd No")
+      return res.redirect('/admin_portal')
+    }
       res.render('dashboard/admin_student_data', { student: stud })
   })
 })
 
 router.post('/admin_portal/:regdno', isAdmin, (req, res) => {
   Database.findOneAndUpdate({ RegdNo: req.params.regdno }, req.body, (err, data) => {
-    if(err)
-      return res.redirect('/admin_portal?err=Some Error Occured')
-    else
-      res.redirect("/admin_portal?msg=Student's Data Updated Successfully")
+    if(err) {
+      req.flash("error", "Some Error Occured... Please try again later.")
+      return res.redirect('/admin_portal')
+    }
+
+    req.flash("success", "Student's Data Updated Successfully")
+    res.redirect("/admin_portal")
   })
 })
 
 router.get('/admin_portal/database', isAdmin, (req, res) => {
   Database.find({}, "-_id").lean().exec((err, data) => {
-    if(err)
-      return res.redirect('/admin_portal?err=There seems to be a problem. Please try later.')
+    if(err) {
+      req.flash("error", "Some Error Occured... Please try again later.")
+      return res.redirect('/admin_portal')
+    }
 
     res.xls("Current Database.xlsx", data)
   })
@@ -179,8 +171,10 @@ router.get("/form/:name", isLoggedIn, (req, res, next) => {
        return next(err);
     }
   
-    if(!compa)
-      return res.redirect('/profile?err=No Company Found')
+    if(!compa) {
+      req.flash("error", "No Company Found")
+      return res.redirect('/profile')
+    }
 
     var flag = 0 
 
@@ -208,7 +202,8 @@ router.post("/form/:name", isLoggedIn, (req, res, next) => {
       next(err)
     }
     else {
-      res.redirect('/profile?msg=Deregistered Successfully')
+      req.flash("success", "Deregistered Successfully")
+      res.redirect('/profile')
     }
   })
 })
@@ -230,7 +225,8 @@ router.post("/form/:name/update/:id", isAdmin, (req, res, next) => {
     if(err)
       next(err)
     else {
-      res.redirect("/admin_portal?msg=Form Edited Successfully")
+      req.flash("success", "Form Edited Successfully")
+      res.redirect("/admin_portal")
     }
   })
 })
@@ -239,8 +235,10 @@ router.post("/form/:name/delete/:id", isAdmin, (req, res, next) => {
   company.findByIdAndDelete(req.params.id, (err) => {
     if(err)
       next(err)
-    else
-      res.redirect("/admin_portal?msg=Form deleted successfully")
+    else {
+      req.flash("success", "Form deleted successfully")
+      res.redirect("/admin_portal")
+    }
   })
 })
 
@@ -251,8 +249,10 @@ router.get("/form/:name/download", isAdmin, (req, res, next) => {
     else {
       const arr = data.data
       
-      if(!arr.length)
-        return res.redirect('/admin_portal?err=No Student has Applied yet')
+      if(!arr.length) {
+        req.flash("error", "No Student has Applied yet")
+        return res.redirect('/admin_portal')
+      }
 
       const required = data.requiredFields
       required.push('-_id')
@@ -273,39 +273,47 @@ router.get("/form/:name/apply/:regno", isLoggedIn, (req, res, next) => {
        return next(err);
     }
     if(!company){
-      return res.redirect('/profile?err=No Company Found');
+      req.flash("error", "No Company Found")
+      return res.redirect('/profile');
     }
 
     for(var i = 0; i < company.data.length; i++) {
       if(company.data[i].equals(req.session.userData._id)) {
-        return res.redirect('/profile?err=You have aready registered')
+        req.flash("error", "You have aready registered")
+        return res.redirect('/profile')
       }
     }
 
     const { MinTenPerc, MinTwePerc, MinBack, MinBCGPA, MinMCGPA, MinYearGap } = company.Eligibility
     
     if(MinTenPerc > req.session.userData.TenPercentage) {
-      return res.redirect("/profile?err=Your 10th Percentage doesn't meet the Eligibility Criteria")
+      req.flash("error", "Your 10th Percentage doesn't meet the Eligibility Criteria")
+      return res.redirect("/profile")
     }
     
     if(MinTwePerc > req.session.userData.TwelvePercentage || MinTwePerc > req.session.userData.DiplomaPercentage) {
-      return res.redirect("/profile?err=Your 12th or Diploma Percentage doesn't meet the Eligibility Criteria")
+      req.flash("error", "Your 12th or Diploma Percentage doesn't meet the Eligibility Criteria")
+      return res.redirect("/profile")
     }
     
     if(MinBack < req.session.userData.Backlogs) {
-      return res.redirect("/profile?err=Your Active Backlogs doesn't meet the Eligibility Criteria")
+      req.flash("error", "Your Active Backlogs doesn't meet the Eligibility Criteria")
+      return res.redirect("/profile")
     }
     
     if(MinBCGPA > req.session.userData.BCGPA) {
-      return res.redirect("/profile?err=Your Bachelors Degree CGPA doesn't meet the Eligibility Criteria")
+      req.flash("error", "Your Bachelors Degree CGPA doesn't meet the Eligibility Criteria")
+      return res.redirect("/profile")
     }
     
     if(req.session.userData.MCGPA != 0 && MinMCGPA > req.session.userData.MCGPA) {
-      return res.redirect("/profile?err=Your Masters Degree CGPA doesn't meet the Eligibility Criteria")
+      req.flash("error", "Your Masters Degree CGPA doesn't meet the Eligibility Criteria")
+      return res.redirect("/profile")
     }
     
     if(MinYearGap < req.session.userData.YearGap) {
-      return res.redirect("/profile?err=Your Number of Year Gaps doesn't meet the Eligibility Criteria")
+      req.flash("error", "Your Number of Year Gaps doesn't meet the Eligibility Criteria")
+      return res.redirect("/profile")
     }
 
     company.data.push(req.session.userData);
@@ -313,7 +321,9 @@ router.get("/form/:name/apply/:regno", isLoggedIn, (req, res, next) => {
       if(err){
         return next(err);
       }
-      return res.redirect('/profile?msg=Successfully Applied for ' + company.name);
+
+      req.flash("success", "Successfully Applied for " + company.name)
+      return res.redirect('/profile');
     })
   })
 })
@@ -322,17 +332,21 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
       return next();
   }
-  res.redirect("/login?err=Authenticate Yourself to Proceed Further");
+  req.flash("error", "Authenticate Yourself to Proceed Further")
+  res.redirect("/login");
 }
 
 function isAdmin(req, res, next) {
   if (req.isAuthenticated() && req.user.role == "admin") {
     return next()
   }
-  else if (req.isAuthenticated())
-    return res.redirect("/profile?err=You are NOT the Admin")
+  else if (req.isAuthenticated()) {
+    req.flash("error", "You are NOT the Admin")
+    return res.redirect("/profile")
+  }
 
-  res.redirect("/login?err=You are NOT the Admin")
+  req.flash("error", "You are NOT the Admin")
+  res.redirect("/login")
 }
 
 module.exports = router;
