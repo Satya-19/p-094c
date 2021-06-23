@@ -4,8 +4,10 @@ var path = require('path');
 var robots = require('express-robots-txt');
 var mongoose = require('mongoose');
 var cookieParser = require('cookie-parser');
-var json2xls = require('json2xls')
+var json2xls = require('json2xls');
 var logger = require('morgan');
+var https = require('express-force-https');
+
 
 mongoose.connect("mongodb+srv://admin:placement@cluster0.3ls3m.mongodb.net/Placement?retryWrites=true&w=majority", {
   useNewUrlParser: true,
@@ -36,6 +38,7 @@ app.use(express.urlencoded({
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(robots(__dirname + '/robots.txt'));
+app.use(https);
 
 app.use('/', authRoutes);
 app.use('/', indexRouter);
