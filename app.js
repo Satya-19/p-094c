@@ -10,7 +10,7 @@ var json2xls = require('json2xls')
 var logger = require('morgan');
 var https = require('express-force-https');
 
-mongoose.connect(`mongodb+srv://${process.env.MONGO_URL_USER}:${process.env.MONGO_URL_PASS}@cluster0.3ls3m.mongodb.net/Placement?retryWrites=true&w=majority`, {
+mongoose.connect("mongodb+srv://admin:placement@cluster0.3ls3m.mongodb.net/Placement?retryWrites=true&w=majority", {
   useNewUrlParser: true,
   useUnifiedTopology: true
 });

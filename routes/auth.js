@@ -27,9 +27,9 @@ const transporter = nodemailer.createTransport({
     auth: {
         type: "OAuth2",
         user: "placementcet2022@gmail.com",
-        clientId: process.env.CLIENT_ID,
-        clientSecret: process.env.CLIENT_SECRET,
-        refreshToken: process.env.REFRESH_TOKEN
+        clientId: "338163971335-opg17qnjl0aa88s3uvmoaqhksu82gmg6.apps.googleusercontent.com",
+        clientSecret: "hfajRy9fm68WTarfKnUAGZiT",
+        refreshToken: "1//04r6YzDJzGDiECgYIARAAGAQSNwF-L9IrT60xxvUnmu7P5a46h_BLVkp7m2kuM5LCvTRHGdvqIZo5fHuEPpMfpy98HocAu9bo6Ko"
     }
 })
 
