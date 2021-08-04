@@ -81,30 +81,40 @@
                     <input type="text" name="slug" class="form-control" required>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="Company Type" class="col-sm-3 control-label">Company Type:</label>
+                <div class="col-sm-12">
+                    <select name="type" class="form-control">
+                        <option value="Core">Core</option>
+                        <option value="Non-Core">Non-Core</option>
+                    </select>
+                </div>
+            </div>
             <br><br>
+
             <h4 style="text-align: center;">Eligibility Criteria</h4><hr>
             <div class="form-group">
                 <label for="Minimum 10th Percentage" class="col-sm-4 control-label">Minimum 10th Percentage</label>
                 <div class="col-sm-12">
-                    <input type="text" name="Eligibility.MinTenPerc" class="form-control" required>
+                    <input type="text" name="Eligibility.MinTenPerc" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum 12th Percentage" class="col-sm-4 control-label">Minimum 12th / Diploma Percentage</label>
                 <div class="col-sm-12"> 
-                    <input type="text" name="Eligibility.MinTwePerc" class="form-control" required>
+                    <input type="text" name="Eligibility.MinTwePerc" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum Active Backlogs" class="col-sm-4 control-label">Minimum Active Backlogs</label>
                 <div class="col-sm-12">
-                    <input type="text" name="Eligibility.MinBack" class="form-control" required>
+                    <input type="text" name="Eligibility.MinBack" class="form-control">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum B.Tech CGPA" class="col-sm-4 control-label">Minimum Bachelors CGPA</label>
                 <div class="col-sm-12">
-                    <input type="text" name="Eligibility.MinBCGPA" class="form-control" required>
+                    <input type="text" name="Eligibility.MinBCGPA" class="form-control">
                 </div>
             </div>
             <div class="form-group">
@@ -116,10 +126,268 @@
             <div class="form-group">
                 <label for="Minimum YearGap Allowed" class="col-sm-3 control-label">Minimum YearGap Allowed</label>
                 <div class="col-sm-12">
-                    <input type="text" name="Eligibility.MinYearGap" class="form-control" required>
+                    <input type="text" name="Eligibility.MinYearGap" class="form-control">
                 </div>
             </div>
             <br><br>
+
+            <h4 style="text-align: center;">Eligibile Degrees</h4><hr>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <table class="table table-bordered desk">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="B.Tech">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Bachelor in Technology</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="M.Tech">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Masters in Technology</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="M.Sc">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Masters in Science</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="MCA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MCA</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h4 style="text-align: center;">Eligibile Branches (Bachelors)</h4><hr>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <table class="table table-bordered desk">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="BT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Biotechnology</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Civil">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Civil</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="CSE">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Computer Science</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Electrical">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Electrical</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="I&E">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Instrumentation & Electronics</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="FT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Fashion & Apparel Technology</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="IT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">IT</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Mechanical">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Mechanical</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="TEXTILE">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Textile</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="MCA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MCA</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="B Arch">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">B Arch</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="B. Plan">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">B. Plan</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h4 style="text-align: center;">Eligibile Branches (Masters)</h4><hr>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <table class="table table-bordered desk">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="BIOTECHNOLOGY">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">BIOTECHNOLOGY</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="COMPUTER SCEINCE AND ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">CSE</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="DESIGN & DYNAMICS">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">DESIGN & DYNAMICS</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="E&I">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">E&I</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="ECE">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ECE</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-ENERGY SYSTEM ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ENERGY SYSTEM ENGINEERING</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-POWER ELECTRONICS AND DRIVES">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">POWER ELECTRONICS AND DRIVES</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-POWER SYSTEM ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">POWER SYSTEM ENGINEERING</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="ELECTRICAL">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ELECTRICAL</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="INDUSTRIAL ENGINEERING AND MANAGEMENT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">INDUSTRIAL ENGINEERING AND MANAGEMENT</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="INFOFMATION TECHNOLOGY">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">INFOFMATION TECHNOLOGY</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="MECHANICAL">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MECHANICAL</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="THERMAL ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">THERMAL ENGINEERING</span>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br><br>
+
             <h4 style="text-align: center;">Mandatory Fields to Submit</h4><hr>
             <div class="form-group">
                 <label for="requiredFields" class="col-sm-3 control-label">Tick Necessary: </label>
@@ -292,6 +560,58 @@
                                 </td>
                                 <td>
                                     <span class="col-sm-2 col-5">Completed Honours</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA1">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA1</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA2">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA2</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA3">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA3</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA4">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA4</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA5">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA5</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA6">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA6</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA7">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA7</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA8">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA8</span>
                                 </td>
                             </tr>
                             <tr>
@@ -564,6 +884,48 @@
                                 </td>
                                 <td>
                                     <span class="col-sm-2 col-5">Completed Honours</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA1">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA1</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA2">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA2</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA3">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA3</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA4">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA4</span>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA5">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA5</span>
+                                </td>
+                                <td>
+                                    <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA6">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">SGPA6</span>
                                 </td>
                             </tr>
                             <tr>

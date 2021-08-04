@@ -129,7 +129,7 @@
                         <th>Sl. No.</th>
                         <th>Name</th>
                         <th>Last Date for Applying</th>
-                        <th>Have you Applied</th>
+                        <th>Core / Non-Core</th>
                       </thead>
                       <tbody>
                         <% var i = 1 %> <% compa.forEach(function(data) { %>
@@ -140,11 +140,7 @@
                             <%= new Date(data.date.getTime() -
                             86400000).toDateString() %>
                           </td>
-                          <% if(data.data.includes(currentUser._id)) { %>
-                          <td>Yes</td>
-                          <% } else { %>
-                          <td>No</td>
-                          <% } %>
+                          <td><%= data.type %></td>
                         </tr>
                         <% }); %>
                       </tbody>

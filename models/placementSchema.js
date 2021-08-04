@@ -24,6 +24,38 @@ const PlacementSchema = new mongoose.Schema({
     YOPDiploma: String,
     YOP: Number,
     Degree: String,
+    SGPA1: {
+        type: Number,
+        default: 0
+    },
+    SGPA2: {
+        type: Number,
+        default: 0
+    },
+    SGPA3: {
+        type: Number,
+        default: 0
+    },
+    SGPA4: {
+        type: Number,
+        default: 0
+    },
+    SGPA5: {
+        type: Number,
+        default: 0
+    },
+    SGPA6: {
+        type: Number,
+        default: 0
+    },
+    SGPA7: {
+        type: Number,
+        default: 0
+    },
+    SGPA8: {
+        type: Number,
+        default: 0
+    },
     BCGPA: Number,
     MCGPA: Number,
     Honours: String,
@@ -45,7 +77,6 @@ const PlacementSchema = new mongoose.Schema({
     Aadhar: String,
     PAN: String,
     DL: String,
-    Eligibility: String
 })
 
 module.exports = mongoose.model("Database", PlacementSchema, "Database")

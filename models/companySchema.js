@@ -8,6 +8,7 @@ const companySchema = new mongoose.Schema({
         unique: true
     },
     date: Date,
+    type: String,
     Eligibility: {
         MinTenPerc: Number,
         MinTwePerc: Number,
@@ -16,13 +17,11 @@ const companySchema = new mongoose.Schema({
         MinMCGPA: Number,
         MinYearGap: Number,
     },
+    Eldegree: [String],
+    Bbranch: [String],
+    Mbranch: [String],
     requiredFields: [String],
-    data: [
-        {
-            type: mongoose.Schema.Types.ObjectId,
-            ref: "Database"
-        },
-    ]
+    data: [Number]
 })
 
 module.exports = mongoose.model("Company", companySchema)

@@ -97,6 +97,8 @@
                                                 <center>
                                                   <% if(msg == "not found") { %>
                                                       <button type="submit" class="btn btn-lg btn-success">Apply</button>
+                                                  <% } else if (msg == "not eligible") { %>
+                                                    <button type="button" class="btn btn-lg btn-success" disabled>Branch not Eligible</button>
                                                   <% } else { %>
                                                       <button type="button" class="btn btn-lg btn-success" disabled>Already Applied</button>
                                                   <% } %>

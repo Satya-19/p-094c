@@ -71,7 +71,7 @@ router.get('/profile', isLoggedIn, async (req, res, next) => {
   }
 
   try {
-    registered_companies = await company.find({ data: student_data._id })
+    registered_companies = await company.find({ data: student_data.RegdNo, date: { $gt: NowDate } })
   } catch (err) {
       return next(err)
   }
@@ -178,24 +178,30 @@ router.get("/form/:name", isLoggedIn, (req, res, next) => {
 
     var flag = 0 
 
-    for(var i = 0; i < compa.data.length; i++) {
-      if(compa.data[i].equals(req.session.userData._id)) {
-        flag = 1
-        break
+    if (compa.Eldegree.includes(req.session.userData.Degree)) {
+      if(compa.Bbranch.includes(req.session.userData.Branch) || compa.Mbranch.includes(req.session.userData.Branch)) {
+
+        for(var i = 0; i < compa.data.length; i++) {
+          if(compa.data[i] == req.session.userData.RegdNo) {
+            flag = 1
+            break
+          }
+        }
+
+        if(flag)
+          return res.render("dashboard/company", { company: compa, student: req.session.userData, msg: "found" })
+
+        return res.render("dashboard/company", { company: compa, student: req.session.userData, msg: "not found" })
       }
     }
-
-    if(flag) {
-      return res.render("dashboard/company", { company: compa, student: req.session.userData, msg: "found" })
-    }
-    return res.render("dashboard/company", { company: compa, student: req.session.userData, msg: "not found" })
-      
+    
+    return res.render("dashboard/company", { company: compa, student: req.session.userData, msg: "not eligible" })
   })
 })
 
 router.post("/form/:name", isLoggedIn, (req, res, next) => {
   company.findOneAndUpdate({ slug: req.params.name }, 
-  { $pull: { data: req.session.userData._id }}, { new: true },
+  { $pull: { data: req.session.userData.RegdNo }}, { new: true },
   (err) => {
     if(err) {
       console.log(err)
@@ -257,7 +263,7 @@ router.get("/form/:name/download", isAdmin, (req, res, next) => {
       const required = data.requiredFields
       required.push('-_id')
 
-      Database.find({ _id: { $in: arr }}, required).lean().exec((err, stud) => {
+      Database.find({ RegdNo: { $in: arr }}, required).lean().exec((err, stud) => {
         if(err)
           return next(err)
 
@@ -278,7 +284,7 @@ router.get("/form/:name/apply/:regno", isLoggedIn, (req, res, next) => {
     }
 
     for(var i = 0; i < company.data.length; i++) {
-      if(company.data[i].equals(req.session.userData._id)) {
+      if(company.data[i] == req.session.userData.RegdNo) {
         req.flash("error", "You have aready registered")
         return res.redirect('/profile')
       }
@@ -286,37 +292,37 @@ router.get("/form/:name/apply/:regno", isLoggedIn, (req, res, next) => {
 
     const { MinTenPerc, MinTwePerc, MinBack, MinBCGPA, MinMCGPA, MinYearGap } = company.Eligibility
     
-    if(MinTenPerc > req.session.userData.TenPercentage) {
+    if(MinTenPerc != null && MinTenPerc > req.session.userData.TenPercentage) {
       req.flash("error", "Your 10th Percentage doesn't meet the Eligibility Criteria")
       return res.redirect("/profile")
     }
     
-    if(MinTwePerc > req.session.userData.TwelvePercentage || MinTwePerc > req.session.userData.DiplomaPercentage) {
+    if(MinTwePerc != null && (MinTwePerc > req.session.userData.TwelvePercentage || MinTwePerc > req.session.userData.DiplomaPercentage)) {
       req.flash("error", "Your 12th or Diploma Percentage doesn't meet the Eligibility Criteria")
       return res.redirect("/profile")
     }
     
-    if(MinBack < req.session.userData.Backlogs) {
+    if(MinBack != null && MinBack < req.session.userData.Backlogs) {
       req.flash("error", "Your Active Backlogs doesn't meet the Eligibility Criteria")
       return res.redirect("/profile")
     }
     
-    if(MinBCGPA > req.session.userData.BCGPA) {
+    if(MinBCGPA != null && req.session.userData.BCGPA != 0 && MinBCGPA > req.session.userData.BCGPA) {
       req.flash("error", "Your Bachelors Degree CGPA doesn't meet the Eligibility Criteria")
       return res.redirect("/profile")
     }
     
-    if(req.session.userData.MCGPA != 0 && MinMCGPA > req.session.userData.MCGPA) {
+    if(MinMCGPA != null && req.session.userData.MCGPA != 0 && MinMCGPA > req.session.userData.MCGPA) {
       req.flash("error", "Your Masters Degree CGPA doesn't meet the Eligibility Criteria")
       return res.redirect("/profile")
     }
     
-    if(MinYearGap < req.session.userData.YearGap) {
+    if(MinYearGap != null && MinYearGap < req.session.userData.YearGap) {
       req.flash("error", "Your Number of Year Gaps doesn't meet the Eligibility Criteria")
       return res.redirect("/profile")
     }
 
-    company.data.push(req.session.userData);
+    company.data.push(req.session.userData.RegdNo);
     company.save((err) => {
       if(err){
         return next(err);

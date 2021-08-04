@@ -61,45 +61,571 @@
                     <input type="text" name="slug" class="form-control" value="<%= compa.slug %>" required>
                 </div>
             </div>
+            <div class="form-group">
+                <label for="Company Type" class="col-sm-3 control-label">Company Type:</label>
+                <div class="col-sm-12">
+                    <input type="text" name="type" class="form-control" value="<%= compa.type %>" required>
+                </div>
+            </div>
             <br><br>
+
             <h4 style="text-align: center;">Eligibility Criteria</h4><hr><br>
             <div class="form-group">
                 <label for="Minimum 10th Percentage" class="col-sm-4 control-label">Minimum 10th Percentage</label>
                 <div class="col-sm-12">
-                    <input type="text" name="MinTenPerc" class="form-control" value="<%= compa.Eligibility.MinTenPerc %>" required>
+                    <input type="text" name="Eligibility.MinTenPerc" class="form-control" value="<%= compa.Eligibility.MinTenPerc %>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum 12th Percentage" class="col-sm-4 control-label">Minimum 12th/Diploma Percentage</label>
                 <div class="col-sm-12">
-                    <input type="text" name="MinTwePerc" class="form-control" value="<%= compa.Eligibility.MinTwePerc %>" required>
+                    <input type="text" name="Eligibility.MinTwePerc" class="form-control" value="<%= compa.Eligibility.MinTwePerc %>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum Active Backlogs" class="col-sm-4 control-label">Minimum Active Backlogs</label>
                 <div class="col-sm-12">
-                    <input type="text" name="MinBack" class="form-control" value="<%= compa.Eligibility.MinBack %>" required>
+                    <input type="text" name="Eligibility.MinBack" class="form-control" value="<%= compa.Eligibility.MinBack %>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum B.Tech CGPA" class="col-sm-4 control-label">Minimum Bachelors CGPA</label>
                 <div class="col-sm-12">
-                    <input type="text" name="MinBCGPA" class="form-control" value="<%= compa.Eligibility.MinBCGPA %>" required>
+                    <input type="text" name="Eligibility.MinBCGPA" class="form-control" value="<%= compa.Eligibility.MinBCGPA %>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum M.Tech CGPA" class="col-sm-4 control-label">Minimum Masters CGPA</label>
                 <div class="col-sm-12">
-                    <input type="text" name="MinMCGPA" class="form-control" value="<%= compa.Eligibility.MinMCGPA %>">
+                    <input type="text" name="Eligibility.MinMCGPA" class="form-control" value="<%= compa.Eligibility.MinMCGPA %>">
                 </div>
             </div>
             <div class="form-group">
                 <label for="Minimum YearGap Allowed" class="col-sm-3 control-label">Minimum YearGap Allowed</label>
                 <div class="col-sm-12">
-                    <input type="text" name="MinYearGap" class="form-control" value="<%= compa.Eligibility.MinYearGap %>" required>
+                    <input type="text" name="Eligibility.MinYearGap" class="form-control" value="<%= compa.Eligibility.MinYearGap %>">
                 </div>
             </div>
             <br><br>
+
+            <h4 style="text-align: center;">Eligibile Degrees</h4><hr>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <table class="table table-bordered desk">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <% if(compa.Eldegree.includes('B.Tech')) { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="B.Tech" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Bachelor in Technology</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="B.Tech">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Bachelor in Technology</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Eldegree.includes('M.Tech')) { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="M.Tech" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Masters in Technology</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="M.Tech">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Masters in Technology</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Eldegree.includes('M.Sc')) { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="M.Sc" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Masters in Science</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="M.Sc">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Masters in Science</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Eldegree.includes('MCA')) { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="MCA" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MCA</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Eldegree" class="form-check-input col-sm-1 col-2" value="MCA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MCA</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h4 style="text-align: center;">Eligibile Branches (Bachelors)</h4><hr>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <table class="table table-bordered desk">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <% if(compa.Bbranch.includes('BT')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="BT" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Biotechnology</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="BT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Biotechnology</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('Civil')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Civil" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Civil</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Civil">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Civil</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('CSE')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="CSE" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Computer Science</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="CSE">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Computer Science</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('Electrical')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Electrical" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Electrical</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Electrical">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Electrical</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.Bbranch.includes('I&E')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="I&E" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Instrumentation & Electronics</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="I&E">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Instrumentation & Electronics</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('FT')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="FT" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Fashion & Apparel Technology</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="FT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Fashion & Apparel Technology</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('IT')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="IT" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">IT</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="IT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">IT</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('Mechanical')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Mechanical" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Mechanical</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="Mechanical">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Mechanical</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.Bbranch.includes('TEXTILE')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="TEXTILE" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Textile</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="TEXTILE">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">Textile</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('MCA')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="MCA" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MCA</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="MCA">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MCA</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('B Arch')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="B Arch" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">B Arch</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="B Arch">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">B Arch</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Bbranch.includes('B. Plan')) { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="B. Plan" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">B. Plan</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Bbranch" class="form-check-input col-sm-1 col-2" value="B. Plan">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">B. Plan</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <h4 style="text-align: center;">Eligibile Branches (Masters)</h4><hr>
+            <div class="form-group">
+                <div class="col-sm-12">
+                    <table class="table table-bordered desk">
+                        <thead>
+                            <tr>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                                <th scope="col">Select</th>
+                                <th scope="col">Attribute</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <% if(compa.Mbranch.includes('BIOTECHNOLOGY')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="BIOTECHNOLOGY" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">BIOTECHNOLOGY</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="BIOTECHNOLOGY">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">BIOTECHNOLOGY</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('COMPUTER SCEINCE AND ENGINEERING')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="COMPUTER SCEINCE AND ENGINEERING" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">CSE</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="COMPUTER SCEINCE AND ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">CSE</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('DESIGN & DYNAMICS')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="DESIGN & DYNAMICS" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">DESIGN & DYNAMICS</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="DESIGN & DYNAMICS">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">DESIGN & DYNAMICS</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('E&I')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="E&I" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">E&I</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="E&I">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">E&I</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.Mbranch.includes('ECE')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="ECE" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ECE</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="ECE">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ECE</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('EE-ENERGY SYSTEM ENGINEERING')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-ENERGY SYSTEM ENGINEERING" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ENERGY SYSTEM ENGINEERING</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-ENERGY SYSTEM ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ENERGY SYSTEM ENGINEERING</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('EE-POWER ELECTRONICS AND DRIVES')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-POWER ELECTRONICS AND DRIVES" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">POWER ELECTRONICS AND DRIVES</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-POWER ELECTRONICS AND DRIVES">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">POWER ELECTRONICS AND DRIVES</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('EE-POWER SYSTEM ENGINEERING')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-POWER SYSTEM ENGINEERING" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">POWER SYSTEM ENGINEERING</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="EE-POWER SYSTEM ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">POWER SYSTEM ENGINEERING</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.Mbranch.includes('ELECTRICAL')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="ELECTRICAL" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ELECTRICAL</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="ELECTRICAL">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">ELECTRICAL</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('INDUSTRIAL ENGINEERING AND MANAGEMENT')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="INDUSTRIAL ENGINEERING AND MANAGEMENT" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">INDUSTRIAL ENGINEERING AND MANAGEMENT</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="INDUSTRIAL ENGINEERING AND MANAGEMENT">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">INDUSTRIAL ENGINEERING AND MANAGEMENT</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('INFOFMATION TECHNOLOGY')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="INFOFMATION TECHNOLOGY" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">INFOFMATION TECHNOLOGY</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="INFOFMATION TECHNOLOGY">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">INFOFMATION TECHNOLOGY</span>
+                                </td>
+                                <% } %>
+                                <% if(compa.Mbranch.includes('MECHANICAL')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="MECHANICAL" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MECHANICAL</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="MECHANICAL">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">MECHANICAL</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.Mbranch.includes('MECHANICAL')) { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="THERMAL ENGINEERING" checked>
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">THERMAL ENGINEERING</span>
+                                </td>
+                                <% } else { %>
+                                <td>
+                                    <input type="checkbox" name="Mbranch" class="form-check-input col-sm-1 col-2" value="THERMAL ENGINEERING">
+                                </td>
+                                <td>
+                                    <span class="col-sm-2 col-5">THERMAL ENGINEERING</span>
+                                </td>
+                                <% } %>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <br><br>
+
             <h4 style="text-align: center;">Mandatory Fields to Submit</h4><hr><br>
             <div class="form-group">
                 <label for="email" class="col-sm-3 control-label">Tick Necessary </label>
@@ -487,6 +1013,130 @@
                                     </td>
                                     <td>
                                         <span class="col-sm-2 col-5">Completed Honours</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('SGPA1')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA1" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA1</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA1">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA1</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('SGPA2')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA2" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA2</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA2">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA2</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('SGPA3')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA3" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA3</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA3">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA3</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('SGPA4')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA4" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA4</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA4">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA4</span>
+                                    </td>
+                                <% } %>
+                            </tr>
+                            <tr>
+                                <% if(compa.requiredFields.includes('SGPA5')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA5" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA5</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA5">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA5</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('SGPA6')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA6" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA6</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-2" value="SGPA6">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA6</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('SGPA7')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA7" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA7</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA7">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA7</span>
+                                    </td>
+                                <% } %>
+                                <% if(compa.requiredFields.includes('SGPA8')) { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA8" checked>
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA8</span>
+                                    </td>
+                                <% } else { %>
+                                    <td>
+                                        <input type="checkbox" name="requiredFields" class="form-check-input col-sm-1 col-1" value="SGPA8">
+                                    </td>
+                                    <td>
+                                        <span class="col-sm-2 col-5">SGPA8</span>
                                     </td>
                                 <% } %>
                             </tr>

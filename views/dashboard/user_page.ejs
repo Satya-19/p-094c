@@ -91,7 +91,6 @@
                     <div class="card">
                       <div class="card-header card-header-info">
                         <span class="card-title">Your Profile</span>
-                        <span class="card-title" style="float: right;"> Eligible for Further Placements: <span style="margin: 0 1em;"><%= student.Eligibility %></span></span>
                       </div>
                       <div class="card-body">
                         <form>
@@ -296,16 +295,25 @@
                                 <input type="number" class="form-control" value="<%= student.Backlogs %>" disabled style="cursor: default;">
                               </div>
                             </div>
-                            <!-- <div class="col-md-2">
-                              <div class="form-group">
-                                <label class="bmd-label-floating">CGPA</label>
-                                <input type="number" class="form-control" value="<%= student.BCGPA %>" disabled style="cursor: default;">
+                            <% if(student.MCGPA == 0) { %>
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">CGPA</label>
+                                  <input type="number" class="form-control" value="<%= student.BCGPA %>" disabled style="cursor: default;">
+                                </div>
                               </div>
-                            </div> -->
+                            <% } else { %>
+                              <div class="col-md-2">
+                                <div class="form-group">
+                                  <label class="bmd-label-floating">CGPA</label>
+                                  <input type="number" class="form-control" value="<%= student.MCGPA %>" disabled style="cursor: default;">
+                                </div>
+                              </div>
+                            <% } %>
                             <div class="col-md-3">
                                 <div class="form-group">
                                   <label class="bmd-label-floating">Aadhar Number</label>
-                                  <input type="number" class="form-control" value="<%= student.Aadhar %>" disabled style="cursor: default;">
+                                  <input type="text" class="form-control" value="<%= student.Aadhar %>" disabled style="cursor: default;">
                                 </div>
                               </div>
                               <div class="col-md-3">

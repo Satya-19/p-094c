@@ -89,7 +89,6 @@
                       <div class="card">
                         <div class="card-header card-header-rose">
                           <span class="card-title">Profile</span>
-                          <span class="card-title" style="float: right;"> Eligible for Further Placements: <span style="margin: 0 1em;"><%= student.Eligibility %></span></span>
                         </div>
                         <div class="card-body">
                           <form method="POST" action="/admin_portal/<%= student.RegdNo %>">
@@ -340,14 +339,6 @@
                                     <label class="bmd-label-floating">PAN Number</label>
                                     <input type="text" class="form-control" name="PAN" value="<%= student.PAN %>">
                                   </div>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="bmd-label-floating">Eligible for Further Placements</label>
-                                        <input type="text" class="form-control" value="<%= student.Eligibility %>">
-                                    </div>
                                 </div>
                             </div>
                             <div class="clearfix"></div>
