@@ -7,3 +7,7 @@
     flex-direction: column;
     justify-content: center;
 }
+
+blockquote {
+    text-align: justify;
+}
