@@ -58,11 +58,12 @@
       height: auto;
     }
 
-    .chart-container-3 {
+    .chart-container-3, .chart-container-4, .chart-container-5 {
       display: none;
     }
 
     #pie-chartcanvas-3 {
+      margin-bottom: 3rem;
       margin-left: 5rem;
     }
 
@@ -71,7 +72,8 @@
     }
 
     #pie-chartcanvas-2 {
-      margin-top: 0.5rem;
+      margin-bottom: 3rem;
+      margin-left: 8rem;
     }
 
     .col-md-6 img {
@@ -104,7 +106,7 @@
         display: none;
       }
 
-      .chart-container-3 {
+      .chart-container-3,.chart-container-4, .chart-container-5 {
         display: block;
       }
 
@@ -124,7 +126,8 @@
         padding-top: 2rem;
       }
     }
-  </style>
+
+</style>
 </head>
 
 <body>
@@ -134,18 +137,11 @@
     <div class="main_sec sec-3">
       <div class="container">
         <center>
-          <h1 style="font-weight: bolder;color: #666;">Placement Statistics - Class of 2021</h1>
+          <h1 style="font-weight: bolder;color: #666;">Placement Statistics - Class of 2022</h1>
         </center>
         <br /><br>
+
         <div class="row" style="margin-bottom: 2em;">
-          <div class="col-12">
-            <div class="chart-container-3">
-              <div class="pie-chart-container">
-                <canvas id="pie-chartcanvas-4"></canvas>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-1 nodis"></div>
           <div class="col-md-10 nodis">
             <div class="chart-container-0">
               <div class="pie-chart-container">
@@ -156,15 +152,19 @@
           <br />
         </div>
 
-        <div class="row nodis">
-          <div class="col-md-6 nodis">
+        <div class="row" style="margin-bottom: 2em;">
+          <div class="col-md-10 nodis">
             <div class="chart-container-1">
               <div class="pie-chart-container">
                 <canvas id="pie-chartcanvas-2"></canvas>
               </div>
             </div>
           </div>
-          <div class="col-md-6 nodis">
+          <br />
+        </div>
+
+        <div class="row" style="margin-bottom: 2em;">
+          <div class="col-md-10 nodis">
             <div class="chart-container-2">
               <div class="pie-chart-container">
                 <canvas id="pie-chartcanvas-3"></canvas>
@@ -174,10 +174,37 @@
           <br />
         </div>
 
-        <div class="row">
-          <div class="col-12 img-fluid noimg">
-            <img src="images/stats.png" alt="" class="img-thumbnail" />
+        <div class="row" style="margin-bottom: 2em;">
+          <div class="col-md-10">
+            <div class="chart-container-3">
+              <div class="pie-chart-container">
+                <canvas id="pie-chartcanvas-4"></canvas>
+              </div>
+            </div>
           </div>
+          <br />
+        </div>
+
+        <div class="row" style="margin-bottom: 2em;">
+          <div class="col-md-10">
+            <div class="chart-container-4">
+              <div class="pie-chart-container">
+                <canvas id="pie-chartcanvas-5"></canvas>
+              </div>
+            </div>
+          </div>
+          <br />
+        </div>
+
+        <div class="row" style="margin-bottom: 2em;">
+          <div class="col-md-10">
+            <div class="chart-container-5">
+              <div class="pie-chart-container">
+                <canvas id="pie-chartcanvas-6"></canvas>
+              </div>
+            </div>
+          </div>
+          <br />
         </div>
       </div>
     </div>
