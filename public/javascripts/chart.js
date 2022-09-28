@@ -405,9 +405,9 @@ $(document).ready(function () {
       display: true,
       position: "right",
       labels: {
-        boxWidth: 10,
-        padding: 10,
-        fontSize: 10,
+        boxWidth: 7,
+        padding: 7,
+        fontSize: 7,
         fontColor: "#000750",
       },
     },
@@ -657,24 +657,24 @@ $(document).ready(function () {
   var chart6 = new Chart(ctx7, {
     type: "doughnut",
     data: data2,
-    options: options0,
+    options: options,
   });
 
   var chart6 = new Chart(ctx8, {
     type: "doughnut",
     data: data3,
-    options: options1,
+    options: options,
   });
 
   var chart6 = new Chart(ctx9, {
     type: "doughnut",
     data: data4,
-    options: options0,
+    options: options,
   });
 
   var chart6 = new Chart(ctx10, {
     type: "doughnut",
     data: data5,
-    options: options1,
+    options: options,
   });
 });
