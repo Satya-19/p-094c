@@ -33,6 +33,11 @@ router.get('/whycet', (req, res) => {
   res.render('whycet');
 });
 
+/* GET Brochure page. */
+router.get('/brochure', (req, res) => {
+  res.render('brochure');
+});
+
 /* GET login page. */
 router.get('/login', (req, res) => {
   let err, msg
