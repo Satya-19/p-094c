@@ -12,37 +12,37 @@ $(document).ready(function () {
 
   var data1 = {
     labels: [
-      "Brillio",
-      "CSS Corp",
+      "TATA Steel",
+      "Pentair Water India",
+      "Asian Paints",
+      "Maruti Suzuki India Limited",
       "Deloitte",
-      "Infocepts",
-      "Nobroker",
-      "PriceWaterhouse Coopers (PWC)",
-      "Soul Limited",
-      "Vmarsh Textile Consulting Services",
-      "Adani Group",
-      "Adani Total Private Limited",
-      "JSPL",
-      "Subudhi TechnoEngineers",
-      "TATA POWER",
-      "Alok Industries",
-      "Century Enka",
-      "CoreEL Technologies",
       "Godrej & Boyce",
-      "Innocule",
+      "Tata Power",
+      "AM/NS",
       "JK Paper",
-      "Merino Consulting Services",
-      "Runaya Metasource",
-      "TATA Advanced Systems",
-      "TATA Steel BSL",
+      "L&T",
+      "Adani",
+      "Reliance Industries Limited",
+      "CoreEl",
+      "TASL",
+      "Tata Consulting Engineers",
+      "Titagarh Wagons",
+      "Beumer Group",
+      "Himatsingka",
+      "Century Enka",
+      "Aurigene Oncology Limited",
+      "Aditya Birla FRL",
+      "Asiczen",
       "Teejay",
+      "Macleods Pharmaceuticals",
     ],
     datasets: [
       {
         label: "",
         data: [
-          1, 2, 39, 2, 1, 21, 3, 1, 16, 6, 7, 1, 8, 1, 1, 1, 2, 2, 3, 4, 1, 4,
-          2, 11,
+          1, 1, 6, 21, 12, 3, 7, 1, 10, 80, 12, 9, 2, 8, 11, 10, 1, 3, 3, 5, 7,
+          2, 5, 3,
         ],
         backgroundColor: [
           "#e28743",
@@ -106,33 +106,30 @@ $(document).ready(function () {
 
   var data2 = {
     labels: [
-      "Triveous",
-      "Zifo Quotient",
-      "L&T ECC",
-      "Accenture",
-      "Argusoft India Ltd",
-      "Ascorb Technologies Pvt. Ltd.",
-      "Bajaj Allianz",
-      "Capgemini",
-      "Capillary Technologies",
-      "CBNITS India Private Limited",
-      "Cognizant",
-      "Ericsson Global India Services",
-      "EY",
-      "Gyansys Infotech Private Limited",
-      "HP",
+      "American Express",
+      "RedHat",
+      "eQ Technologies",
       "IBM",
-      "Infosys",
-      "iServeU",
+      "Hughes Systique Corporation",
+      "Vassar Labs",
+      "Cummins India",
+      "Pradan",
+      "LG",
+      "Spotline",
+      "Argusoft",
+      "Edmingle",
+      "TCS",
+      "Open Financial Technologies",
+      "Kfintech",
+      "SAP Labs",
+      "Accenture",
+      "Comviva",
       "Itobuz Technologies",
-      "Kellton tech",
     ],
     datasets: [
       {
         label: "Team A",
-        data: [
-          2, 2, 21, 68, 4, 1, 1, 12, 3, 2, 74, 11, 2, 5, 6, 4, 28, 5, 1, 2,
-        ],
+        data: [1, 1, 1, 1, 5, 7, 1, 11, 1, 2, 14, 2, 184, 11, 14, 2, 54, 12, 3],
         backgroundColor: [
           "#e28743",
           "#a78fa9",
@@ -266,31 +263,18 @@ $(document).ready(function () {
 
   var data4 = {
     labels: [
-      "Incture Technologies",
-      "Keka",
-      "Tejas Networks",
-      "All E Technologies",
-      "AM/NS India",
       "Amazon",
-      "Bosch Global Software Technologies",
+      "HackerRank",
       "CISCO",
-      "Gupshup Technologies",
-      "HashedIn",
-      "Microsoft",
-      "Maruti Suzuki India Limited",
-      "Windmöller & Hölscher",
-      "Xoriant Solutions",
-      "Yahoo",
-      "Analog Devices",
-      "Infineon Technologies AG",
-      "Asiczen",
-      "Marquee Semiconductor",
-      "Sevya Multimedia",
+      "Tejas Networks",
+      "Incture Technologies",
+      "Continental Tech Center",
+      "AM/NS",
     ],
     datasets: [
       {
         label: "Team A",
-        data: [8, 3, 10, 2, 3, 2, 6, 7, 1, 1, 1, 15, 1, 3, 1, 1, 1, 6, 2, 6],
+        data: [11, 1, 5, 6, 11, 1, 1],
         backgroundColor: [
           "#e28743",
           "#a78fa9",
@@ -299,19 +283,6 @@ $(document).ready(function () {
           "#45df54",
           "#8950C7",
           "#50C75A",
-          "#C75B50",
-          "#C7C150",
-          "#CF5063",
-          "#ddff11",
-          "#509DC7",
-          "#297597",
-          "#5069C7",
-          "#C3C750",
-          "#E8DFDF",
-          "#999999",
-          "#595287",
-          "#ddff00",
-          "#a78fa9",
         ],
         borderColor: [
           "#e28743",
@@ -321,19 +292,6 @@ $(document).ready(function () {
           "#45df54",
           "#8950C7",
           "#50C75A",
-          "#C75B50",
-          "#C7C150",
-          "#CF5063",
-          "#ddff11",
-          "#509DC7",
-          "#297597",
-          "#5069C7",
-          "#C3C750",
-          "#E8DFDF",
-          "#999999",
-          "#595287",
-          "#ddff00",
-          "#a78fa9",
         ],
         borderWidth: [
           1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
@@ -639,14 +597,11 @@ $(document).ready(function () {
     options: options04,
   });
 
-  var chart5 = new Chart(ctx5, {
-    type: "doughnut",
-    data: data5,
-    options: options05,
-  });
-
-
-
+  // var chart5 = new Chart(ctx5, {
+  //   type: "doughnut",
+  //   data: data5,
+  //   options: options05,
+  // });
 
   var chart6 = new Chart(ctx6, {
     type: "doughnut",
@@ -672,9 +627,9 @@ $(document).ready(function () {
     options: options,
   });
 
-  var chart6 = new Chart(ctx10, {
-    type: "doughnut",
-    data: data5,
-    options: options,
-  });
+  // var chart6 = new Chart(ctx10, {
+  //   type: "doughnut",
+  //   data: data5,
+  //   options: options,
+  // });
 });

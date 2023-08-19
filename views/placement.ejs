@@ -90,8 +90,17 @@
     .noimg {
       display: none;
     }
+    .changing-height-stats{
+      margin-bottom: -25rem;
+    }
 
     @media (max-width: 1000px) {
+      .changing-height-stats{
+        margin-bottom:25rem;
+      }
+      .container{
+        margin-top: -25rem;
+      }
       .nodis {
         display: none;
         height: 0;
@@ -233,7 +242,7 @@
           <br />
         </div>
 
-        <div class="row" style="margin-bottom: 2em;">
+        <div class="row changing-height-stats">
           <div class="col-md-10">
             <div class="chart-container-8">
               <div class="pie-chart-container">
@@ -243,7 +252,7 @@
           </div>
           <br />
         </div>
-
+<!-- 
         <div class="row" style="margin-bottom: 2em;">
           <div class="col-md-10">
             <div class="chart-container-9">
@@ -253,7 +262,7 @@
             </div>
           </div>
           <br />
-        </div>
+        </div> -->
       </div>
     </div>
   </div>
