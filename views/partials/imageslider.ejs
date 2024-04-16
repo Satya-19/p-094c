@@ -1,0 +1,120 @@
+<style>
+  .slider-container {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .slides {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .slides img {
+    max-width: 100%;
+    height: auto;
+    display: none;
+  }
+
+  .slides img.active {
+    display: block;
+  }
+
+  .slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+  }
+
+  .prev {
+    left: 10px;
+  }
+
+  .next {
+    right: 10px;
+  }
+</style>
+
+<body>
+  <div class="slider-container">
+    <div class="slides">
+      <img src="/images/pd/1.jpeg" alt="Slide 1" />
+      <img src="/images/pd/2.jpeg" alt="Slide 2" />
+      <img src="/images/pd/3.jpeg" alt="Slide 3" />
+      <img src="/images/pd/4.jpeg" alt="Slide 4" />
+      <img src="/images/pd/5.jpeg" alt="Slide 5" />
+      <img src="/images/pd/6.jpeg" alt="Slide 6" />
+    </div>
+    <button class="slider-button prev">&#10094;</button>
+    <button class="slider-button next">&#10095;</button>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const slides = document.querySelectorAll(".slides img");
+      const prevButton = document.querySelector(".prev");
+      const nextButton = document.querySelector(".next");
+      let currentSlide = 0;
+
+      // Function to show the current slide
+      function showSlide() {
+        slides.forEach((slide) => {
+          slide.classList.remove("active");
+        });
+        slides[currentSlide].classList.add("active");
+      }
+
+      // Function to move to the next slide
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide();
+      }
+
+      // Function to move to the previous slide
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide();
+      }
+
+      // Automatic slideshow
+      let slideInterval = setInterval(nextSlide, 3000);
+
+      // Pause slideshow on mouseover
+      slides.forEach((slide) => {
+        slide.addEventListener("mouseover", () => {
+          clearInterval(slideInterval);
+        });
+      });
+
+      // Resume slideshow on mouseout
+      slides.forEach((slide) => {
+        slide.addEventListener("mouseout", () => {
+          slideInterval = setInterval(nextSlide, 3000);
+        });
+      });
+
+      // Previous button click event
+      prevButton.addEventListener("click", () => {
+        prevSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 3000);
+      });
+
+      // Next button click event
+      nextButton.addEventListener("click", () => {
+        nextSlide();
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, 3000);
+      });
+
+      // Initial slide display
+      showSlide();
+    });
+  </script>
+</body>
