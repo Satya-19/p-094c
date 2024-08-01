@@ -2,10 +2,33 @@
   .sec-4 {
     line-height: 1.4;
   }
+  .card {
+    border-radius: 1.25em;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
 
+  .card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 18px rgba(0, 0, 0, 0.4);
+  }
+
+  .card-body {
+    transition: transform 0.3s ease;
+  }
+
+  .card:hover .card-body {
+    transform: translateY(-20px);
+  }
+
+  .card-img-top {
+    border-top-left-radius: 1.25em;
+    border-top-right-radius: 1.25em;
+  }
+  
   @media (max-width: 768px) {
     .card {
       border-radius: 1.25em;
+      margin: 10px 0;
     }
 
     .card-body {
@@ -16,7 +39,7 @@
       border-top-left-radius: 1.25em;
       border-top-right-radius: 1.25em;
       width: 800px;
-      height: 300px;
+      height: auto;
     }
 
     .carousel-control-prev {
@@ -27,6 +50,10 @@
     .carousel-control-next {
       right: -10px;
       width: 6%;
+    }
+    .carousel-inner .carousel-item {
+      display: block;
+      width: 100%;
     }
   }
 
@@ -50,6 +77,7 @@
 
     .card {
       border-radius: 1.25em;
+      margin:10px;
     }
 
     .card-img-top {

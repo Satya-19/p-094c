@@ -54,6 +54,10 @@ router.get('/contact', (req, res) => {
   res.render('contact');
 });
 
+router.get('/gallery', (req, res) => {
+  res.render('gallery');
+});
+
 
 // **************************************************************************************** //
 
