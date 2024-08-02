@@ -56,6 +56,7 @@
 
   .college-brand {
     display: flex;
+    align-items: center;
   }
 
   a.nav-item.active_nav_link {
@@ -82,6 +83,18 @@
   .nav-link {
     margin-right: 20px;
   }
+  .outr-logo{
+    margin: 0;
+  padding: 0; 
+  display: flex;
+  align-items: center;
+
+  }
+  .logo-img {
+  height: 40px; 
+  margin-right: 10px; 
+  vertical-align: middle; 
+}
   @media only screen and (max-width: 1500px){
     .navbar-expand-xl .navbar-nav .nav-link {
     padding-right: 0px !important;
@@ -170,6 +183,9 @@
       //   nav_selector = "a.nav-item:nth-child(6)";
       //   break;
       case "/contact":
+        nav_selector = "a.nav-item:nth-child(6)";
+        break;
+      case "/gallery":
         nav_selector = "a.nav-item:nth-child(7)";
         break;
     }
@@ -179,7 +195,11 @@
 </script>
 <nav class="navbar sticky-top navbar-expand-xl navbar-light">
   <span class="college-brand">
+    <p class="outr-logo">
+      <a href="/"><img src="images/outr-logo.png" alt="Logo not found" class="logo-img"></a>
+    </p>
     <p class="brand-name">
+      
       <a href="/"><span class="brd">Training and Placement Cell</span><br /></a>
       <a href="https://cet.edu.in"><span class="weight">
         Odisha University of Technology and Research
@@ -196,10 +216,11 @@
       <a class="nav-item nav-link active text-uppercase" href="/about">About Us</a>
       <a class="nav-item nav-link active text-uppercase" href="/whycet">Why OUTR</a>
       <a class="nav-item nav-link active text-uppercase" href="/placement">Placements</a>
-      <a class="nav-item nav-link text-uppercase" href="/brochure"
+      <a class="nav-item nav-link active text-uppercase" href="/brochure"
         title="Placement Brochure">Brochure</a>
       <!-- <a class="nav-item nav-link active text-uppercase" href="/team">Our Team</a> -->
       <a class="nav-item nav-link active text-uppercase" href="/contact">Contact Us</a>
+      <a class="nav-item nav-link active text-uppercase" href="/gallery">Gallery</a>
     </div>
   </div>
 </nav>
